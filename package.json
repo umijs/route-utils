@@ -1,0 +1,24 @@
+{
+  "name": "@umijs/route-utils",
+  "version": "1.0.0",
+  "description": "Quickly process the routing of umi",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "authors": {
+    "name": "chenshuai2144",
+    "email": "qixian.cs@outlook.com"
+  },
+  "repository": "https://github.com/umijs/route-utils",
+  "scripts": {
+    "build": "father build",
+    "test": "umi-test"
+  },
+  "devDependencies": {
+    "father": "^2.16.0",
+    "typescript": "^3.3.3"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "umi-test": "^1.9.6"
+  }
+}
