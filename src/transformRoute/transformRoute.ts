@@ -9,7 +9,7 @@ const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(
 export const isUrl = (path: string): boolean => reg.test(path);
 
 export function guid() {
-  return 'xxxxxxxx'.replace(/[xy]/g, (c) => {
+  return 'xxxxxxxx'.replace(/[xy]/g, c => {
     // eslint-disable-next-line no-bitwise
     const r = (Math.random() * 16) | 0;
     // eslint-disable-next-line no-bitwise
@@ -29,7 +29,10 @@ export const getKeyByPath = (item: MenuDataItem) => {
   }
   // 如果还是没有，用对象的hash 生成一个
   try {
-    return hash.sha256().update(JSON.stringify(item)).digest('hex');
+    return hash
+      .sha256()
+      .update(JSON.stringify(item))
+      .digest('hex');
   } catch (error) {
     // dom some thing
   }
@@ -42,10 +45,7 @@ export const getKeyByPath = (item: MenuDataItem) => {
  * @param item
  * @param parentName
  */
-const getItemLocaleName = (
-  item: MenuDataItem,
-  parentName: string,
-): string | false => {
+const getItemLocaleName = (item: MenuDataItem, parentName: string): string | false => {
   const { name, locale } = item;
 
   // 如果配置了 locale 并且 locale 为 false或 ""
@@ -94,7 +94,7 @@ function formatter(
     return [];
   }
   return data
-    .filter((item) => {
+    .filter(item => {
       if (!item) return false;
       if (item.routes || item.children) return true;
       if (item.name && item.path) return true;
@@ -148,10 +148,7 @@ const memoizeOneFormatter = memoizeOne(formatter, isEqual);
  */
 const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
   menuData
-    .filter(
-      (item: MenuDataItem) =>
-        item && item.name && !item.hideInMenu && !item.redirect,
-    )
+    .filter((item: MenuDataItem) => item && item.name && !item.hideInMenu && !item.redirect)
     .map((item: MenuDataItem) => {
       if (
         item.children &&
@@ -164,19 +161,17 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
       }
       return { ...item, children: undefined };
     })
-    .filter((item) => item);
+    .filter(item => item);
 
 /**
  * 获取面包屑映射
  * @param MenuDataItem[] menuData 菜单配置
  */
-const getBreadcrumbNameMap = (
-  menuData: MenuDataItem[],
-): Map<string, MenuDataItem> => {
+const getBreadcrumbNameMap = (menuData: MenuDataItem[]): Map<string, MenuDataItem> => {
   // Map is used to ensure the order of keys
   const routerMap = new Map<string, MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
-    data.forEach((menuItem) => {
+    data.forEach(menuItem => {
       if (!menuItem) {
         return;
       }
@@ -192,10 +187,7 @@ const getBreadcrumbNameMap = (
   return routerMap;
 };
 
-const memoizeOneGetBreadcrumbNameMap = memoizeOne(
-  getBreadcrumbNameMap,
-  isEqual,
-);
+const memoizeOneGetBreadcrumbNameMap = memoizeOne(getBreadcrumbNameMap, isEqual);
 
 /**
  * @param routes 路由配置

@@ -24,12 +24,9 @@ export const genKeysToArray = (menuKey: string) => {
   return keyArray;
 };
 
-export const getMenuMatches = (
-  flatMenuKeys: string[] = [],
-  path: string,
-): string | undefined =>
+export const getMenuMatches = (flatMenuKeys: string[] = [], path: string): string | undefined =>
   flatMenuKeys
-    .filter((item) => {
+    .filter(item => {
       if (item === '/' && path === '/') {
         return true;
       }
@@ -63,10 +60,7 @@ export const getMenuMatches = (
  * @param menuData
  * @returns MenuDataItem[]
  */
-export const getMatchMenu = (
-  pathname: string,
-  menuData: MenuDataItem[],
-): MenuDataItem[] => {
+export const getMatchMenu = (pathname: string, menuData: MenuDataItem[]): MenuDataItem[] => {
   const flatMenus = getFlatMenu(menuData);
   const flatMenuKeys = Object.keys(flatMenus);
   const menuPathKey = getMenuMatches(flatMenuKeys, pathname || '/');
@@ -75,9 +69,7 @@ export const getMatchMenu = (
   }
   const menuItem = flatMenus[menuPathKey] || { parentKeys: '', key: '' };
 
-  const parentItems = (menuItem.parentKeys || [])
-    .map((key) => flatMenus[key])
-    .filter((item) => item);
+  const parentItems = (menuItem.parentKeys || []).map(key => flatMenus[key]).filter(item => item);
 
   if (menuItem.key) {
     parentItems.push(menuItem);

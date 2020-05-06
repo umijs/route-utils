@@ -3,3 +3,6 @@
 /dist
 /.docz
 /node_modules
+es/
+lib/
+yarn-error.log
