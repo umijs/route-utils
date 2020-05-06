@@ -1,6 +1,7 @@
 import { isEqual } from 'lodash';
 import memoizeOne from 'memoize-one';
 import hash from 'hash.js';
+
 import { MenuDataItem, Route, MessageDescriptor } from '../types';
 
 /* eslint no-useless-escape:0 import/prefer-default-export:0 */
@@ -45,7 +46,10 @@ export const getKeyByPath = (item: MenuDataItem) => {
  * @param item
  * @param parentName
  */
-const getItemLocaleName = (item: MenuDataItem, parentName: string): string | false => {
+const getItemLocaleName = (
+  item: MenuDataItem,
+  parentName: string,
+): string | false => {
   const { name, locale } = item;
 
   // 如果配置了 locale 并且 locale 为 false或 ""
@@ -148,7 +152,10 @@ const memoizeOneFormatter = memoizeOne(formatter, isEqual);
  */
 const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
   menuData
-    .filter((item: MenuDataItem) => item && item.name && !item.hideInMenu && !item.redirect)
+    .filter(
+      (item: MenuDataItem) =>
+        item && item.name && !item.hideInMenu && !item.redirect,
+    )
     .map((item: MenuDataItem) => {
       if (
         item.children &&
@@ -167,7 +174,9 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
  * 获取面包屑映射
  * @param MenuDataItem[] menuData 菜单配置
  */
-const getBreadcrumbNameMap = (menuData: MenuDataItem[]): Map<string, MenuDataItem> => {
+const getBreadcrumbNameMap = (
+  menuData: MenuDataItem[],
+): Map<string, MenuDataItem> => {
   // Map is used to ensure the order of keys
   const routerMap = new Map<string, MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
@@ -187,7 +196,10 @@ const getBreadcrumbNameMap = (menuData: MenuDataItem[]): Map<string, MenuDataIte
   return routerMap;
 };
 
-const memoizeOneGetBreadcrumbNameMap = memoizeOne(getBreadcrumbNameMap, isEqual);
+const memoizeOneGetBreadcrumbNameMap = memoizeOne(
+  getBreadcrumbNameMap,
+  isEqual,
+);
 
 /**
  * @param routes 路由配置
