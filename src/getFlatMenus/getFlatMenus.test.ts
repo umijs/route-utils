@@ -50,6 +50,5 @@ test('normal', () => {
   expect(Object.keys(flatMenus).length).toEqual(5);
 
   expect(flatMenus['/list'].name).toEqual('查询表格');
-
   expect(flatMenus).toMatchSnapshot();
 });

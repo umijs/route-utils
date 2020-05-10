@@ -178,7 +178,6 @@ function formatter(
       return true;
     })
     .map((item = { path: '/' }) => {
-      if (!item.name) return item;
       const path = mergePath(item.path, parent ? parent.path : '/');
       const { name } = item;
       const locale = getItemLocaleName(item, parentName || 'menu');

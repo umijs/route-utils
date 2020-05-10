@@ -3,6 +3,33 @@
 exports[`normal 1`] = `
 Array [
   Object {
+    "children": Array [
+      Object {
+        "children": undefined,
+        "component": "./user/login",
+        "key": "/user/login",
+        "layout": false,
+        "locale": "menu.undefined.login",
+        "name": "menu.undefined.login",
+        "parentKeys": Array [
+          "/",
+          "/user",
+        ],
+        "path": "/user/login",
+        "routes": null,
+      },
+    ],
+    "key": "/user",
+    "layout": false,
+    "locale": "menu.undefined",
+    "name": "menu.undefined",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/user",
+    "routes": null,
+  },
+  Object {
     "children": undefined,
     "component": "./Welcome",
     "icon": "smile",
@@ -63,17 +90,44 @@ Array [
 
 exports[`normal 2`] = `
 Map {
-  "/user" => Object {
+  "/user/login" => Object {
+    "component": "./user/login",
+    "key": "/user/login",
     "layout": false,
-    "path": "/user",
-    "routes": Array [
+    "locale": "menu.undefined.login",
+    "name": "menu.undefined.login",
+    "parentKeys": Array [
+      "/",
+      "/user",
+    ],
+    "path": "/user/login",
+    "routes": null,
+  },
+  "/user" => Object {
+    "children": Array [
       Object {
         "component": "./user/login",
+        "key": "/user/login",
         "layout": false,
-        "name": "login",
+        "locale": "menu.undefined.login",
+        "name": "menu.undefined.login",
+        "parentKeys": Array [
+          "/",
+          "/user",
+        ],
         "path": "/user/login",
+        "routes": null,
       },
     ],
+    "key": "/user",
+    "layout": false,
+    "locale": "menu.undefined",
+    "name": "menu.undefined",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/user",
+    "routes": null,
   },
   "/welcome" => Object {
     "component": "./Welcome",
@@ -148,16 +202,30 @@ Map {
 exports[`normal ignoreFilter 1`] = `
 Array [
   Object {
-    "layout": false,
-    "path": "/user",
-    "routes": Array [
+    "children": Array [
       Object {
         "component": "./user/login",
+        "key": "/user/login",
         "layout": false,
-        "name": "login",
+        "locale": "menu.undefined.login",
+        "name": "menu.undefined.login",
+        "parentKeys": Array [
+          "/",
+          "/user",
+        ],
         "path": "/user/login",
+        "routes": null,
       },
     ],
+    "key": "/user",
+    "layout": false,
+    "locale": "menu.undefined",
+    "name": "menu.undefined",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/user",
+    "routes": null,
   },
   Object {
     "component": "./Welcome",
@@ -217,17 +285,44 @@ Array [
 
 exports[`normal ignoreFilter 2`] = `
 Map {
-  "/user" => Object {
+  "/user/login" => Object {
+    "component": "./user/login",
+    "key": "/user/login",
     "layout": false,
-    "path": "/user",
-    "routes": Array [
+    "locale": "menu.undefined.login",
+    "name": "menu.undefined.login",
+    "parentKeys": Array [
+      "/",
+      "/user",
+    ],
+    "path": "/user/login",
+    "routes": null,
+  },
+  "/user" => Object {
+    "children": Array [
       Object {
         "component": "./user/login",
+        "key": "/user/login",
         "layout": false,
-        "name": "login",
+        "locale": "menu.undefined.login",
+        "name": "menu.undefined.login",
+        "parentKeys": Array [
+          "/",
+          "/user",
+        ],
         "path": "/user/login",
+        "routes": null,
       },
     ],
+    "key": "/user",
+    "layout": false,
+    "locale": "menu.undefined",
+    "name": "menu.undefined",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/user",
+    "routes": null,
   },
   "/welcome" => Object {
     "component": "./Welcome",
