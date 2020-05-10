@@ -227,7 +227,10 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
   menuData
     .filter(
       (item: MenuDataItem) =>
-        item && item.name && !item.hideInMenu && !item.redirect,
+        item &&
+        (item.name || item.children) &&
+        !item.hideInMenu &&
+        !item.redirect,
     )
     .map((item: MenuDataItem) => {
       if (
@@ -278,12 +281,14 @@ const memoizeOneGetBreadcrumbNameMap = memoizeOne(
  * @param routes 路由配置
  * @param locale 是否使用国际化
  * @param formatMessage 国际化的程序
+ * @param ignoreFilter 是否筛选掉不展示的 menuItem 项，plugin-layout需要所有项目来计算布局样式
  * @returns { breadcrumb, menuData}
  */
 const transformRoute = (
   routes: Route[],
   locale?: boolean,
   formatMessage?: (message: MessageDescriptor) => string,
+  ignoreFilter?: boolean,
 ): {
   breadcrumb: Map<string, MenuDataItem>;
   menuData: MenuDataItem[];
@@ -293,7 +298,9 @@ const transformRoute = (
     formatMessage,
     locale,
   });
-  const menuData = defaultFilterMenuData(originalMenuData);
+  const menuData = ignoreFilter
+    ? originalMenuData.filter(item => item)
+    : defaultFilterMenuData(originalMenuData);
   // Map type used for internal logic
   const breadcrumb = memoizeOneGetBreadcrumbNameMap(originalMenuData);
 

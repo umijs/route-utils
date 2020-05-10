@@ -17,7 +17,7 @@
   "repository": "https://github.com/umijs/route-utils",
   "scripts": {
     "build": "father build && tsc -d",
-    "test": "umi-test",
+    "test": "umi-test ./src",
     "lint": "npm run lint-eslint",
     "lint-eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty",

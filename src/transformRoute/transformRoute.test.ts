@@ -2,44 +2,79 @@ import transformRoute from './transformRoute';
 
 const routes = [
   {
+    path: '/user',
+    layout: false,
+    routes: [
+      {
+        name: 'login',
+        path: '/user/login',
+        layout: false,
+        component: './user/login',
+      },
+    ],
+  },
+
+  {
     path: '/welcome',
     name: 'welcome',
-    exact: true,
-    unaccessible: false,
+    icon: 'smile',
+    component: './Welcome',
   },
   {
     path: '/admin',
     name: 'admin',
+    icon: 'crown',
     access: 'canAdmin',
+    component: './Admin',
     routes: [
       {
         path: '/admin/sub-page',
         name: 'sub-page',
-        exact: true,
-        unaccessible: false,
+        icon: 'smile',
+        component: './Welcome',
       },
     ],
-
-    unaccessible: false,
   },
   {
     name: 'list.table-list',
+    icon: 'table',
     path: '/list',
-    exact: true,
-    unaccessible: false,
+    component: './ListTableList',
   },
-  { path: '/', redirect: '/welcome', exact: true, unaccessible: false },
+  {
+    path: '/',
+    redirect: '/welcome',
+  },
+  {
+    component: './404',
+  },
 ];
 
-const { menuData, breadcrumb } = transformRoute(routes, false, ({ id }) => {
-  if (id === 'menu.list.table-list') return '查询表格';
-  if (id === 'menu.admin') return '管理页';
-  if (id === 'menu.admin.sub-page') return '二级管理页';
-  if (id === 'menu.welcome') return '欢迎';
-  return id;
+test('normal', () => {
+  const { menuData, breadcrumb } = transformRoute(routes, false, ({ id }) => {
+    if (id === 'menu.list.table-list') return '查询表格';
+    if (id === 'menu.admin') return '管理页';
+    if (id === 'menu.admin.sub-page') return '二级管理页';
+    if (id === 'menu.welcome') return '欢迎';
+    return id;
+  });
+  expect(menuData).toMatchSnapshot();
+  expect(breadcrumb).toMatchSnapshot();
 });
 
-test('normal', () => {
+test('normal ignoreFilter', () => {
+  const { menuData, breadcrumb } = transformRoute(
+    routes,
+    false,
+    ({ id }) => {
+      if (id === 'menu.list.table-list') return '查询表格';
+      if (id === 'menu.admin') return '管理页';
+      if (id === 'menu.admin.sub-page') return '二级管理页';
+      if (id === 'menu.welcome') return '欢迎';
+      return id;
+    },
+    true,
+  );
   expect(menuData).toMatchSnapshot();
   expect(breadcrumb).toMatchSnapshot();
 });

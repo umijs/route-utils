@@ -4,7 +4,8 @@ exports[`normal 1`] = `
 Array [
   Object {
     "children": undefined,
-    "exact": true,
+    "component": "./Welcome",
+    "icon": "smile",
     "key": "/welcome",
     "locale": "menu.welcome",
     "name": "欢迎",
@@ -13,7 +14,6 @@ Array [
     ],
     "path": "/welcome",
     "routes": null,
-    "unaccessible": false,
   },
   Object {
     "access": "canAdmin",
@@ -21,7 +21,8 @@ Array [
       Object {
         "access": "canAdmin",
         "children": undefined,
-        "exact": true,
+        "component": "./Welcome",
+        "icon": "smile",
         "key": "/admin/sub-page",
         "locale": "menu.admin.sub-page",
         "name": "二级管理页",
@@ -31,9 +32,10 @@ Array [
         ],
         "path": "/admin/sub-page",
         "routes": null,
-        "unaccessible": false,
       },
     ],
+    "component": "./Admin",
+    "icon": "crown",
     "key": "/admin",
     "locale": "menu.admin",
     "name": "管理页",
@@ -42,11 +44,11 @@ Array [
     ],
     "path": "/admin",
     "routes": null,
-    "unaccessible": false,
   },
   Object {
     "children": undefined,
-    "exact": true,
+    "component": "./ListTableList",
+    "icon": "table",
     "key": "/list",
     "locale": "menu.list.table-list",
     "name": "查询表格",
@@ -55,15 +57,27 @@ Array [
     ],
     "path": "/list",
     "routes": null,
-    "unaccessible": false,
   },
 ]
 `;
 
 exports[`normal 2`] = `
 Map {
+  "/user" => Object {
+    "layout": false,
+    "path": "/user",
+    "routes": Array [
+      Object {
+        "component": "./user/login",
+        "layout": false,
+        "name": "login",
+        "path": "/user/login",
+      },
+    ],
+  },
   "/welcome" => Object {
-    "exact": true,
+    "component": "./Welcome",
+    "icon": "smile",
     "key": "/welcome",
     "locale": "menu.welcome",
     "name": "欢迎",
@@ -72,11 +86,11 @@ Map {
     ],
     "path": "/welcome",
     "routes": null,
-    "unaccessible": false,
   },
   "/admin/sub-page" => Object {
     "access": "canAdmin",
-    "exact": true,
+    "component": "./Welcome",
+    "icon": "smile",
     "key": "/admin/sub-page",
     "locale": "menu.admin.sub-page",
     "name": "二级管理页",
@@ -86,14 +100,14 @@ Map {
     ],
     "path": "/admin/sub-page",
     "routes": null,
-    "unaccessible": false,
   },
   "/admin" => Object {
     "access": "canAdmin",
     "children": Array [
       Object {
         "access": "canAdmin",
-        "exact": true,
+        "component": "./Welcome",
+        "icon": "smile",
         "key": "/admin/sub-page",
         "locale": "menu.admin.sub-page",
         "name": "二级管理页",
@@ -103,9 +117,10 @@ Map {
         ],
         "path": "/admin/sub-page",
         "routes": null,
-        "unaccessible": false,
       },
     ],
+    "component": "./Admin",
+    "icon": "crown",
     "key": "/admin",
     "locale": "menu.admin",
     "name": "管理页",
@@ -114,10 +129,10 @@ Map {
     ],
     "path": "/admin",
     "routes": null,
-    "unaccessible": false,
   },
   "/list" => Object {
-    "exact": true,
+    "component": "./ListTableList",
+    "icon": "table",
     "key": "/list",
     "locale": "menu.list.table-list",
     "name": "查询表格",
@@ -126,7 +141,160 @@ Map {
     ],
     "path": "/list",
     "routes": null,
-    "unaccessible": false,
+  },
+}
+`;
+
+exports[`normal ignoreFilter 1`] = `
+Array [
+  Object {
+    "layout": false,
+    "path": "/user",
+    "routes": Array [
+      Object {
+        "component": "./user/login",
+        "layout": false,
+        "name": "login",
+        "path": "/user/login",
+      },
+    ],
+  },
+  Object {
+    "component": "./Welcome",
+    "icon": "smile",
+    "key": "/welcome",
+    "locale": "menu.welcome",
+    "name": "欢迎",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/welcome",
+    "routes": null,
+  },
+  Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "component": "./Welcome",
+        "icon": "smile",
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "parentKeys": Array [
+          "/",
+          "/admin",
+        ],
+        "path": "/admin/sub-page",
+        "routes": null,
+      },
+    ],
+    "component": "./Admin",
+    "icon": "crown",
+    "key": "/admin",
+    "locale": "menu.admin",
+    "name": "管理页",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/admin",
+    "routes": null,
+  },
+  Object {
+    "component": "./ListTableList",
+    "icon": "table",
+    "key": "/list",
+    "locale": "menu.list.table-list",
+    "name": "查询表格",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/list",
+    "routes": null,
+  },
+]
+`;
+
+exports[`normal ignoreFilter 2`] = `
+Map {
+  "/user" => Object {
+    "layout": false,
+    "path": "/user",
+    "routes": Array [
+      Object {
+        "component": "./user/login",
+        "layout": false,
+        "name": "login",
+        "path": "/user/login",
+      },
+    ],
+  },
+  "/welcome" => Object {
+    "component": "./Welcome",
+    "icon": "smile",
+    "key": "/welcome",
+    "locale": "menu.welcome",
+    "name": "欢迎",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/welcome",
+    "routes": null,
+  },
+  "/admin/sub-page" => Object {
+    "access": "canAdmin",
+    "component": "./Welcome",
+    "icon": "smile",
+    "key": "/admin/sub-page",
+    "locale": "menu.admin.sub-page",
+    "name": "二级管理页",
+    "parentKeys": Array [
+      "/",
+      "/admin",
+    ],
+    "path": "/admin/sub-page",
+    "routes": null,
+  },
+  "/admin" => Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "component": "./Welcome",
+        "icon": "smile",
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "parentKeys": Array [
+          "/",
+          "/admin",
+        ],
+        "path": "/admin/sub-page",
+        "routes": null,
+      },
+    ],
+    "component": "./Admin",
+    "icon": "crown",
+    "key": "/admin",
+    "locale": "menu.admin",
+    "name": "管理页",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/admin",
+    "routes": null,
+  },
+  "/list" => Object {
+    "component": "./ListTableList",
+    "icon": "table",
+    "key": "/list",
+    "locale": "menu.list.table-list",
+    "name": "查询表格",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/list",
+    "routes": null,
   },
 }
 `;
