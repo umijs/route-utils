@@ -2,8 +2,9 @@
   "name": "@umijs/route-utils",
   "version": "1.0.4",
   "description": "Quickly process the routing of umi",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "./dist/index.d.ts",
   "authors": {
     "name": "chenshuai2144",
     "email": "qixian.cs@outlook.com"
@@ -15,7 +16,7 @@
   ],
   "repository": "https://github.com/umijs/route-utils",
   "scripts": {
-    "build": "father build",
+    "build": "father build && tsc -d",
     "test": "umi-test",
     "lint": "npm run lint-eslint",
     "lint-eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
