@@ -48,6 +48,178 @@ Array [
 ]
 `;
 
+exports[`test router 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "exact": true,
+            "icon": Object {
+              "_owner": null,
+              "_store": Object {},
+              "key": null,
+              "props": Object {},
+              "ref": null,
+              "type": Object {},
+            },
+            "key": "/welcome/repertoryFw",
+            "locale": "menu.welcome.one.two",
+            "name": "two",
+            "parentKeys": Array [
+              "/",
+              "welcome",
+              "/welcome",
+            ],
+            "path": "/welcome/repertoryFw",
+            "routes": null,
+          },
+          Object {
+            "exact": true,
+            "icon": Object {
+              "_owner": null,
+              "_store": Object {},
+              "key": null,
+              "props": Object {},
+              "ref": null,
+              "type": Object {},
+            },
+            "key": "/welcome/repertory",
+            "locale": "menu.welcome.one.two2",
+            "name": "two2",
+            "parentKeys": Array [
+              "/",
+              "welcome",
+              "/welcome",
+            ],
+            "path": "/welcome/repertory",
+            "routes": null,
+          },
+        ],
+        "icon": Object {
+          "_owner": null,
+          "_store": Object {},
+          "key": null,
+          "props": Object {},
+          "ref": null,
+          "type": Object {},
+        },
+        "key": "/welcome",
+        "locale": "menu.welcome.one",
+        "name": "one",
+        "parentKeys": Array [
+          "/",
+          "welcome",
+        ],
+        "path": "/welcome",
+        "routes": null,
+      },
+    ],
+    "icon": Object {
+      "_owner": null,
+      "_store": Object {},
+      "key": null,
+      "props": Object {},
+      "ref": null,
+      "type": Object {},
+    },
+    "key": "welcome",
+    "locale": "menu.welcome",
+    "name": "welcome",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/",
+    "routes": null,
+  },
+  Object {
+    "children": Array [
+      Object {
+        "exact": true,
+        "icon": Object {
+          "_owner": null,
+          "_store": Object {},
+          "key": null,
+          "props": Object {},
+          "ref": null,
+          "type": Object {},
+        },
+        "key": "/welcome/repertoryFw",
+        "locale": "menu.welcome.one.two",
+        "name": "two",
+        "parentKeys": Array [
+          "/",
+          "welcome",
+          "/welcome",
+        ],
+        "path": "/welcome/repertoryFw",
+        "routes": null,
+      },
+      Object {
+        "exact": true,
+        "icon": Object {
+          "_owner": null,
+          "_store": Object {},
+          "key": null,
+          "props": Object {},
+          "ref": null,
+          "type": Object {},
+        },
+        "key": "/welcome/repertory",
+        "locale": "menu.welcome.one.two2",
+        "name": "two2",
+        "parentKeys": Array [
+          "/",
+          "welcome",
+          "/welcome",
+        ],
+        "path": "/welcome/repertory",
+        "routes": null,
+      },
+    ],
+    "icon": Object {
+      "_owner": null,
+      "_store": Object {},
+      "key": null,
+      "props": Object {},
+      "ref": null,
+      "type": Object {},
+    },
+    "key": "/welcome",
+    "locale": "menu.welcome.one",
+    "name": "one",
+    "parentKeys": Array [
+      "/",
+      "welcome",
+    ],
+    "path": "/welcome",
+    "routes": null,
+  },
+  Object {
+    "exact": true,
+    "icon": Object {
+      "_owner": null,
+      "_store": Object {},
+      "key": null,
+      "props": Object {},
+      "ref": null,
+      "type": Object {},
+    },
+    "key": "/welcome/repertoryFw",
+    "locale": "menu.welcome.one.two",
+    "name": "two",
+    "parentKeys": Array [
+      "/",
+      "welcome",
+      "/welcome",
+    ],
+    "path": "/welcome/repertoryFw",
+    "routes": null,
+  },
+]
+`;
+
 exports[`var path 1`] = `
 Array [
   Object {

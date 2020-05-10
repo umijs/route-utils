@@ -70,6 +70,7 @@ export const getMatchMenu = (
   const flatMenus = getFlatMenu(menuData);
   const flatMenuKeys = Object.keys(flatMenus);
   const menuPathKey = getMenuMatches(flatMenuKeys, pathname || '/');
+
   if (!menuPathKey) {
     return [];
   }

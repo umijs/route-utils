@@ -131,7 +131,6 @@ const bigfishCompatibleConversions = (route: MenuDataItem) => {
     }
 
     result.children = children;
-    // delete result.path;
   }
   return result;
 };
@@ -190,10 +189,10 @@ function formatter(
         locale !== false && formatMessage
           ? formatMessage({ id: locale, defaultMessage: name })
           : name;
-      const { parentKeys = [] } = parent;
+      const { parentKeys = [], children, ...restParent } = parent;
 
       const finallyItem: MenuDataItem = {
-        ...parent,
+        ...restParent,
         ...item,
         path,
         name: localeName,
@@ -203,8 +202,8 @@ function formatter(
         parentKeys: [...parentKeys, parent.key || '/'],
       };
 
-      if (item.routes || item.children) {
-        const children = formatter(
+      if (item.routes || item.children || item.i) {
+        const formatterChildren = formatter(
           {
             ...props,
             data: item.routes || item.children,
@@ -213,7 +212,7 @@ function formatter(
           finallyItem,
         );
         // Reduce memory usage
-        finallyItem.children = children;
+        finallyItem.children = formatterChildren;
       }
       return bigfishCompatibleConversions(finallyItem);
     });
@@ -283,7 +282,7 @@ const memoizeOneGetBreadcrumbNameMap = memoizeOne(
  */
 const transformRoute = (
   routes: Route[],
-  locale: false,
+  locale?: boolean,
   formatMessage?: (message: MessageDescriptor) => string,
 ): {
   breadcrumb: Map<string, MenuDataItem>;

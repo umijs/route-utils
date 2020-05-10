@@ -1,5 +1,6 @@
 import getMatchMenu from './getMatchMenu';
 import transformRoute from '../transformRoute/transformRoute';
+import testMenuData from './test.menu';
 
 const routes = [
   {
@@ -58,5 +59,10 @@ test('var path', () => {
   const openMenuItems = getMatchMenu('/list/1234', menuData);
   expect(openMenuItems.length).toEqual(1);
   expect(openMenuItems[0].name).toEqual('数据详情');
+  expect(openMenuItems).toMatchSnapshot();
+});
+
+test('test router', () => {
+  const openMenuItems = getMatchMenu('/welcome/repertoryFw', testMenuData);
   expect(openMenuItems).toMatchSnapshot();
 });
