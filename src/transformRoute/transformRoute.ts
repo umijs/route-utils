@@ -84,6 +84,58 @@ const mergePath = (path: string = '', parentPath: string = '/') => {
   return `/${parentPath}/${path}`.replace(/\/\//g, '/').replace(/\/\//g, '/');
 };
 
+// bigfish 的兼容准话
+const bigfishCompatibleConversions = (route: MenuDataItem) => {
+  const { menu = {}, indexRoute, path = '', routes } = route;
+  const {
+    name = route.name,
+    icon = route.icon,
+    hideChildren = route.hideChildren,
+    flatMenu = route.flatMenu,
+  } = menu as Route; // 兼容平铺式写法
+
+  // 拼接 childrenRoutes, 处理存在 indexRoute 时的逻辑
+  const childrenRoutes = indexRoute
+    ? [
+        {
+          path,
+          menu,
+          ...indexRoute,
+        },
+      ].concat(routes || [])
+    : routes;
+
+  // 拼接返回的 menu 数据
+  const result = {
+    ...route,
+    name,
+  } as MenuDataItem;
+
+  if (icon) {
+    result.icon = icon;
+  }
+
+  if (childrenRoutes && childrenRoutes.length) {
+    /** 在菜单中隐藏子项 */
+    if (hideChildren) {
+      delete result.children;
+      return result;
+    }
+
+    // 需要重新进行一次
+    const children = formatter(childrenRoutes, route);
+
+    /** 在菜单中只隐藏此项，子项往上提，仍旧展示 */
+    if (flatMenu) {
+      return children;
+    }
+
+    result.children = children;
+    // delete result.path;
+  }
+  return result;
+};
+
 /**
  *
  * @param props
@@ -102,6 +154,25 @@ function formatter(
       if (!item) return false;
       if (item.routes || item.children) return true;
       if (item.name && item.path) return true;
+      return false;
+    })
+    .filter(item => {
+      // 是否没有权限查看
+      if (item.unaccessible) {
+        return false;
+      }
+      // 显示指定在 menu 中隐藏该项
+      // layout 插件的功能，其实不应该存在的
+      if (item.menu === false) {
+        return false;
+      }
+      if (item?.menu?.name || item?.menu?.flatMenu) {
+        return true;
+      }
+      // 兼容性，bigfish的兼容
+      if (item?.indexRoute?.menu?.name || item?.indexRoute?.menu?.flatMenu) {
+        return true;
+      }
       return false;
     })
     .map((item = { path: '/' }) => {
@@ -141,7 +212,7 @@ function formatter(
         // Reduce memory usage
         finallyItem.children = children;
       }
-      return finallyItem;
+      return bigfishCompatibleConversions(finallyItem);
     });
 }
 
