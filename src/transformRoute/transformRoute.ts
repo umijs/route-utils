@@ -161,11 +161,7 @@ function formatter(
       if (item.unaccessible) {
         return false;
       }
-      // 显示指定在 menu 中隐藏该项
-      // layout 插件的功能，其实不应该存在的
-      if (item.menu === false) {
-        return false;
-      }
+
       if (item?.menu?.name || item?.menu?.flatMenu) {
         return true;
       }
@@ -173,7 +169,14 @@ function formatter(
       if (item?.indexRoute?.menu?.name || item?.indexRoute?.menu?.flatMenu) {
         return true;
       }
-      return false;
+
+      // 显示指定在 menu 中隐藏该项
+      // layout 插件的功能，其实不应该存在的
+      if (item.menu === false) {
+        return false;
+      }
+
+      return true;
     })
     .map((item = { path: '/' }) => {
       if (!item.name) return item;

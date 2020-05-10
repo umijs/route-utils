@@ -51,10 +51,12 @@ test('normal', () => {
 
   expect(openMenuItems[0].name).toEqual('管理页');
   expect(openMenuItems[1].name).toEqual('二级管理页');
+  expect(openMenuItems).toMatchSnapshot();
 });
 
 test('var path', () => {
   const openMenuItems = getMatchMenu('/list/1234', menuData);
   expect(openMenuItems.length).toEqual(1);
   expect(openMenuItems[0].name).toEqual('数据详情');
+  expect(openMenuItems).toMatchSnapshot();
 });

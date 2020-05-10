@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`normal 1`] = `
+Array [
+  Object {
+    "children": undefined,
+    "exact": true,
+    "key": "/welcome",
+    "locale": "menu.welcome",
+    "name": "欢迎",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/welcome",
+    "routes": null,
+    "unaccessible": false,
+  },
+  Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "children": undefined,
+        "exact": true,
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "parentKeys": Array [
+          "/",
+          "/admin",
+        ],
+        "path": "/admin/sub-page",
+        "routes": null,
+        "unaccessible": false,
+      },
+    ],
+    "key": "/admin",
+    "locale": "menu.admin",
+    "name": "管理页",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/admin",
+    "routes": null,
+    "unaccessible": false,
+  },
+  Object {
+    "children": undefined,
+    "exact": true,
+    "key": "/list",
+    "locale": "menu.list.table-list",
+    "name": "查询表格",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/list",
+    "routes": null,
+    "unaccessible": false,
+  },
+]
+`;
+
+exports[`normal 2`] = `
+Map {
+  "/welcome" => Object {
+    "exact": true,
+    "key": "/welcome",
+    "locale": "menu.welcome",
+    "name": "欢迎",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/welcome",
+    "routes": null,
+    "unaccessible": false,
+  },
+  "/admin/sub-page" => Object {
+    "access": "canAdmin",
+    "exact": true,
+    "key": "/admin/sub-page",
+    "locale": "menu.admin.sub-page",
+    "name": "二级管理页",
+    "parentKeys": Array [
+      "/",
+      "/admin",
+    ],
+    "path": "/admin/sub-page",
+    "routes": null,
+    "unaccessible": false,
+  },
+  "/admin" => Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "exact": true,
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "parentKeys": Array [
+          "/",
+          "/admin",
+        ],
+        "path": "/admin/sub-page",
+        "routes": null,
+        "unaccessible": false,
+      },
+    ],
+    "key": "/admin",
+    "locale": "menu.admin",
+    "name": "管理页",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/admin",
+    "routes": null,
+    "unaccessible": false,
+  },
+  "/list" => Object {
+    "exact": true,
+    "key": "/list",
+    "locale": "menu.list.table-list",
+    "name": "查询表格",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/list",
+    "routes": null,
+    "unaccessible": false,
+  },
+}
+`;

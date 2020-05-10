@@ -40,12 +40,6 @@ const { menuData, breadcrumb } = transformRoute(routes, false, ({ id }) => {
 });
 
 test('normal', () => {
-  expect(menuData[0].name).toEqual('欢迎');
-  expect(menuData[1].name).toEqual('管理页');
-  // @ts-ignore
-  expect(menuData[1].children[0].name).toEqual('二级管理页');
-
-  expect(breadcrumb.get('/admin')?.name).toEqual('管理页');
-  expect(breadcrumb.get('/welcome')?.name).toEqual('欢迎');
-  expect(breadcrumb.get('/admin/sub-page')?.name).toEqual('二级管理页');
+  expect(menuData).toMatchSnapshot();
+  expect(breadcrumb).toMatchSnapshot();
 });

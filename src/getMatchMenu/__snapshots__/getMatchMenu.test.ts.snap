@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`normal 1`] = `
+Array [
+  Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "children": undefined,
+        "exact": true,
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "parentKeys": Array [
+          "/",
+          "/admin",
+        ],
+        "path": "/admin/sub-page",
+        "routes": null,
+        "unaccessible": false,
+      },
+    ],
+    "key": "/admin",
+    "locale": "menu.admin",
+    "name": "管理页",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/admin",
+    "routes": null,
+  },
+  Object {
+    "access": "canAdmin",
+    "children": undefined,
+    "exact": true,
+    "key": "/admin/sub-page",
+    "locale": "menu.admin.sub-page",
+    "name": "二级管理页",
+    "parentKeys": Array [
+      "/",
+      "/admin",
+    ],
+    "path": "/admin/sub-page",
+    "routes": null,
+    "unaccessible": false,
+  },
+]
+`;
+
+exports[`var path 1`] = `
+Array [
+  Object {
+    "children": undefined,
+    "exact": true,
+    "key": "/list/:id",
+    "locale": "menu.list.table.result",
+    "name": "数据详情",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/list/:id",
+    "routes": null,
+    "unaccessible": false,
+  },
+]
+`;
