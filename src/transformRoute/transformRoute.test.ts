@@ -13,7 +13,6 @@ const routes = [
       },
     ],
   },
-
   {
     path: '/welcome',
     name: 'welcome',
@@ -26,6 +25,7 @@ const routes = [
     icon: 'crown',
     access: 'canAdmin',
     component: './Admin',
+    menu: { hideChildren: true },
     routes: [
       {
         path: '/admin/sub-page',

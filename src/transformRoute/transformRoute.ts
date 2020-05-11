@@ -88,15 +88,17 @@ const mergePath = (path: string = '', parentPath: string = '/') => {
 };
 
 // bigfish 的兼容准话
-const bigfishCompatibleConversions = (route: MenuDataItem) => {
-  const { menu = {}, indexRoute, path = '', routes } = route;
+const bigfishCompatibleConversions = (
+  route: MenuDataItem,
+  props: FormatterProps,
+) => {
+  const { menu = {}, indexRoute, path = '', children } = route;
   const {
     name = route.name,
     icon = route.icon,
     hideChildren = route.hideChildren,
     flatMenu = route.flatMenu,
   } = menu as Route; // 兼容平铺式写法
-
   // 拼接 childrenRoutes, 处理存在 indexRoute 时的逻辑
   const childrenRoutes = indexRoute
     ? [
@@ -105,8 +107,8 @@ const bigfishCompatibleConversions = (route: MenuDataItem) => {
           menu,
           ...indexRoute,
         },
-      ].concat(routes || [])
-    : routes;
+      ].concat(children || [])
+    : children;
 
   // 拼接返回的 menu 数据
   const result = {
@@ -127,14 +129,20 @@ const bigfishCompatibleConversions = (route: MenuDataItem) => {
     }
 
     // 需要重新进行一次
-    const children = formatter(childrenRoutes, route);
+    const routers = formatter(
+      {
+        ...props,
+        data: childrenRoutes,
+      },
+      route,
+    );
 
     /** 在菜单中只隐藏此项，子项往上提，仍旧展示 */
     if (flatMenu) {
-      return children;
+      return routers;
     }
 
-    result.children = children;
+    result.children = routers;
   }
   return result;
 };
@@ -222,7 +230,7 @@ function formatter(
         // Reduce memory usage
         finallyItem.children = formatterChildren;
       }
-      return bigfishCompatibleConversions(finallyItem);
+      return bigfishCompatibleConversions(finallyItem, props);
     });
 }
 

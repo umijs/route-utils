@@ -43,27 +43,14 @@ Array [
   },
   Object {
     "access": "canAdmin",
-    "children": Array [
-      Object {
-        "access": "canAdmin",
-        "children": undefined,
-        "component": "./Welcome",
-        "icon": "smile",
-        "key": "/admin/sub-page",
-        "locale": "menu.admin.sub-page",
-        "name": "二级管理页",
-        "parentKeys": Array [
-          "/",
-          "/admin",
-        ],
-        "path": "/admin/sub-page",
-        "routes": null,
-      },
-    ],
+    "children": undefined,
     "component": "./Admin",
     "icon": "crown",
     "key": "/admin",
     "locale": "menu.admin",
+    "menu": Object {
+      "hideChildren": true,
+    },
     "name": "管理页",
     "parentKeys": Array [
       "/",
@@ -139,42 +126,15 @@ Map {
     "path": "/welcome",
     "routes": null,
   },
-  "/admin/sub-page" => Object {
-    "access": "canAdmin",
-    "component": "./Welcome",
-    "icon": "smile",
-    "key": "/admin/sub-page",
-    "locale": "menu.admin.sub-page",
-    "name": "二级管理页",
-    "parentKeys": Array [
-      "/",
-      "/admin",
-    ],
-    "path": "/admin/sub-page",
-    "routes": null,
-  },
   "/admin" => Object {
     "access": "canAdmin",
-    "children": Array [
-      Object {
-        "access": "canAdmin",
-        "component": "./Welcome",
-        "icon": "smile",
-        "key": "/admin/sub-page",
-        "locale": "menu.admin.sub-page",
-        "name": "二级管理页",
-        "parentKeys": Array [
-          "/",
-          "/admin",
-        ],
-        "path": "/admin/sub-page",
-        "routes": null,
-      },
-    ],
     "component": "./Admin",
     "icon": "crown",
     "key": "/admin",
     "locale": "menu.admin",
+    "menu": Object {
+      "hideChildren": true,
+    },
     "name": "管理页",
     "parentKeys": Array [
       "/",
@@ -238,26 +198,13 @@ Array [
   },
   Object {
     "access": "canAdmin",
-    "children": Array [
-      Object {
-        "access": "canAdmin",
-        "component": "./Welcome",
-        "icon": "smile",
-        "key": "/admin/sub-page",
-        "locale": "menu.admin.sub-page",
-        "name": "二级管理页",
-        "parentKeys": Array [
-          "/",
-          "/admin",
-        ],
-        "path": "/admin/sub-page",
-        "routes": null,
-      },
-    ],
     "component": "./Admin",
     "icon": "crown",
     "key": "/admin",
     "locale": "menu.admin",
+    "menu": Object {
+      "hideChildren": true,
+    },
     "name": "管理页",
     "parentKeys": Array [
       "/",
@@ -332,42 +279,15 @@ Map {
     "path": "/welcome",
     "routes": null,
   },
-  "/admin/sub-page" => Object {
-    "access": "canAdmin",
-    "component": "./Welcome",
-    "icon": "smile",
-    "key": "/admin/sub-page",
-    "locale": "menu.admin.sub-page",
-    "name": "二级管理页",
-    "parentKeys": Array [
-      "/",
-      "/admin",
-    ],
-    "path": "/admin/sub-page",
-    "routes": null,
-  },
   "/admin" => Object {
     "access": "canAdmin",
-    "children": Array [
-      Object {
-        "access": "canAdmin",
-        "component": "./Welcome",
-        "icon": "smile",
-        "key": "/admin/sub-page",
-        "locale": "menu.admin.sub-page",
-        "name": "二级管理页",
-        "parentKeys": Array [
-          "/",
-          "/admin",
-        ],
-        "path": "/admin/sub-page",
-        "routes": null,
-      },
-    ],
     "component": "./Admin",
     "icon": "crown",
     "key": "/admin",
     "locale": "menu.admin",
+    "menu": Object {
+      "hideChildren": true,
+    },
     "name": "管理页",
     "parentKeys": Array [
       "/",
