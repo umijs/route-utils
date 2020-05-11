@@ -36,6 +36,22 @@ const routes = [
     ],
   },
   {
+    path: '/admin2',
+    name: 'admin',
+    icon: 'crown',
+    access: 'canAdmin',
+    component: './Admin',
+    hideInMenu: true,
+    routes: [
+      {
+        path: '/admin/sub-page2',
+        name: 'sub-page',
+        icon: 'smile',
+        component: './Welcome',
+      },
+    ],
+  },
+  {
     name: 'list.table-list',
     icon: 'table',
     path: '/list',
