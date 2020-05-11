@@ -56,6 +56,9 @@ const getItemLocaleName = (
   if ('locale' in item && !locale) {
     return '';
   }
+  if (!name || locale === false) {
+    return false;
+  }
   return item.locale || `${parentName}.${name}`;
 };
 
@@ -108,9 +111,10 @@ const bigfishCompatibleConversions = (route: MenuDataItem) => {
   // 拼接返回的 menu 数据
   const result = {
     ...route,
-    name,
   } as MenuDataItem;
-
+  if (name) {
+    result.name = name;
+  }
   if (icon) {
     result.icon = icon;
   }
@@ -194,12 +198,17 @@ function formatter(
         ...restParent,
         ...item,
         path,
-        name: localeName,
         locale,
         key: item.key || getKeyByPath(item),
         routes: null,
         parentKeys: [...parentKeys, parent.key || '/'],
       };
+
+      if (localeName) {
+        finallyItem.name = localeName;
+      } else {
+        delete finallyItem.name;
+      }
 
       if (item.routes || item.children || item.i) {
         const formatterChildren = formatter(
