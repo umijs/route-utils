@@ -67,7 +67,7 @@ const routes = [
 ];
 
 test('normal', () => {
-  const { menuData, breadcrumb } = transformRoute(routes, false, ({ id }) => {
+  const { menuData, breadcrumb } = transformRoute(routes, true, ({ id }) => {
     if (id === 'menu.list.table-list') return '查询表格';
     if (id === 'menu.admin') return '管理页';
     if (id === 'menu.admin.sub-page') return '二级管理页';
@@ -79,6 +79,23 @@ test('normal', () => {
 });
 
 test('normal ignoreFilter', () => {
+  const { menuData, breadcrumb } = transformRoute(
+    routes,
+    true,
+    ({ id }) => {
+      if (id === 'menu.list.table-list') return '查询表格';
+      if (id === 'menu.admin') return '管理页';
+      if (id === 'menu.admin.sub-page') return '二级管理页';
+      if (id === 'menu.welcome') return '欢迎';
+      return id;
+    },
+    true,
+  );
+  expect(menuData).toMatchSnapshot();
+  expect(breadcrumb).toMatchSnapshot();
+});
+
+test('disable locale', () => {
   const { menuData, breadcrumb } = transformRoute(
     routes,
     false,

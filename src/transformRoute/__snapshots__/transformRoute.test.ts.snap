@@ -1,5 +1,235 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`disable locale 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "component": "./user/login",
+        "key": "/user/login",
+        "layout": false,
+        "locale": "menu.login",
+        "name": "login",
+        "parentKeys": Array [
+          "/",
+          "/user",
+        ],
+        "path": "/user/login",
+        "routes": null,
+      },
+    ],
+    "key": "/user",
+    "layout": false,
+    "locale": false,
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/user",
+    "routes": null,
+  },
+  Object {
+    "component": "./Welcome",
+    "icon": "smile",
+    "key": "/welcome",
+    "locale": "menu.welcome",
+    "name": "welcome",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/welcome",
+    "routes": null,
+  },
+  Object {
+    "access": "canAdmin",
+    "component": "./Admin",
+    "icon": "crown",
+    "key": "/admin",
+    "locale": "menu.admin",
+    "menu": Object {
+      "hideChildren": true,
+    },
+    "name": "admin",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/admin",
+    "routes": null,
+  },
+  Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "component": "./Welcome",
+        "hideInMenu": true,
+        "icon": "smile",
+        "key": "/admin/sub-page2",
+        "locale": "menu.admin.sub-page",
+        "name": "sub-page",
+        "parentKeys": Array [
+          "/",
+          "/admin2",
+        ],
+        "path": "/admin/sub-page2",
+        "routes": null,
+      },
+    ],
+    "component": "./Admin",
+    "hideInMenu": true,
+    "icon": "crown",
+    "key": "/admin2",
+    "locale": "menu.admin",
+    "name": "admin",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/admin2",
+    "routes": null,
+  },
+  Object {
+    "component": "./ListTableList",
+    "icon": "table",
+    "key": "/list",
+    "locale": "menu.list.table-list",
+    "name": "list.table-list",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/list",
+    "routes": null,
+  },
+]
+`;
+
+exports[`disable locale 2`] = `
+Map {
+  "/user/login" => Object {
+    "component": "./user/login",
+    "key": "/user/login",
+    "layout": false,
+    "locale": "menu.login",
+    "name": "login",
+    "parentKeys": Array [
+      "/",
+      "/user",
+    ],
+    "path": "/user/login",
+    "routes": null,
+  },
+  "/user" => Object {
+    "children": Array [
+      Object {
+        "component": "./user/login",
+        "key": "/user/login",
+        "layout": false,
+        "locale": "menu.login",
+        "name": "login",
+        "parentKeys": Array [
+          "/",
+          "/user",
+        ],
+        "path": "/user/login",
+        "routes": null,
+      },
+    ],
+    "key": "/user",
+    "layout": false,
+    "locale": false,
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/user",
+    "routes": null,
+  },
+  "/welcome" => Object {
+    "component": "./Welcome",
+    "icon": "smile",
+    "key": "/welcome",
+    "locale": "menu.welcome",
+    "name": "welcome",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/welcome",
+    "routes": null,
+  },
+  "/admin" => Object {
+    "access": "canAdmin",
+    "component": "./Admin",
+    "icon": "crown",
+    "key": "/admin",
+    "locale": "menu.admin",
+    "menu": Object {
+      "hideChildren": true,
+    },
+    "name": "admin",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/admin",
+    "routes": null,
+  },
+  "/admin/sub-page2" => Object {
+    "access": "canAdmin",
+    "component": "./Welcome",
+    "hideInMenu": true,
+    "icon": "smile",
+    "key": "/admin/sub-page2",
+    "locale": "menu.admin.sub-page",
+    "name": "sub-page",
+    "parentKeys": Array [
+      "/",
+      "/admin2",
+    ],
+    "path": "/admin/sub-page2",
+    "routes": null,
+  },
+  "/admin2" => Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "component": "./Welcome",
+        "hideInMenu": true,
+        "icon": "smile",
+        "key": "/admin/sub-page2",
+        "locale": "menu.admin.sub-page",
+        "name": "sub-page",
+        "parentKeys": Array [
+          "/",
+          "/admin2",
+        ],
+        "path": "/admin/sub-page2",
+        "routes": null,
+      },
+    ],
+    "component": "./Admin",
+    "hideInMenu": true,
+    "icon": "crown",
+    "key": "/admin2",
+    "locale": "menu.admin",
+    "name": "admin",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/admin2",
+    "routes": null,
+  },
+  "/list" => Object {
+    "component": "./ListTableList",
+    "icon": "table",
+    "key": "/list",
+    "locale": "menu.list.table-list",
+    "name": "list.table-list",
+    "parentKeys": Array [
+      "/",
+    ],
+    "path": "/list",
+    "routes": null,
+  },
+}
+`;
+
 exports[`normal 1`] = `
 Array [
   Object {

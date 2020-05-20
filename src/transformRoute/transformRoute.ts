@@ -156,7 +156,7 @@ function formatter(
   props: FormatterProps,
   parent: Partial<MenuDataItem> = { path: '/' },
 ): MenuDataItem[] {
-  const { data, formatMessage, parentName } = props;
+  const { data, formatMessage, parentName, locale: menuLocale } = props;
   if (!data) {
     return [];
   }
@@ -197,10 +197,10 @@ function formatter(
       // if enableMenuLocale use item.name,
       // close menu international
       const localeName =
-        locale !== false && formatMessage
+        locale !== false && menuLocale !== false && formatMessage
           ? formatMessage({ id: locale, defaultMessage: name })
           : name;
-      const { parentKeys = [], children, ...restParent } = parent;
+      const { parentKeys = [], children, icon, ...restParent } = parent;
 
       const finallyItem: MenuDataItem = {
         ...restParent,
