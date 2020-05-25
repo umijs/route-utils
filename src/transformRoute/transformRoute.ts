@@ -209,7 +209,10 @@ function formatter(
         locale,
         key: item.key || getKeyByPath(item),
         routes: null,
-        parentKeys: [...parentKeys, parent.key || '/'],
+        parentKeys: [
+          ...parentKeys,
+          `/${parent.key}`.replace(/\/\//g, '/').replace(/\/\//g, '/'),
+        ],
       };
 
       if (localeName) {
@@ -230,6 +233,7 @@ function formatter(
         // Reduce memory usage
         finallyItem.children = formatterChildren;
       }
+
       return bigfishCompatibleConversions(finallyItem, props);
     });
 }

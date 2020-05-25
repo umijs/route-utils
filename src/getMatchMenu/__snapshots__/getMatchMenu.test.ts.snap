@@ -7,13 +7,30 @@ Array [
     "children": Array [
       Object {
         "access": "canAdmin",
-        "children": undefined,
+        "children": Array [
+          Object {
+            "access": "canAdmin",
+            "children": undefined,
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "parentKeys": Array [
+              "/undefined",
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "path": "/admin/sub-page/list",
+            "routes": null,
+            "unaccessible": false,
+          },
+        ],
         "exact": true,
         "key": "/admin/sub-page",
         "locale": "menu.admin.sub-page",
         "name": "二级管理页",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/admin",
         ],
         "path": "/admin/sub-page",
@@ -25,20 +42,37 @@ Array [
     "locale": "menu.admin",
     "name": "管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin",
     "routes": null,
   },
   Object {
     "access": "canAdmin",
-    "children": undefined,
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "children": undefined,
+        "exact": true,
+        "key": "/admin/sub-page/list",
+        "locale": "menu.admin.sub-page.sub-page-list",
+        "name": "三级管理页",
+        "parentKeys": Array [
+          "/undefined",
+          "/admin",
+          "/admin/sub-page",
+        ],
+        "path": "/admin/sub-page/list",
+        "routes": null,
+        "unaccessible": false,
+      },
+    ],
     "exact": true,
     "key": "/admin/sub-page",
     "locale": "menu.admin.sub-page",
     "name": "二级管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
       "/admin",
     ],
     "path": "/admin/sub-page",
@@ -220,6 +254,157 @@ Array [
 ]
 `;
 
+exports[`three path 1`] = `
+Array [
+  Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "children": Array [
+          Object {
+            "access": "canAdmin",
+            "children": undefined,
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "parentKeys": Array [
+              "/undefined",
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "path": "/admin/sub-page/list",
+            "routes": null,
+            "unaccessible": false,
+          },
+        ],
+        "exact": true,
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "parentKeys": Array [
+          "/undefined",
+          "/admin",
+        ],
+        "path": "/admin/sub-page",
+        "routes": null,
+        "unaccessible": false,
+      },
+    ],
+    "key": "/admin",
+    "locale": "menu.admin",
+    "name": "管理页",
+    "parentKeys": Array [
+      "/undefined",
+    ],
+    "path": "/admin",
+    "routes": null,
+  },
+  Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "children": undefined,
+        "exact": true,
+        "key": "/admin/sub-page/list",
+        "locale": "menu.admin.sub-page.sub-page-list",
+        "name": "三级管理页",
+        "parentKeys": Array [
+          "/undefined",
+          "/admin",
+          "/admin/sub-page",
+        ],
+        "path": "/admin/sub-page/list",
+        "routes": null,
+        "unaccessible": false,
+      },
+    ],
+    "exact": true,
+    "key": "/admin/sub-page",
+    "locale": "menu.admin.sub-page",
+    "name": "二级管理页",
+    "parentKeys": Array [
+      "/undefined",
+      "/admin",
+    ],
+    "path": "/admin/sub-page",
+    "routes": null,
+    "unaccessible": false,
+  },
+  Object {
+    "access": "canAdmin",
+    "children": undefined,
+    "exact": true,
+    "key": "/admin/sub-page/list",
+    "locale": "menu.admin.sub-page.sub-page-list",
+    "name": "三级管理页",
+    "parentKeys": Array [
+      "/undefined",
+      "/admin",
+      "/admin/sub-page",
+    ],
+    "path": "/admin/sub-page/list",
+    "routes": null,
+    "unaccessible": false,
+  },
+]
+`;
+
+exports[`user path test 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "children": undefined,
+        "key": "/admin/userMng/users",
+        "locale": "menu.人员组织管理.人员管理",
+        "name": "人员管理",
+        "parentKeys": Array [
+          "/undefined",
+          "/admin/userMng/",
+        ],
+        "path": "/admin/userMng/users",
+        "routes": null,
+      },
+      Object {
+        "children": undefined,
+        "key": "/admin/userMng/companies",
+        "locale": "menu.人员组织管理.单位管理",
+        "name": "单位管理",
+        "parentKeys": Array [
+          "/undefined",
+          "/admin/userMng/",
+        ],
+        "path": "/admin/userMng/companies",
+        "routes": null,
+      },
+    ],
+    "key": "/admin/userMng/",
+    "locale": "menu.人员组织管理",
+    "name": "人员组织管理",
+    "parentKeys": Array [
+      "/undefined",
+    ],
+    "path": "/admin/userMng/",
+    "routes": null,
+  },
+  Object {
+    "children": undefined,
+    "key": "/admin/userMng/companies",
+    "locale": "menu.人员组织管理.单位管理",
+    "name": "单位管理",
+    "parentKeys": Array [
+      "/undefined",
+      "/admin/userMng/",
+    ],
+    "path": "/admin/userMng/companies",
+    "routes": null,
+  },
+]
+`;
+
 exports[`var path 1`] = `
 Array [
   Object {
@@ -229,7 +414,7 @@ Array [
     "locale": "menu.list.table.result",
     "name": "数据详情",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/list/:id",
     "routes": null,

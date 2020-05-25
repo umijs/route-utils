@@ -13,7 +13,7 @@ Object {
         "locale": "menu.admin.sub-page",
         "name": "二级管理页",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/admin",
         ],
         "path": "/admin/sub-page",
@@ -25,7 +25,7 @@ Object {
     "locale": "menu.admin",
     "name": "管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin",
     "routes": null,
@@ -38,7 +38,7 @@ Object {
     "locale": "menu.admin.sub-page",
     "name": "二级管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
       "/admin",
     ],
     "path": "/admin/sub-page",
@@ -52,7 +52,7 @@ Object {
     "locale": "menu.list.table-list",
     "name": "查询表格",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/list",
     "routes": null,
@@ -65,7 +65,7 @@ Object {
     "locale": "menu.list.table.result",
     "name": "数据详情",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/list/:id",
     "routes": null,
@@ -78,7 +78,7 @@ Object {
     "locale": "menu.welcome",
     "name": "欢迎",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/welcome",
     "routes": null,

@@ -111,3 +111,21 @@ test('disable locale', () => {
   expect(menuData).toMatchSnapshot();
   expect(breadcrumb).toMatchSnapshot();
 });
+
+test('do not start with "/"', () => {
+  const { menuData: userMenuData, breadcrumb } = transformRoute(
+    [
+      {
+        name: '人员组织管理',
+        path: 'admin/userMng/',
+        children: [
+          { name: '人员管理', path: '/admin/userMng/users' },
+          { name: '单位管理', path: '/admin/userMng/companies' },
+        ],
+      },
+    ],
+    false,
+  );
+  expect(userMenuData).toMatchSnapshot();
+  expect(breadcrumb).toMatchSnapshot();
+});

@@ -11,7 +11,7 @@ Array [
         "locale": "menu.login",
         "name": "login",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/user",
         ],
         "path": "/user/login",
@@ -22,7 +22,7 @@ Array [
     "layout": false,
     "locale": false,
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/user",
     "routes": null,
@@ -34,7 +34,7 @@ Array [
     "locale": "menu.welcome",
     "name": "welcome",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/welcome",
     "routes": null,
@@ -50,7 +50,7 @@ Array [
     },
     "name": "admin",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin",
     "routes": null,
@@ -67,7 +67,7 @@ Array [
         "locale": "menu.admin.sub-page",
         "name": "sub-page",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/admin2",
         ],
         "path": "/admin/sub-page2",
@@ -81,7 +81,7 @@ Array [
     "locale": "menu.admin",
     "name": "admin",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin2",
     "routes": null,
@@ -93,7 +93,7 @@ Array [
     "locale": "menu.list.table-list",
     "name": "list.table-list",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/list",
     "routes": null,
@@ -110,7 +110,7 @@ Map {
     "locale": "menu.login",
     "name": "login",
     "parentKeys": Array [
-      "/",
+      "/undefined",
       "/user",
     ],
     "path": "/user/login",
@@ -125,7 +125,7 @@ Map {
         "locale": "menu.login",
         "name": "login",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/user",
         ],
         "path": "/user/login",
@@ -136,7 +136,7 @@ Map {
     "layout": false,
     "locale": false,
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/user",
     "routes": null,
@@ -148,7 +148,7 @@ Map {
     "locale": "menu.welcome",
     "name": "welcome",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/welcome",
     "routes": null,
@@ -164,7 +164,7 @@ Map {
     },
     "name": "admin",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin",
     "routes": null,
@@ -178,7 +178,7 @@ Map {
     "locale": "menu.admin.sub-page",
     "name": "sub-page",
     "parentKeys": Array [
-      "/",
+      "/undefined",
       "/admin2",
     ],
     "path": "/admin/sub-page2",
@@ -196,7 +196,7 @@ Map {
         "locale": "menu.admin.sub-page",
         "name": "sub-page",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/admin2",
         ],
         "path": "/admin/sub-page2",
@@ -210,7 +210,7 @@ Map {
     "locale": "menu.admin",
     "name": "admin",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin2",
     "routes": null,
@@ -222,9 +222,111 @@ Map {
     "locale": "menu.list.table-list",
     "name": "list.table-list",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/list",
+    "routes": null,
+  },
+}
+`;
+
+exports[`do not start with "/" 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "children": undefined,
+        "key": "/admin/userMng/users",
+        "locale": "menu.人员组织管理.人员管理",
+        "name": "人员管理",
+        "parentKeys": Array [
+          "/undefined",
+          "/admin/userMng/",
+        ],
+        "path": "/admin/userMng/users",
+        "routes": null,
+      },
+      Object {
+        "children": undefined,
+        "key": "/admin/userMng/companies",
+        "locale": "menu.人员组织管理.单位管理",
+        "name": "单位管理",
+        "parentKeys": Array [
+          "/undefined",
+          "/admin/userMng/",
+        ],
+        "path": "/admin/userMng/companies",
+        "routes": null,
+      },
+    ],
+    "key": "admin/userMng/",
+    "locale": "menu.人员组织管理",
+    "name": "人员组织管理",
+    "parentKeys": Array [
+      "/undefined",
+    ],
+    "path": "/admin/userMng/",
+    "routes": null,
+  },
+]
+`;
+
+exports[`do not start with "/" 2`] = `
+Map {
+  "/admin/userMng/users" => Object {
+    "key": "/admin/userMng/users",
+    "locale": "menu.人员组织管理.人员管理",
+    "name": "人员管理",
+    "parentKeys": Array [
+      "/undefined",
+      "/admin/userMng/",
+    ],
+    "path": "/admin/userMng/users",
+    "routes": null,
+  },
+  "/admin/userMng/companies" => Object {
+    "key": "/admin/userMng/companies",
+    "locale": "menu.人员组织管理.单位管理",
+    "name": "单位管理",
+    "parentKeys": Array [
+      "/undefined",
+      "/admin/userMng/",
+    ],
+    "path": "/admin/userMng/companies",
+    "routes": null,
+  },
+  "/admin/userMng/" => Object {
+    "children": Array [
+      Object {
+        "key": "/admin/userMng/users",
+        "locale": "menu.人员组织管理.人员管理",
+        "name": "人员管理",
+        "parentKeys": Array [
+          "/undefined",
+          "/admin/userMng/",
+        ],
+        "path": "/admin/userMng/users",
+        "routes": null,
+      },
+      Object {
+        "key": "/admin/userMng/companies",
+        "locale": "menu.人员组织管理.单位管理",
+        "name": "单位管理",
+        "parentKeys": Array [
+          "/undefined",
+          "/admin/userMng/",
+        ],
+        "path": "/admin/userMng/companies",
+        "routes": null,
+      },
+    ],
+    "key": "admin/userMng/",
+    "locale": "menu.人员组织管理",
+    "name": "人员组织管理",
+    "parentKeys": Array [
+      "/undefined",
+    ],
+    "path": "/admin/userMng/",
     "routes": null,
   },
 }
@@ -242,7 +344,7 @@ Array [
         "locale": "menu.login",
         "name": "menu.login",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/user",
         ],
         "path": "/user/login",
@@ -253,7 +355,7 @@ Array [
     "layout": false,
     "locale": false,
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/user",
     "routes": null,
@@ -266,7 +368,7 @@ Array [
     "locale": "menu.welcome",
     "name": "欢迎",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/welcome",
     "routes": null,
@@ -283,7 +385,7 @@ Array [
     },
     "name": "管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin",
     "routes": null,
@@ -296,7 +398,7 @@ Array [
     "locale": "menu.list.table-list",
     "name": "查询表格",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/list",
     "routes": null,
@@ -313,7 +415,7 @@ Map {
     "locale": "menu.login",
     "name": "menu.login",
     "parentKeys": Array [
-      "/",
+      "/undefined",
       "/user",
     ],
     "path": "/user/login",
@@ -328,7 +430,7 @@ Map {
         "locale": "menu.login",
         "name": "menu.login",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/user",
         ],
         "path": "/user/login",
@@ -339,7 +441,7 @@ Map {
     "layout": false,
     "locale": false,
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/user",
     "routes": null,
@@ -351,7 +453,7 @@ Map {
     "locale": "menu.welcome",
     "name": "欢迎",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/welcome",
     "routes": null,
@@ -367,7 +469,7 @@ Map {
     },
     "name": "管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin",
     "routes": null,
@@ -381,7 +483,7 @@ Map {
     "locale": "menu.admin.sub-page",
     "name": "二级管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
       "/admin2",
     ],
     "path": "/admin/sub-page2",
@@ -399,7 +501,7 @@ Map {
         "locale": "menu.admin.sub-page",
         "name": "二级管理页",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/admin2",
         ],
         "path": "/admin/sub-page2",
@@ -413,7 +515,7 @@ Map {
     "locale": "menu.admin",
     "name": "管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin2",
     "routes": null,
@@ -425,7 +527,7 @@ Map {
     "locale": "menu.list.table-list",
     "name": "查询表格",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/list",
     "routes": null,
@@ -444,7 +546,7 @@ Array [
         "locale": "menu.login",
         "name": "menu.login",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/user",
         ],
         "path": "/user/login",
@@ -455,7 +557,7 @@ Array [
     "layout": false,
     "locale": false,
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/user",
     "routes": null,
@@ -467,7 +569,7 @@ Array [
     "locale": "menu.welcome",
     "name": "欢迎",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/welcome",
     "routes": null,
@@ -483,7 +585,7 @@ Array [
     },
     "name": "管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin",
     "routes": null,
@@ -500,7 +602,7 @@ Array [
         "locale": "menu.admin.sub-page",
         "name": "二级管理页",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/admin2",
         ],
         "path": "/admin/sub-page2",
@@ -514,7 +616,7 @@ Array [
     "locale": "menu.admin",
     "name": "管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin2",
     "routes": null,
@@ -526,7 +628,7 @@ Array [
     "locale": "menu.list.table-list",
     "name": "查询表格",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/list",
     "routes": null,
@@ -543,7 +645,7 @@ Map {
     "locale": "menu.login",
     "name": "menu.login",
     "parentKeys": Array [
-      "/",
+      "/undefined",
       "/user",
     ],
     "path": "/user/login",
@@ -558,7 +660,7 @@ Map {
         "locale": "menu.login",
         "name": "menu.login",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/user",
         ],
         "path": "/user/login",
@@ -569,7 +671,7 @@ Map {
     "layout": false,
     "locale": false,
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/user",
     "routes": null,
@@ -581,7 +683,7 @@ Map {
     "locale": "menu.welcome",
     "name": "欢迎",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/welcome",
     "routes": null,
@@ -597,7 +699,7 @@ Map {
     },
     "name": "管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin",
     "routes": null,
@@ -611,7 +713,7 @@ Map {
     "locale": "menu.admin.sub-page",
     "name": "二级管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
       "/admin2",
     ],
     "path": "/admin/sub-page2",
@@ -629,7 +731,7 @@ Map {
         "locale": "menu.admin.sub-page",
         "name": "二级管理页",
         "parentKeys": Array [
-          "/",
+          "/undefined",
           "/admin2",
         ],
         "path": "/admin/sub-page2",
@@ -643,7 +745,7 @@ Map {
     "locale": "menu.admin",
     "name": "管理页",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/admin2",
     "routes": null,
@@ -655,7 +757,7 @@ Map {
     "locale": "menu.list.table-list",
     "name": "查询表格",
     "parentKeys": Array [
-      "/",
+      "/undefined",
     ],
     "path": "/list",
     "routes": null,

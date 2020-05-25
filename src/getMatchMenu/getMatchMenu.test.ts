@@ -19,6 +19,14 @@ const routes = [
         name: 'sub-page',
         exact: true,
         unaccessible: false,
+        routes: [
+          {
+            path: '/admin/sub-page/list',
+            name: 'sub-page-list',
+            exact: true,
+            unaccessible: false,
+          },
+        ],
       },
     ],
   },
@@ -42,6 +50,7 @@ const { menuData } = transformRoute(routes, true, ({ id }) => {
   if (id === 'menu.list.table.result') return '数据详情';
   if (id === 'menu.admin') return '管理页';
   if (id === 'menu.admin.sub-page') return '二级管理页';
+  if (id === 'menu.admin.sub-page.sub-page-list') return '三级管理页';
   if (id === 'menu.welcome') return '欢迎';
   return id;
 });
@@ -55,6 +64,16 @@ test('normal', () => {
   expect(openMenuItems).toMatchSnapshot();
 });
 
+test('three path', () => {
+  const openMenuItems = getMatchMenu('/admin/sub-page/list', menuData);
+  expect(openMenuItems.length).toEqual(3);
+
+  expect(openMenuItems[0].name).toEqual('管理页');
+  expect(openMenuItems[1].name).toEqual('二级管理页');
+  expect(openMenuItems[2].name).toEqual('三级管理页');
+  expect(openMenuItems).toMatchSnapshot();
+});
+
 test('var path', () => {
   const openMenuItems = getMatchMenu('/list/1234', menuData);
   expect(openMenuItems.length).toEqual(1);
@@ -64,5 +83,24 @@ test('var path', () => {
 
 test('test router', () => {
   const openMenuItems = getMatchMenu('/welcome/repertoryFw', testMenuData);
+  expect(openMenuItems).toMatchSnapshot();
+});
+
+test('user path test', () => {
+  const { menuData: userMenuData } = transformRoute(
+    [
+      {
+        name: '人员组织管理',
+        path: '/admin/userMng/',
+        children: [
+          { name: '人员管理', path: '/admin/userMng/users' },
+          { name: '单位管理', path: '/admin/userMng/companies' },
+        ],
+      },
+    ],
+    false,
+  );
+  const openMenuItems = getMatchMenu('/admin/userMng/companies', userMenuData);
+  expect(openMenuItems.length).toEqual(2);
   expect(openMenuItems).toMatchSnapshot();
 });
