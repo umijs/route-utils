@@ -254,6 +254,26 @@ Array [
 ]
 `;
 
+exports[`test_config_router2 1`] = `
+Array [
+  Object {
+    "children": undefined,
+    "component": "./keyMangement/ExperienceScenario",
+    "key": "/experienceScenario",
+    "locale": "menu.name",
+    "menuKey": "experienceScenario",
+    "name": "name",
+    "parentKey": "tool",
+    "path": "/experienceScenario",
+    "permission": "KM_WORKFLOW",
+    "pro_layout_parentKeys": Array [
+      "/undefined",
+    ],
+    "routes": null,
+  },
+]
+`;
+
 exports[`three path 1`] = `
 Array [
   Object {

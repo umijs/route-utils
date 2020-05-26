@@ -1,12 +1,14 @@
 const list = [
   {
     path: '/home',
+    name: 'name',
     component: './Home',
     menuKey: 'home',
     parentKey: '',
   },
   {
     path: '/manageSite',
+    name: 'name',
     component: './platformConfig/ManageSite',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'manageSite',
@@ -14,6 +16,7 @@ const list = [
   },
   {
     path: '/manageSite/addSite',
+    name: 'name',
     component: './platformConfig/AddSite',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'manageSite',
@@ -21,6 +24,7 @@ const list = [
   },
   {
     path: '/manageSite/updateSite/:id',
+    name: 'name',
     component: './platformConfig/UpdateSite',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'manageSite',
@@ -28,6 +32,7 @@ const list = [
   },
   {
     path: '/manageSite/viewSite/:id',
+    name: 'name',
     component: './platformConfig/UpdateSite',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'manageSite',
@@ -38,6 +43,7 @@ const list = [
    */
   {
     path: '/siteTenant',
+    name: 'name',
     component: './platformConfig/SiteTenant',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'siteTenant',
@@ -45,6 +51,7 @@ const list = [
   },
   {
     path: '/siteTenant/addTenant',
+    name: 'name',
     component: './platformConfig/AddTenant',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'siteTenant',
@@ -52,6 +59,7 @@ const list = [
   },
   {
     path: '/siteTenant/updateTenant/:id',
+    name: 'name',
     component: './platformConfig/AddTenant',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'siteTenant',
@@ -59,6 +67,7 @@ const list = [
   },
   {
     path: '/siteTenant/viewTenant/:id',
+    name: 'name',
     component: './platformConfig/AddTenant',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'siteTenant',
@@ -70,6 +79,7 @@ const list = [
    */
   {
     path: '/engineer',
+    name: 'name',
     component: './platformConfig/EngineerInfo',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'engineer',
@@ -80,6 +90,7 @@ const list = [
    */
   {
     path: '/team',
+    name: 'name',
     component: './platformConfig/TeamMembers',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'team',
@@ -91,6 +102,7 @@ const list = [
 
   {
     path: '/securityGoals',
+    name: 'name',
     component: './platformConfig/SecurityGoals',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'securityGoals',
@@ -98,6 +110,7 @@ const list = [
   },
   {
     path: '/securityGoals/add',
+    name: 'name',
     component: './platformConfig/AddSecurityGoals',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'securityGoals',
@@ -105,6 +118,7 @@ const list = [
   },
   {
     path: '/securityGoals/update/:id',
+    name: 'name',
     component: './platformConfig/AddSecurityGoals',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'securityGoals',
@@ -117,6 +131,7 @@ const list = [
 
   {
     path: '/algorithm',
+    name: 'name',
     component: './platformConfig/Algorithm',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'algorithm',
@@ -124,6 +139,7 @@ const list = [
   },
   {
     path: '/algorithm/add',
+    name: 'name',
     component: './platformConfig/AddAlgorithm',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'algorithm',
@@ -131,6 +147,7 @@ const list = [
   },
   {
     path: '/algorithm/update/:id',
+    name: 'name',
     component: './platformConfig/AddAlgorithm',
     permission: 'KM_PLAT_ADMIN',
     menuKey: 'algorithm',
@@ -141,6 +158,7 @@ const list = [
    */
   {
     path: '/createKey',
+    name: 'name',
     component: './keyMangement/CreateKey',
     permission: 'KM_WORKFLOW',
     menuKey: 'createKey',
@@ -148,6 +166,7 @@ const list = [
   },
   {
     path: '/useTheExistingKey',
+    name: 'name',
     component: './keyMangement/CreateKey',
     permission: 'KM_WORKFLOW',
     menuKey: 'useTheExistingKey',
@@ -155,6 +174,7 @@ const list = [
   },
   {
     path: '/queryPublicKeyContent',
+    name: 'name',
     component: './keyMangement/QueryKeyContent',
     permission: 'KM_WORKFLOW',
     menuKey: 'queryPublicKeyContent',
@@ -162,6 +182,7 @@ const list = [
   },
   {
     path: '/queryKeyContent',
+    name: 'name',
     component: './keyMangement/QueryKeyContent',
     permission: 'KM_WORKFLOW',
     menuKey: 'queryKeyContent',
@@ -169,6 +190,7 @@ const list = [
   },
   {
     path: '/queryKeyAttr',
+    name: 'name',
     component: './keyMangement/QueryKeyAttr',
     permission: 'KM_WORKFLOW',
     menuKey: 'queryKeyAttr',
@@ -176,6 +198,7 @@ const list = [
   },
   {
     path: '/updateKeyAttr',
+    name: 'name',
     component: './keyMangement/QueryKeyAttr',
     permission: 'KM_WORKFLOW',
     menuKey: 'updateKeyAttr',
@@ -186,9 +209,30 @@ const list = [
    */
   {
     path: '/sceneAccess',
+    name: 'name',
     component: './scene/SceneAccess',
     permission: 'KM_WORKFLOW',
     menuKey: 'sceneAccess',
+    parentKey: 'scene',
+  },
+
+  /**
+   * 创建场景
+   */
+  {
+    path: '/haveCreateScene',
+    name: 'name',
+    component: './scene/HaveCreateScene',
+    permission: 'KM_WORKFLOW',
+    menuKey: 'haveCreateScene',
+    parentKey: 'scene',
+  },
+  {
+    path: '/removeCreateScene',
+    name: 'name',
+    component: './scene/RemoveCreateScene',
+    permission: 'KM_WORKFLOW',
+    menuKey: 'removeCreateScene',
     parentKey: 'scene',
   },
 
@@ -197,6 +241,7 @@ const list = [
    */
   {
     path: '/kmiTool',
+    name: 'name',
     component: './keyMangement/KmiTool',
     permission: 'KM_WORKFLOW',
     menuKey: 'kmiTool',
@@ -204,9 +249,26 @@ const list = [
   },
   {
     path: '/smallTool',
+    name: 'name',
     component: './keyMangement/SmallTool',
     permission: 'KM_WORKFLOW',
     menuKey: 'smallTool',
+    parentKey: 'tool',
+  },
+  {
+    path: '/experienceKmiScenario',
+    name: 'name',
+    component: './keyMangement/ExperienceKmiScenario',
+    permission: 'KM_WORKFLOW',
+    menuKey: 'experienceKmiScenario',
+    parentKey: 'tool',
+  },
+  {
+    path: '/experienceScenario',
+    name: 'name',
+    component: './keyMangement/ExperienceScenario',
+    permission: 'KM_WORKFLOW',
+    menuKey: 'experienceScenario',
     parentKey: 'tool',
   },
   /**
@@ -214,6 +276,7 @@ const list = [
    */
   {
     path: '/myDemandList',
+    name: 'name',
     component: './demand/MyDemandList',
     permission: 'KM_WORKFLOW',
     menuKey: 'myDemandList',
@@ -221,6 +284,7 @@ const list = [
   },
   {
     path: '/myDemandList/demandDetail/:id',
+    name: 'name',
     component: './demand/DemandDetail',
     permission: 'KM_WORKFLOW',
     menuKey: 'myDemandList',
@@ -228,6 +292,7 @@ const list = [
   },
   {
     path: '/temporaryDemand',
+    name: 'name',
     component: './demand/TemporaryDemand',
     permission: 'KM_WORKFLOW',
     menuKey: 'temporaryDemand',
@@ -235,6 +300,7 @@ const list = [
   },
   {
     path: '/temporaryDemand/detail/:id',
+    name: 'name',
     component: './demand/TemporaryDemandDetail',
     permission: 'KM_WORKFLOW',
     menuKey: 'temporaryDemand',
@@ -245,6 +311,7 @@ const list = [
    */
   {
     path: '/myApproval',
+    name: 'name',
     component: './approval/MyApproval',
     permission: 'KM_WORKFLOW',
     menuKey: 'myApproval',
@@ -252,6 +319,7 @@ const list = [
   },
   {
     path: '/myApproval/approvalDetail/:id',
+    name: 'name',
     component: './approval/ApprovalDetail',
     permission: 'KM_WORKFLOW',
     menuKey: 'myApproval',
@@ -259,6 +327,7 @@ const list = [
   },
   {
     path: '/haveBeenApproval',
+    name: 'name',
     component: './approval/MyApproval',
     permission: 'KM_WORKFLOW',
     menuKey: 'haveBeenApproval',
@@ -266,6 +335,7 @@ const list = [
   },
   {
     path: '/haveBeenApproval/detail/:id',
+    name: 'name',
     component: './approval/ApprovalDetail',
     permission: 'KM_WORKFLOW',
     menuKey: 'haveBeenApproval',
@@ -273,6 +343,7 @@ const list = [
   },
   {
     path: '/claimed',
+    name: 'name',
     component: './approval/DemandClaimed',
     permission: 'KM_WORKFLOW',
     menuKey: 'claimed',
@@ -280,6 +351,7 @@ const list = [
   },
   {
     path: '/claimed/detail/:id',
+    name: 'name',
     component: './approval/ApprovalDetail',
     permission: 'KM_WORKFLOW',
     menuKey: 'claimed',
@@ -287,12 +359,14 @@ const list = [
   },
   {
     path: '/keyManageOfManager',
+    name: 'name',
     component: './keyManageOfManager/KeyManageOfManager',
     permission: 'KM_ADMIN',
     menuKey: 'keyManageOfManager',
   },
   {
     path: '/keyManageOfManager/detail/:id',
+    name: 'name',
     component: './demand/DemandDetail',
     menuKey: 'keyManageOfManager',
     parentKey: '',
@@ -301,95 +375,77 @@ const list = [
    * secretmng
    */
   {
-    path: '/secretmng/commission/secretList',
+    path: '/secretmng/secretList',
+    name: 'name',
     component: './secretmng/secretList',
     permission: 'KM_SECRET_ADMIN',
     menuKey: 'secretList',
-    parentKey: 'subMenu_manage',
+    parentKey: 'secretmng',
   },
   {
-    path: '/secretmng/commission/manualAddSecret',
-    component: './secretmng/manualAddSecret',
-    permission: 'KM_SECRET_ADMIN',
-    menuKey: 'manualAddSecret',
-    parentKey: 'subMenu_manage',
-  },
-  {
-    path: '/secretmng/commission/createTask',
-    component: './secretmng/createTask',
-    permission: 'KM_SECRET_ADMIN',
-    menuKey: 'createTask',
-    parentKey: 'subMenu_manage',
-  },
-  {
-    path: '/secretmng/commission/componentBls',
-    component: './secretmng/componentBls',
-    permission: 'KM_SECRET_ADMIN',
-    menuKey: 'componentBls',
-    parentKey: 'subMenu_manage',
-  },
-  {
-    path: '/secretmng/rotation/taskList',
+    path: '/secretmng/taskList',
+    name: 'name',
     component: './secretmng/taskList',
     permission: 'KM_SECRET_ADMIN',
     menuKey: 'taskList',
-    parentKey: 'subMenu_rotate',
+    parentKey: 'secretmng',
   },
   {
-    path: '/secretmng/rotation/alterPloyManagement',
+    path: '/secretmng/createTask',
+    name: 'name',
+    component: './secretmng/createTask',
+    permission: 'KM_SECRET_ADMIN',
+    menuKey: 'createTask',
+    parentKey: 'secretmng',
+  },
+  {
+    path: '/secretmng/alterPloyManagement',
+    name: 'name',
     component: './secretmng/alterPloyManagement',
     permission: 'KM_SECRET_ADMIN',
     menuKey: 'alterPloyManagement',
-    parentKey: 'subMenu_rotate',
+    parentKey: 'secretmng',
   },
   {
-    path: '/secretmng/rotation/alterPloyManagement/createAlterPloy',
+    path: '/secretmng/alterPloyManagement/createAlterPloy',
+    name: 'name',
     component: './secretmng/alterPloyManagement/components/createAlterPloy',
     permission: 'KM_SECRET_ADMIN',
     menuKey: 'createAlterPloy',
-    parentKey: 'subMenu_rotate',
+    parentKey: 'secretmng',
   },
   {
-    path: '/secretmng/rotation/alterPloyManagement/editAlterPloy',
+    path: '/secretmng/alterPloyManagement/editAlterPloy',
+    name: 'name',
     component: './secretmng/alterPloyManagement/components/createAlterPloy',
     permission: 'KM_SECRET_ADMIN',
     menuKey: 'editAlterPloy',
-    parentKey: 'subMenu_rotate',
+    parentKey: 'secretmng',
   },
   {
-    path: '/secretmng/rotation/mailPloyManagement',
+    path: '/secretmng/mailPloyManagement',
+    name: 'name',
     component: './secretmng/mailPloyManagement',
     permission: 'KM_SECRET_ADMIN',
     menuKey: 'mailPloyManagement',
-    parentKey: 'subMenu_rotate',
+    parentKey: 'secretmng',
   },
   {
-    path: '/secretmng/rotation/mailPloyManagement/createMailPloy',
+    path: '/secretmng/mailPloyManagement/createMailPloy',
+    name: 'name',
     component: './secretmng/mailPloyManagement/components/createMailPloy',
     permission: 'KM_SECRET_ADMIN',
     menuKey: 'createMailPloy',
-    parentKey: 'subMenu_rotate',
+    parentKey: 'secretmng',
   },
   {
-    path: '/secretmng/rotation/mailPloyManagement/editMailPloy',
+    path: '/secretmng/mailPloyManagement/editMailPloy',
+    name: 'name',
     component: './secretmng/mailPloyManagement/components/createMailPloy',
     permission: 'KM_SECRET_ADMIN',
     menuKey: 'editMailPloy',
-    parentKey: 'subMenu_rotate',
-  },
-  {
-    path: '/secretmng/rotation/blackList',
-    component: './secretmng/blackList',
-    permission: 'KM_SECRET_ADMIN',
-    menuKey: 'blackList',
-    parentKey: 'subMenu_rotate',
+    parentKey: 'secretmng',
   },
 ];
 
-export const routeList = list;
-export default {
-  path: '/',
-  component: '../layout',
-  indexRoute: { component: './Home' },
-  childRoutes: list,
-};
+export default list;

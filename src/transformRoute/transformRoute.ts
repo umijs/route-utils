@@ -157,7 +157,7 @@ function formatter(
   parent: Partial<MenuDataItem> = { path: '/' },
 ): MenuDataItem[] {
   const { data, formatMessage, parentName, locale: menuLocale } = props;
-  if (!data) {
+  if (!data || !Array.isArray(data)) {
     return [];
   }
   return data

@@ -1,6 +1,7 @@
 import getMatchMenu from './getMatchMenu';
 import transformRoute from '../transformRoute/transformRoute';
 import testMenuData from './test.menu';
+import test_config_router2 from './test.config.router2';
 
 const routes = [
   {
@@ -102,5 +103,12 @@ test('user path test', () => {
   );
   const openMenuItems = getMatchMenu('/admin/userMng/companies', userMenuData);
   expect(openMenuItems.length).toEqual(2);
+  expect(openMenuItems).toMatchSnapshot();
+});
+
+test('test_config_router2', () => {
+  const { menuData: userMenuData } = transformRoute(test_config_router2, false);
+  const openMenuItems = getMatchMenu('/experienceScenario', userMenuData);
+  expect(openMenuItems.length).toEqual(1);
   expect(openMenuItems).toMatchSnapshot();
 });
