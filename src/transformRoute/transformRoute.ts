@@ -200,7 +200,12 @@ function formatter(
         locale !== false && menuLocale !== false && formatMessage
           ? formatMessage({ id: locale, defaultMessage: name })
           : name;
-      const { parentKeys = [], children, icon, ...restParent } = parent;
+      const {
+        pro_layout_parentKeys = [],
+        children,
+        icon,
+        ...restParent
+      } = parent;
 
       const finallyItem: MenuDataItem = {
         ...restParent,
@@ -209,8 +214,8 @@ function formatter(
         locale,
         key: item.key || getKeyByPath(item),
         routes: null,
-        parentKeys: [
-          ...parentKeys,
+        pro_layout_parentKeys: [
+          ...pro_layout_parentKeys,
           `/${parent.key}`.replace(/\/\//g, '/').replace(/\/\//g, '/'),
         ],
       };

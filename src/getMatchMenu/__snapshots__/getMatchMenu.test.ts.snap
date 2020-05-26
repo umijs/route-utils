@@ -15,12 +15,12 @@ Array [
             "key": "/admin/sub-page/list",
             "locale": "menu.admin.sub-page.sub-page-list",
             "name": "三级管理页",
-            "parentKeys": Array [
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
               "/undefined",
               "/admin",
               "/admin/sub-page",
             ],
-            "path": "/admin/sub-page/list",
             "routes": null,
             "unaccessible": false,
           },
@@ -29,11 +29,11 @@ Array [
         "key": "/admin/sub-page",
         "locale": "menu.admin.sub-page",
         "name": "二级管理页",
-        "parentKeys": Array [
+        "path": "/admin/sub-page",
+        "pro_layout_parentKeys": Array [
           "/undefined",
           "/admin",
         ],
-        "path": "/admin/sub-page",
         "routes": null,
         "unaccessible": false,
       },
@@ -41,10 +41,10 @@ Array [
     "key": "/admin",
     "locale": "menu.admin",
     "name": "管理页",
-    "parentKeys": Array [
+    "path": "/admin",
+    "pro_layout_parentKeys": Array [
       "/undefined",
     ],
-    "path": "/admin",
     "routes": null,
   },
   Object {
@@ -57,12 +57,12 @@ Array [
         "key": "/admin/sub-page/list",
         "locale": "menu.admin.sub-page.sub-page-list",
         "name": "三级管理页",
-        "parentKeys": Array [
+        "path": "/admin/sub-page/list",
+        "pro_layout_parentKeys": Array [
           "/undefined",
           "/admin",
           "/admin/sub-page",
         ],
-        "path": "/admin/sub-page/list",
         "routes": null,
         "unaccessible": false,
       },
@@ -71,11 +71,11 @@ Array [
     "key": "/admin/sub-page",
     "locale": "menu.admin.sub-page",
     "name": "二级管理页",
-    "parentKeys": Array [
+    "path": "/admin/sub-page",
+    "pro_layout_parentKeys": Array [
       "/undefined",
       "/admin",
     ],
-    "path": "/admin/sub-page",
     "routes": null,
     "unaccessible": false,
   },
@@ -101,12 +101,12 @@ Array [
             "key": "/welcome/repertoryFw",
             "locale": "menu.welcome.one.two",
             "name": "two",
-            "parentKeys": Array [
+            "path": "/welcome/repertoryFw",
+            "pro_layout_parentKeys": Array [
               "/",
               "welcome",
               "/welcome",
             ],
-            "path": "/welcome/repertoryFw",
             "routes": null,
           },
           Object {
@@ -122,12 +122,12 @@ Array [
             "key": "/welcome/repertory",
             "locale": "menu.welcome.one.two2",
             "name": "two2",
-            "parentKeys": Array [
+            "path": "/welcome/repertory",
+            "pro_layout_parentKeys": Array [
               "/",
               "welcome",
               "/welcome",
             ],
-            "path": "/welcome/repertory",
             "routes": null,
           },
         ],
@@ -142,11 +142,11 @@ Array [
         "key": "/welcome",
         "locale": "menu.welcome.one",
         "name": "one",
-        "parentKeys": Array [
+        "path": "/welcome",
+        "pro_layout_parentKeys": Array [
           "/",
           "welcome",
         ],
-        "path": "/welcome",
         "routes": null,
       },
     ],
@@ -161,10 +161,10 @@ Array [
     "key": "welcome",
     "locale": "menu.welcome",
     "name": "welcome",
-    "parentKeys": Array [
+    "path": "/",
+    "pro_layout_parentKeys": Array [
       "/",
     ],
-    "path": "/",
     "routes": null,
   },
   Object {
@@ -182,12 +182,12 @@ Array [
         "key": "/welcome/repertoryFw",
         "locale": "menu.welcome.one.two",
         "name": "two",
-        "parentKeys": Array [
+        "path": "/welcome/repertoryFw",
+        "pro_layout_parentKeys": Array [
           "/",
           "welcome",
           "/welcome",
         ],
-        "path": "/welcome/repertoryFw",
         "routes": null,
       },
       Object {
@@ -203,12 +203,12 @@ Array [
         "key": "/welcome/repertory",
         "locale": "menu.welcome.one.two2",
         "name": "two2",
-        "parentKeys": Array [
+        "path": "/welcome/repertory",
+        "pro_layout_parentKeys": Array [
           "/",
           "welcome",
           "/welcome",
         ],
-        "path": "/welcome/repertory",
         "routes": null,
       },
     ],
@@ -223,11 +223,11 @@ Array [
     "key": "/welcome",
     "locale": "menu.welcome.one",
     "name": "one",
-    "parentKeys": Array [
+    "path": "/welcome",
+    "pro_layout_parentKeys": Array [
       "/",
       "welcome",
     ],
-    "path": "/welcome",
     "routes": null,
   },
   Object {
@@ -243,12 +243,12 @@ Array [
     "key": "/welcome/repertoryFw",
     "locale": "menu.welcome.one.two",
     "name": "two",
-    "parentKeys": Array [
+    "path": "/welcome/repertoryFw",
+    "pro_layout_parentKeys": Array [
       "/",
       "welcome",
       "/welcome",
     ],
-    "path": "/welcome/repertoryFw",
     "routes": null,
   },
 ]
@@ -269,12 +269,12 @@ Array [
             "key": "/admin/sub-page/list",
             "locale": "menu.admin.sub-page.sub-page-list",
             "name": "三级管理页",
-            "parentKeys": Array [
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
               "/undefined",
               "/admin",
               "/admin/sub-page",
             ],
-            "path": "/admin/sub-page/list",
             "routes": null,
             "unaccessible": false,
           },
@@ -283,11 +283,11 @@ Array [
         "key": "/admin/sub-page",
         "locale": "menu.admin.sub-page",
         "name": "二级管理页",
-        "parentKeys": Array [
+        "path": "/admin/sub-page",
+        "pro_layout_parentKeys": Array [
           "/undefined",
           "/admin",
         ],
-        "path": "/admin/sub-page",
         "routes": null,
         "unaccessible": false,
       },
@@ -295,10 +295,10 @@ Array [
     "key": "/admin",
     "locale": "menu.admin",
     "name": "管理页",
-    "parentKeys": Array [
+    "path": "/admin",
+    "pro_layout_parentKeys": Array [
       "/undefined",
     ],
-    "path": "/admin",
     "routes": null,
   },
   Object {
@@ -311,12 +311,12 @@ Array [
         "key": "/admin/sub-page/list",
         "locale": "menu.admin.sub-page.sub-page-list",
         "name": "三级管理页",
-        "parentKeys": Array [
+        "path": "/admin/sub-page/list",
+        "pro_layout_parentKeys": Array [
           "/undefined",
           "/admin",
           "/admin/sub-page",
         ],
-        "path": "/admin/sub-page/list",
         "routes": null,
         "unaccessible": false,
       },
@@ -325,11 +325,11 @@ Array [
     "key": "/admin/sub-page",
     "locale": "menu.admin.sub-page",
     "name": "二级管理页",
-    "parentKeys": Array [
+    "path": "/admin/sub-page",
+    "pro_layout_parentKeys": Array [
       "/undefined",
       "/admin",
     ],
-    "path": "/admin/sub-page",
     "routes": null,
     "unaccessible": false,
   },
@@ -340,12 +340,12 @@ Array [
     "key": "/admin/sub-page/list",
     "locale": "menu.admin.sub-page.sub-page-list",
     "name": "三级管理页",
-    "parentKeys": Array [
+    "path": "/admin/sub-page/list",
+    "pro_layout_parentKeys": Array [
       "/undefined",
       "/admin",
       "/admin/sub-page",
     ],
-    "path": "/admin/sub-page/list",
     "routes": null,
     "unaccessible": false,
   },
@@ -361,11 +361,11 @@ Array [
         "key": "/admin/userMng/users",
         "locale": "menu.人员组织管理.人员管理",
         "name": "人员管理",
-        "parentKeys": Array [
+        "path": "/admin/userMng/users",
+        "pro_layout_parentKeys": Array [
           "/undefined",
           "/admin/userMng/",
         ],
-        "path": "/admin/userMng/users",
         "routes": null,
       },
       Object {
@@ -373,21 +373,21 @@ Array [
         "key": "/admin/userMng/companies",
         "locale": "menu.人员组织管理.单位管理",
         "name": "单位管理",
-        "parentKeys": Array [
+        "path": "/admin/userMng/companies",
+        "pro_layout_parentKeys": Array [
           "/undefined",
           "/admin/userMng/",
         ],
-        "path": "/admin/userMng/companies",
         "routes": null,
       },
     ],
     "key": "/admin/userMng/",
     "locale": "menu.人员组织管理",
     "name": "人员组织管理",
-    "parentKeys": Array [
+    "path": "/admin/userMng/",
+    "pro_layout_parentKeys": Array [
       "/undefined",
     ],
-    "path": "/admin/userMng/",
     "routes": null,
   },
   Object {
@@ -395,11 +395,11 @@ Array [
     "key": "/admin/userMng/companies",
     "locale": "menu.人员组织管理.单位管理",
     "name": "单位管理",
-    "parentKeys": Array [
+    "path": "/admin/userMng/companies",
+    "pro_layout_parentKeys": Array [
       "/undefined",
       "/admin/userMng/",
     ],
-    "path": "/admin/userMng/companies",
     "routes": null,
   },
 ]
@@ -413,10 +413,10 @@ Array [
     "key": "/list/:id",
     "locale": "menu.list.table.result",
     "name": "数据详情",
-    "parentKeys": Array [
+    "path": "/list/:id",
+    "pro_layout_parentKeys": Array [
       "/undefined",
     ],
-    "path": "/list/:id",
     "routes": null,
     "unaccessible": false,
   },

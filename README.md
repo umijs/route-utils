@@ -55,7 +55,7 @@ export interface MenuDataItem {
   locale?: string | false;
   name?: string;
   key?: string;
-  parentKeys?: string[];
+  pro_layout_parentKeys?: string[];
   path?: string;
   [key: string]: any;
 }

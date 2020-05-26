@@ -75,9 +75,12 @@ export const getMatchMenu = (
   if (!menuPathKey) {
     return [];
   }
-  const menuItem = flatMenus[menuPathKey] || { parentKeys: '', key: '' };
+  const menuItem = flatMenus[menuPathKey] || {
+    pro_layout_parentKeys: '',
+    key: '',
+  };
 
-  const parentItems = (menuItem.parentKeys || [])
+  const parentItems = (menuItem.pro_layout_parentKeys || [])
     .map(key => flatMenus[key])
     .filter(item => item);
 
