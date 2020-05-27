@@ -216,8 +216,8 @@ function formatter(
         routes: null,
         pro_layout_parentKeys: [
           ...pro_layout_parentKeys,
-          `/${parent.key}`.replace(/\/\//g, '/').replace(/\/\//g, '/'),
-        ],
+          `/${parent.key || ''}`.replace(/\/\//g, '/').replace(/\/\//g, '/'),
+        ].filter(key => key && key !== '/'),
       };
 
       if (localeName) {

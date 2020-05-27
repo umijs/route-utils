@@ -17,7 +17,6 @@ Array [
             "name": "三级管理页",
             "path": "/admin/sub-page/list",
             "pro_layout_parentKeys": Array [
-              "/undefined",
               "/admin",
               "/admin/sub-page",
             ],
@@ -31,7 +30,6 @@ Array [
         "name": "二级管理页",
         "path": "/admin/sub-page",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin",
         ],
         "routes": null,
@@ -42,9 +40,7 @@ Array [
     "locale": "menu.admin",
     "name": "管理页",
     "path": "/admin",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -59,7 +55,6 @@ Array [
         "name": "三级管理页",
         "path": "/admin/sub-page/list",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin",
           "/admin/sub-page",
         ],
@@ -73,7 +68,6 @@ Array [
     "name": "二级管理页",
     "path": "/admin/sub-page",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/admin",
     ],
     "routes": null,
@@ -266,9 +260,7 @@ Array [
     "parentKey": "tool",
     "path": "/experienceScenario",
     "permission": "KM_WORKFLOW",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
 ]
@@ -291,7 +283,6 @@ Array [
             "name": "三级管理页",
             "path": "/admin/sub-page/list",
             "pro_layout_parentKeys": Array [
-              "/undefined",
               "/admin",
               "/admin/sub-page",
             ],
@@ -305,7 +296,6 @@ Array [
         "name": "二级管理页",
         "path": "/admin/sub-page",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin",
         ],
         "routes": null,
@@ -316,9 +306,7 @@ Array [
     "locale": "menu.admin",
     "name": "管理页",
     "path": "/admin",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -333,7 +321,6 @@ Array [
         "name": "三级管理页",
         "path": "/admin/sub-page/list",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin",
           "/admin/sub-page",
         ],
@@ -347,7 +334,6 @@ Array [
     "name": "二级管理页",
     "path": "/admin/sub-page",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/admin",
     ],
     "routes": null,
@@ -362,7 +348,6 @@ Array [
     "name": "三级管理页",
     "path": "/admin/sub-page/list",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/admin",
       "/admin/sub-page",
     ],
@@ -383,7 +368,6 @@ Array [
         "name": "人员管理",
         "path": "/admin/userMng/users",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin/userMng/",
         ],
         "routes": null,
@@ -395,7 +379,6 @@ Array [
         "name": "单位管理",
         "path": "/admin/userMng/companies",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin/userMng/",
         ],
         "routes": null,
@@ -405,9 +388,7 @@ Array [
     "locale": "menu.人员组织管理",
     "name": "人员组织管理",
     "path": "/admin/userMng/",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -417,7 +398,6 @@ Array [
     "name": "单位管理",
     "path": "/admin/userMng/companies",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/admin/userMng/",
     ],
     "routes": null,
@@ -434,9 +414,7 @@ Array [
     "locale": "menu.list.table.result",
     "name": "数据详情",
     "path": "/list/:id",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
     "unaccessible": false,
   },

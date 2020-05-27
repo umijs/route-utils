@@ -1,6 +1,8 @@
 import getMatchMenu from './getMatchMenu';
 import transformRoute from '../transformRoute/transformRoute';
 import testMenuData from './test.menu';
+
+// @ts-ignore
 import test_config_router2 from './test.config.router2';
 
 const routes = [
@@ -43,7 +45,7 @@ const routes = [
     exact: true,
     unaccessible: false,
   },
-  { path: '/', redirect: '/welcome', exact: true, unaccessible: false },
+  { path: '/', name: '/welcome', exact: true, unaccessible: false },
 ];
 
 const { menuData } = transformRoute(routes, true, ({ id }) => {

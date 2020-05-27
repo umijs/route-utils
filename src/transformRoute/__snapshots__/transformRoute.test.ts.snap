@@ -12,7 +12,6 @@ Array [
         "name": "login",
         "path": "/user/login",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/user",
         ],
         "routes": null,
@@ -22,9 +21,7 @@ Array [
     "layout": false,
     "locale": false,
     "path": "/user",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -34,9 +31,7 @@ Array [
     "locale": "menu.welcome",
     "name": "welcome",
     "path": "/welcome",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -50,9 +45,7 @@ Array [
     },
     "name": "admin",
     "path": "/admin",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -68,7 +61,6 @@ Array [
         "name": "sub-page",
         "path": "/admin/sub-page2",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin2",
         ],
         "routes": null,
@@ -81,9 +73,7 @@ Array [
     "locale": "menu.admin",
     "name": "admin",
     "path": "/admin2",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -93,9 +83,16 @@ Array [
     "locale": "menu.list.table-list",
     "name": "list.table-list",
     "path": "/list",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
+    "routes": null,
+  },
+  Object {
+    "component": "./ListTableList",
+    "key": "home",
+    "locale": "menu.home",
+    "name": "home",
+    "path": "/",
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
 ]
@@ -111,7 +108,6 @@ Map {
     "name": "login",
     "path": "/user/login",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/user",
     ],
     "routes": null,
@@ -126,7 +122,6 @@ Map {
         "name": "login",
         "path": "/user/login",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/user",
         ],
         "routes": null,
@@ -136,9 +131,7 @@ Map {
     "layout": false,
     "locale": false,
     "path": "/user",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/welcome" => Object {
@@ -148,9 +141,7 @@ Map {
     "locale": "menu.welcome",
     "name": "welcome",
     "path": "/welcome",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/admin" => Object {
@@ -164,9 +155,7 @@ Map {
     },
     "name": "admin",
     "path": "/admin",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/admin/sub-page2" => Object {
@@ -179,7 +168,6 @@ Map {
     "name": "sub-page",
     "path": "/admin/sub-page2",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/admin2",
     ],
     "routes": null,
@@ -197,7 +185,6 @@ Map {
         "name": "sub-page",
         "path": "/admin/sub-page2",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin2",
         ],
         "routes": null,
@@ -210,9 +197,7 @@ Map {
     "locale": "menu.admin",
     "name": "admin",
     "path": "/admin2",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/list" => Object {
@@ -222,9 +207,16 @@ Map {
     "locale": "menu.list.table-list",
     "name": "list.table-list",
     "path": "/list",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
+    "routes": null,
+  },
+  "/" => Object {
+    "component": "./ListTableList",
+    "key": "home",
+    "locale": "menu.home",
+    "name": "home",
+    "path": "/",
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
 }
@@ -241,7 +233,6 @@ Array [
         "name": "人员管理",
         "path": "/admin/userMng/users",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin/userMng/",
         ],
         "routes": null,
@@ -253,7 +244,6 @@ Array [
         "name": "单位管理",
         "path": "/admin/userMng/companies",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin/userMng/",
         ],
         "routes": null,
@@ -263,9 +253,7 @@ Array [
     "locale": "menu.人员组织管理",
     "name": "人员组织管理",
     "path": "/admin/userMng/",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
 ]
@@ -279,7 +267,6 @@ Map {
     "name": "人员管理",
     "path": "/admin/userMng/users",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/admin/userMng/",
     ],
     "routes": null,
@@ -290,7 +277,6 @@ Map {
     "name": "单位管理",
     "path": "/admin/userMng/companies",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/admin/userMng/",
     ],
     "routes": null,
@@ -303,7 +289,6 @@ Map {
         "name": "人员管理",
         "path": "/admin/userMng/users",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin/userMng/",
         ],
         "routes": null,
@@ -314,7 +299,6 @@ Map {
         "name": "单位管理",
         "path": "/admin/userMng/companies",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin/userMng/",
         ],
         "routes": null,
@@ -324,9 +308,7 @@ Map {
     "locale": "menu.人员组织管理",
     "name": "人员组织管理",
     "path": "/admin/userMng/",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
 }
@@ -345,7 +327,6 @@ Array [
         "name": "menu.login",
         "path": "/user/login",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/user",
         ],
         "routes": null,
@@ -355,9 +336,7 @@ Array [
     "layout": false,
     "locale": false,
     "path": "/user",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -368,9 +347,7 @@ Array [
     "locale": "menu.welcome",
     "name": "欢迎",
     "path": "/welcome",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -385,9 +362,7 @@ Array [
     },
     "name": "管理页",
     "path": "/admin",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -398,9 +373,17 @@ Array [
     "locale": "menu.list.table-list",
     "name": "查询表格",
     "path": "/list",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
+    "routes": null,
+  },
+  Object {
+    "children": undefined,
+    "component": "./ListTableList",
+    "key": "home",
+    "locale": "menu.home",
+    "name": "menu.home",
+    "path": "/",
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
 ]
@@ -416,7 +399,6 @@ Map {
     "name": "menu.login",
     "path": "/user/login",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/user",
     ],
     "routes": null,
@@ -431,7 +413,6 @@ Map {
         "name": "menu.login",
         "path": "/user/login",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/user",
         ],
         "routes": null,
@@ -441,9 +422,7 @@ Map {
     "layout": false,
     "locale": false,
     "path": "/user",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/welcome" => Object {
@@ -453,9 +432,7 @@ Map {
     "locale": "menu.welcome",
     "name": "欢迎",
     "path": "/welcome",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/admin" => Object {
@@ -469,9 +446,7 @@ Map {
     },
     "name": "管理页",
     "path": "/admin",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/admin/sub-page2" => Object {
@@ -484,7 +459,6 @@ Map {
     "name": "二级管理页",
     "path": "/admin/sub-page2",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/admin2",
     ],
     "routes": null,
@@ -502,7 +476,6 @@ Map {
         "name": "二级管理页",
         "path": "/admin/sub-page2",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin2",
         ],
         "routes": null,
@@ -515,9 +488,7 @@ Map {
     "locale": "menu.admin",
     "name": "管理页",
     "path": "/admin2",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/list" => Object {
@@ -527,9 +498,16 @@ Map {
     "locale": "menu.list.table-list",
     "name": "查询表格",
     "path": "/list",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
+    "routes": null,
+  },
+  "/" => Object {
+    "component": "./ListTableList",
+    "key": "home",
+    "locale": "menu.home",
+    "name": "menu.home",
+    "path": "/",
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
 }
@@ -547,7 +525,6 @@ Array [
         "name": "menu.login",
         "path": "/user/login",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/user",
         ],
         "routes": null,
@@ -557,9 +534,7 @@ Array [
     "layout": false,
     "locale": false,
     "path": "/user",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -569,9 +544,7 @@ Array [
     "locale": "menu.welcome",
     "name": "欢迎",
     "path": "/welcome",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -585,9 +558,7 @@ Array [
     },
     "name": "管理页",
     "path": "/admin",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -603,7 +574,6 @@ Array [
         "name": "二级管理页",
         "path": "/admin/sub-page2",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin2",
         ],
         "routes": null,
@@ -616,9 +586,7 @@ Array [
     "locale": "menu.admin",
     "name": "管理页",
     "path": "/admin2",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   Object {
@@ -628,9 +596,16 @@ Array [
     "locale": "menu.list.table-list",
     "name": "查询表格",
     "path": "/list",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
+    "routes": null,
+  },
+  Object {
+    "component": "./ListTableList",
+    "key": "home",
+    "locale": "menu.home",
+    "name": "menu.home",
+    "path": "/",
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
 ]
@@ -646,7 +621,6 @@ Map {
     "name": "menu.login",
     "path": "/user/login",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/user",
     ],
     "routes": null,
@@ -661,7 +635,6 @@ Map {
         "name": "menu.login",
         "path": "/user/login",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/user",
         ],
         "routes": null,
@@ -671,9 +644,7 @@ Map {
     "layout": false,
     "locale": false,
     "path": "/user",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/welcome" => Object {
@@ -683,9 +654,7 @@ Map {
     "locale": "menu.welcome",
     "name": "欢迎",
     "path": "/welcome",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/admin" => Object {
@@ -699,9 +668,7 @@ Map {
     },
     "name": "管理页",
     "path": "/admin",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/admin/sub-page2" => Object {
@@ -714,7 +681,6 @@ Map {
     "name": "二级管理页",
     "path": "/admin/sub-page2",
     "pro_layout_parentKeys": Array [
-      "/undefined",
       "/admin2",
     ],
     "routes": null,
@@ -732,7 +698,6 @@ Map {
         "name": "二级管理页",
         "path": "/admin/sub-page2",
         "pro_layout_parentKeys": Array [
-          "/undefined",
           "/admin2",
         ],
         "routes": null,
@@ -745,9 +710,7 @@ Map {
     "locale": "menu.admin",
     "name": "管理页",
     "path": "/admin2",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
   "/list" => Object {
@@ -757,9 +720,16 @@ Map {
     "locale": "menu.list.table-list",
     "name": "查询表格",
     "path": "/list",
-    "pro_layout_parentKeys": Array [
-      "/undefined",
-    ],
+    "pro_layout_parentKeys": Array [],
+    "routes": null,
+  },
+  "/" => Object {
+    "component": "./ListTableList",
+    "key": "home",
+    "locale": "menu.home",
+    "name": "menu.home",
+    "path": "/",
+    "pro_layout_parentKeys": Array [],
     "routes": null,
   },
 }

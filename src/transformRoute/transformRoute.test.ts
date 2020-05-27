@@ -59,7 +59,8 @@ const routes = [
   },
   {
     path: '/',
-    redirect: '/welcome',
+    name: 'home',
+    component: './ListTableList',
   },
   {
     component: './404',
