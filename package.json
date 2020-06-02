@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
-    "@types/lodash": "^4.14.150",
+    "@types/lodash.isequal": "^4.5.5",
     "@umijs/fabric": "^2.0.8",
     "eslint": "^6.8.0",
     "father": "^2.16.0",
@@ -37,7 +37,7 @@
   "license": "MIT",
   "dependencies": {
     "hash.js": "^1.1.7",
-    "lodash": "^4.17.15",
+    "lodash.isequal": "^4.5.0",
     "memoize-one": "^5.1.1",
     "path-to-regexp": "2.4.0"
   }
