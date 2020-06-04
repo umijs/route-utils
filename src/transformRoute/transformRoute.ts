@@ -1,4 +1,4 @@
-import { isEqual } from 'lodash';
+import isEqual from 'lodash.isequal';
 import memoizeOne from 'memoize-one';
 import hash from 'hash.js';
 
