@@ -226,7 +226,7 @@ function formatter(
         delete finallyItem.name;
       }
 
-      if (item.routes || item.children || item.i) {
+      if (item.routes || item.children) {
         const formatterChildren = formatter(
           {
             ...props,
@@ -236,7 +236,14 @@ function formatter(
           finallyItem,
         );
         // Reduce memory usage
-        finallyItem.children = formatterChildren;
+        finallyItem.children =
+          formatterChildren && formatterChildren.length > 0
+            ? formatterChildren
+            : undefined;
+
+        if (!finallyItem.children) {
+          delete finallyItem.children;
+        }
       }
 
       return bigfishCompatibleConversions(finallyItem, props);

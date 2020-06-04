@@ -56,6 +56,8 @@ const routes = [
     icon: 'table',
     path: '/list',
     component: './ListTableList',
+    routes: [],
+    children: [],
   },
   {
     path: '/',
