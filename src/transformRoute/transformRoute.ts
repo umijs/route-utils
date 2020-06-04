@@ -309,6 +309,24 @@ const memoizeOneGetBreadcrumbNameMap = memoizeOne(
   isEqual,
 );
 
+const clearChildren = (menuData: MenuDataItem[] = []): MenuDataItem[] => {
+  return menuData
+    .map((item: MenuDataItem) => {
+      if (
+        item.children &&
+        Array.isArray(item.children) &&
+        item.children.length > 0
+      ) {
+        const children = clearChildren(item.children);
+        if (children.length) return { ...item, children };
+      }
+      const finallyItem = { ...item };
+      delete finallyItem.children;
+      return finallyItem;
+    })
+    .filter(item => item);
+};
+
 /**
  * @param routes 路由配置
  * @param locale 是否使用国际化
@@ -331,7 +349,7 @@ const transformRoute = (
     locale,
   });
   const menuData = ignoreFilter
-    ? originalMenuData.filter(item => item)
+    ? clearChildren(originalMenuData)
     : defaultFilterMenuData(originalMenuData);
   // Map type used for internal logic
   const breadcrumb = memoizeOneGetBreadcrumbNameMap(originalMenuData);
