@@ -1,4 +1,4 @@
-# @umi-material/@umijs/route-utils
+# @umijs/route-utils
 
 ## Usage
 
@@ -15,7 +15,6 @@ yarn add @umijs/route-utils
 ```tsx
 import {
   transformRoute,
-  getMatchMenu,
   getMatchMenu,
 } from ' @umijs/route-utils';
 
