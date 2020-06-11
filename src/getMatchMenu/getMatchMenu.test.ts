@@ -50,98 +50,92 @@ const routes = [
 
 const layout_Router_config: any = [
   {
-    path: '/',
-    component: '../layouts/BasicLayout',
+    path: 'https://github.com/ant-design/ant-design-pro-layout/issues',
+    name: 'site',
+    icon: 'smile',
+    locale: false,
+    target: '_blank',
+    component: './Welcome',
+  },
+  {
+    name: 'flex 布局测试',
+    icon: 'smile',
+    path: 'flex',
+    component: './FlexDemo',
+  },
+  {
+    name: '分析页',
+    icon: 'smile',
+    path: '/dashboardanalysis',
+    component: './DashboardAnalysisTwo',
+  },
+  {
+    name: '个人设置',
+    icon: 'smile',
+    path: '/accountsettings',
+    component: './AccountSettings',
+  },
+  {
+    name: '高级表单',
+    icon: 'smile',
+    path: 'formadvancedform',
+    component: './FormAdvancedForm',
+  },
+
+  {
+    path: 'single',
+    name: 'Single',
     routes: [
       {
-        path: 'https://github.com/ant-design/ant-design-pro-layout/issues',
-        name: 'site',
+        path: 'welcome',
+        name: 'two',
         icon: 'smile',
-        locale: false,
-        target: '_blank',
         component: './Welcome',
       },
       {
-        name: 'flex 布局测试',
+        path: 'welcome2',
+        name: 'two2',
         icon: 'smile',
-        path: 'flex',
-        component: './FlexDemo',
+        component: './Welcome',
       },
       {
-        name: '分析页',
+        path: 'welcome3/:id?',
+        name: 'two3',
+        hideInMenu: true,
         icon: 'smile',
-        path: '/dashboardanalysis',
-        component: './DashboardAnalysisTwo',
+        component: './Welcome',
+      },
+    ],
+  },
+  {
+    path: '/',
+    name: 'welcome',
+    icon: 'smile',
+    routes: [
+      {
+        path: '/',
+        redirect: '/welcome',
       },
       {
-        name: '个人设置',
-        icon: 'smile',
-        path: '/accountsettings',
-        component: './AccountSettings',
+        path: '/welcome',
+        redirect: '/welcome/welcome',
       },
       {
-        name: '高级表单',
-        icon: 'smile',
-        path: 'formadvancedform',
-        component: './FormAdvancedForm',
-      },
-
-      {
-        path: 'single',
-        name: 'Single',
+        path: 'welcome',
+        name: 'one',
+        component: './Welcome',
         routes: [
           {
-            path: 'welcome',
+            path: 'repertoryFw',
             name: 'two',
             icon: 'smile',
             component: './Welcome',
           },
           {
-            path: 'welcome2',
+            path: 'repertory',
             name: 'two2',
             icon: 'smile',
             component: './Welcome',
-          },
-          {
-            path: 'welcome3/:id?',
-            name: 'two3',
-            hideInMenu: true,
-            icon: 'smile',
-            component: './Welcome',
-          },
-        ],
-      },
-      {
-        path: '/',
-        name: 'welcome',
-        icon: 'smile',
-        routes: [
-          {
-            path: '/',
-            redirect: '/welcome',
-          },
-          {
-            path: '/welcome',
-            redirect: '/welcome/welcome',
-          },
-          {
-            path: 'welcome',
-            name: 'one',
-            component: './Welcome',
-            routes: [
-              {
-                path: 'repertoryFw',
-                name: 'two',
-                icon: 'smile',
-                component: './Welcome',
-              },
-              {
-                path: 'repertory',
-                name: 'two2',
-                icon: 'smile',
-                component: './Welcome',
-              },
-            ],
           },
         ],
       },
@@ -222,6 +216,6 @@ test('test_layout_router', () => {
     false,
   );
   const openMenuItems = getMatchMenu('/welcome/repertoryFw', userMenuData);
-  expect(openMenuItems.length).toEqual(2);
+  expect(openMenuItems.length).toEqual(3);
   expect(openMenuItems).toMatchSnapshot();
 });
