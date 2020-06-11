@@ -69,9 +69,7 @@ export const getMatchMenu = (
 ): MenuDataItem[] => {
   const flatMenus = getFlatMenu(menuData);
   const flatMenuKeys = Object.keys(flatMenus);
-
   const menuPathKey = getMenuMatches(flatMenuKeys, pathname || '/');
-
   if (!menuPathKey) {
     return [];
   }
@@ -80,10 +78,17 @@ export const getMatchMenu = (
     key: '',
   };
 
+  // 去重
+  const map = new Map();
   const parentItems = (menuItem.pro_layout_parentKeys || [])
-    .map(key => flatMenus[key])
-    .filter(item => item);
-
+    .map(key => {
+      if (map.has(key)) {
+        return null;
+      }
+      map.set(key, true);
+      return flatMenus[key];
+    })
+    .filter(item => item) as MenuDataItem[];
   if (menuItem.key) {
     parentItems.push(menuItem);
   }

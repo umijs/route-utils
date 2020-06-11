@@ -48,6 +48,107 @@ const routes = [
   { path: '/', name: '/welcome', exact: true, unaccessible: false },
 ];
 
+const layout_Router_config: any = [
+  {
+    path: '/',
+    component: '../layouts/BasicLayout',
+    routes: [
+      {
+        path: 'https://github.com/ant-design/ant-design-pro-layout/issues',
+        name: 'site',
+        icon: 'smile',
+        locale: false,
+        target: '_blank',
+        component: './Welcome',
+      },
+      {
+        name: 'flex 布局测试',
+        icon: 'smile',
+        path: 'flex',
+        component: './FlexDemo',
+      },
+      {
+        name: '分析页',
+        icon: 'smile',
+        path: '/dashboardanalysis',
+        component: './DashboardAnalysisTwo',
+      },
+      {
+        name: '个人设置',
+        icon: 'smile',
+        path: '/accountsettings',
+        component: './AccountSettings',
+      },
+      {
+        name: '高级表单',
+        icon: 'smile',
+        path: 'formadvancedform',
+        component: './FormAdvancedForm',
+      },
+
+      {
+        path: 'single',
+        name: 'Single',
+        routes: [
+          {
+            path: 'welcome',
+            name: 'two',
+            icon: 'smile',
+            component: './Welcome',
+          },
+          {
+            path: 'welcome2',
+            name: 'two2',
+            icon: 'smile',
+            component: './Welcome',
+          },
+          {
+            path: 'welcome3/:id?',
+            name: 'two3',
+            hideInMenu: true,
+            icon: 'smile',
+            component: './Welcome',
+          },
+        ],
+      },
+      {
+        path: '/',
+        name: 'welcome',
+        icon: 'smile',
+        routes: [
+          {
+            path: '/',
+            redirect: '/welcome',
+          },
+          {
+            path: '/welcome',
+            redirect: '/welcome/welcome',
+          },
+          {
+            path: 'welcome',
+            name: 'one',
+            component: './Welcome',
+            routes: [
+              {
+                path: 'repertoryFw',
+                name: 'two',
+                icon: 'smile',
+                component: './Welcome',
+              },
+              {
+                path: 'repertory',
+                name: 'two2',
+                icon: 'smile',
+                component: './Welcome',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
+
 const { menuData } = transformRoute(routes, true, ({ id }) => {
   if (id === 'menu.list.table-list') return '查询表格';
   if (id === 'menu.list.table.result') return '数据详情';
@@ -112,5 +213,15 @@ test('test_config_router2', () => {
   const { menuData: userMenuData } = transformRoute(test_config_router2, false);
   const openMenuItems = getMatchMenu('/experienceScenario', userMenuData);
   expect(openMenuItems.length).toEqual(1);
+  expect(openMenuItems).toMatchSnapshot();
+});
+
+test('test_layout_router', () => {
+  const { menuData: userMenuData } = transformRoute(
+    layout_Router_config,
+    false,
+  );
+  const openMenuItems = getMatchMenu('/welcome/repertoryFw', userMenuData);
+  expect(openMenuItems.length).toEqual(2);
   expect(openMenuItems).toMatchSnapshot();
 });

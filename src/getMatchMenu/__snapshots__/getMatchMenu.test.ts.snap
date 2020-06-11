@@ -266,6 +266,70 @@ Array [
 ]
 `;
 
+exports[`test_layout_router 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "children": undefined,
+        "component": "./Welcome",
+        "icon": "smile",
+        "key": "/welcome/repertoryFw",
+        "locale": "menu.welcome.one.two",
+        "name": "two",
+        "path": "/welcome/repertoryFw",
+        "pro_layout_parentKeys": Array [
+          "/0444d8c15d130c7d18d025e0439e4adf74c67fe4086bde705431032554af2f71",
+          "/welcome",
+          "/welcome",
+        ],
+        "routes": null,
+      },
+      Object {
+        "children": undefined,
+        "component": "./Welcome",
+        "icon": "smile",
+        "key": "/welcome/repertory",
+        "locale": "menu.welcome.one.two2",
+        "name": "two2",
+        "path": "/welcome/repertory",
+        "pro_layout_parentKeys": Array [
+          "/0444d8c15d130c7d18d025e0439e4adf74c67fe4086bde705431032554af2f71",
+          "/welcome",
+          "/welcome",
+        ],
+        "routes": null,
+      },
+    ],
+    "component": "./Welcome",
+    "key": "/welcome",
+    "locale": "menu.welcome.one",
+    "name": "one",
+    "path": "/welcome",
+    "pro_layout_parentKeys": Array [
+      "/0444d8c15d130c7d18d025e0439e4adf74c67fe4086bde705431032554af2f71",
+      "/welcome",
+    ],
+    "routes": null,
+  },
+  Object {
+    "children": undefined,
+    "component": "./Welcome",
+    "icon": "smile",
+    "key": "/welcome/repertoryFw",
+    "locale": "menu.welcome.one.two",
+    "name": "two",
+    "path": "/welcome/repertoryFw",
+    "pro_layout_parentKeys": Array [
+      "/0444d8c15d130c7d18d025e0439e4adf74c67fe4086bde705431032554af2f71",
+      "/welcome",
+      "/welcome",
+    ],
+    "routes": null,
+  },
+]
+`;
+
 exports[`three path 1`] = `
 Array [
   Object {

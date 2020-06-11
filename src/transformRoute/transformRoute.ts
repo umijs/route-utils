@@ -20,20 +20,16 @@ export function guid() {
 }
 
 export const getKeyByPath = (item: MenuDataItem) => {
-  const { path, name } = item;
+  const { path } = item;
   if (path && path !== '/') {
     return path;
   }
-  // 如果有name, 使用name
-  if (name) {
-    return name;
-  }
   // 如果还是没有，用对象的hash 生成一个
   try {
-    return hash
+    return `/${hash
       .sha256()
       .update(JSON.stringify(item))
-      .digest('hex');
+      .digest('hex')}`;
   } catch (error) {
     // dom some thing
   }
@@ -212,7 +208,7 @@ function formatter(
         ...item,
         path,
         locale,
-        key: item.key || getKeyByPath(item),
+        key: item.key || getKeyByPath({ ...item, path }),
         routes: null,
         pro_layout_parentKeys: [
           ...pro_layout_parentKeys,

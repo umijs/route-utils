@@ -14,11 +14,11 @@ export const getFlatMenus = (
     [key: string]: MenuDataItem;
   } = {};
   menuData.forEach(item => {
-    if (!item || item.hideInMenu || !item.key) {
+    if (!item || !item.key) {
       return;
     }
-    menus[item.path || '/'] = { ...item };
-    if (item.children && !item.hideChildrenInMenu) {
+    menus[item.key || item.path || '/'] = { ...item };
+    if (item.children) {
       menus = { ...menus, ...getFlatMenus(item.children) };
     }
   });
