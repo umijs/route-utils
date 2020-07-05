@@ -27,9 +27,16 @@ export const genKeysToArray = (menuKey: string) => {
 export const getMenuMatches = (
   flatMenuKeys: string[] = [],
   path: string,
+  flatMenus: {
+    [key: string]: MenuDataItem;
+  },
 ): string | undefined =>
   flatMenuKeys
     .filter(item => {
+      // 如果配置了 hideInMenu 就不需要选中了
+      if (flatMenus[item].hideInMenu) {
+        return false;
+      }
       if (item === '/' && path === '/') {
         return true;
       }
@@ -69,7 +76,7 @@ export const getMatchMenu = (
 ): MenuDataItem[] => {
   const flatMenus = getFlatMenu(menuData);
   const flatMenuKeys = Object.keys(flatMenus);
-  const menuPathKey = getMenuMatches(flatMenuKeys, pathname || '/');
+  const menuPathKey = getMenuMatches(flatMenuKeys, pathname || '/', flatMenus);
   if (!menuPathKey) {
     return [];
   }
