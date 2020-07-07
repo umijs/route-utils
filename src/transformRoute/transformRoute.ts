@@ -274,17 +274,30 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
       return { ...item, children: undefined };
     })
     .filter(item => item);
-
+class RoutesMap<K, V> extends Map<K, V> {
+  constructor() {
+    super()
+  }
+  get(pathname: K) {
+    let routeValue;
+    for (let [key, value] of this.entries()) {
+      if (pathToRegexp(key as any).test(pathname as any)) {
+        routeValue = value;
+        break;
+      }
+    }
+    return routeValue;
+  }
+}
 /**
  * 获取面包屑映射
  * @param MenuDataItem[] menuData 菜单配置
  */
 const getBreadcrumbNameMap = (
   menuData: MenuDataItem[],
-): Map<string, MenuDataItem> => {
+): RoutesMap<string, MenuDataItem> => {
   // Map is used to ensure the order of keys
-
-  const routerMap = new Map<string, MenuDataItem>();
+  const routerMap = new RoutesMap<string, MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
     data.forEach(menuItem => {
       if (!menuItem) {
@@ -299,18 +312,7 @@ const getBreadcrumbNameMap = (
     });
   };
   flattenMenuData(menuData);
-  return {
-    ...routerMap, get: (pathname: string) => {
-      let routeValue;
-      for (let [key, value] of routerMap.entries()) {
-        if (pathToRegexp(key as any).test(pathname as any)) {
-          routeValue = value;
-          break;
-        }
-      }
-      return routeValue;
-    }
-  };
+  return routerMap;
 };
 
 const memoizeOneGetBreadcrumbNameMap = memoizeOne(
