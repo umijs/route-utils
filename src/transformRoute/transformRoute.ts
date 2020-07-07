@@ -1,6 +1,7 @@
 import isEqual from 'lodash.isequal';
 import memoizeOne from 'memoize-one';
 import hash from 'hash.js';
+import pathToRegexp from 'path-to-regexp';
 
 import { MenuDataItem, Route, MessageDescriptor } from '../types';
 
@@ -98,12 +99,12 @@ const bigfishCompatibleConversions = (
   // 拼接 childrenRoutes, 处理存在 indexRoute 时的逻辑
   const childrenRoutes = indexRoute
     ? [
-        {
-          path,
-          menu,
-          ...indexRoute,
-        },
-      ].concat(children || [])
+      {
+        path,
+        menu,
+        ...indexRoute,
+      },
+    ].concat(children || [])
     : children;
 
   // 拼接返回的 menu 数据
@@ -273,16 +274,30 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
       return { ...item, children: undefined };
     })
     .filter(item => item);
-
+class RoutesMap<K, V> extends Map<K, V> {
+  constructor() {
+    super()
+  }
+  get(pathname: K) {
+    let routeValue;
+    this.forEach((value: V, key: K) => {
+      if (pathToRegexp(key as any).test(pathname as any)) {
+        routeValue = value;
+      }
+    })
+    return routeValue;
+  }
+}
 /**
  * 获取面包屑映射
  * @param MenuDataItem[] menuData 菜单配置
  */
 const getBreadcrumbNameMap = (
   menuData: MenuDataItem[],
-): Map<string, MenuDataItem> => {
+): RoutesMap<string, MenuDataItem> => {
   // Map is used to ensure the order of keys
-  const routerMap = new Map<string, MenuDataItem>();
+
+  const routerMap = new RoutesMap<string, MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
     data.forEach(menuItem => {
       if (!menuItem) {
