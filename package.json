@@ -21,7 +21,7 @@
     "lint": "npm run lint-eslint",
     "lint-eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty",
-    "tsc": "tsc",
+    "tsc": "tsc --noEmit",
     "prepublishOnly": "npm run test && npm run build && np --no-cleanup --yolo --no-publish --any-branch"
   },
   "devDependencies": {
