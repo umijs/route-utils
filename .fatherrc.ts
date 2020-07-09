@@ -1,6 +1,4 @@
-import { IBundleOptions } from 'father';
-
-const options: IBundleOptions = {
+const options = {
   cjs: 'babel',
   esm: 'babel',
 };
