@@ -28,7 +28,7 @@
     "@types/jest": "^25.2.1",
     "@types/lodash.isequal": "^4.5.5",
     "@umijs/fabric": "^2.0.8",
-    "eslint": "^6.8.0",
+    "eslint": "^7.0.0",
     "father": "^2.16.0",
     "np": "^6.2.3",
     "typescript": "^3.3.3",

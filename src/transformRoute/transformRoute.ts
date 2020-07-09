@@ -198,6 +198,7 @@ function formatter(
           ? formatMessage({ id: locale, defaultMessage: name })
           : name;
       const {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         pro_layout_parentKeys = [],
         children,
         icon,
@@ -274,12 +275,11 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
       return { ...item, children: undefined };
     })
     .filter(item => item);
-class RoutesMap<V> extends Map<string, V> {
-  // eslint-disable-next-line no-useless-constructor
-  constructor() {
-    super();
-  }
 
+/**
+ * support pathToRegexp get string
+ */
+class RoutesMap<V> extends Map<string, V> {
   get(pathname: string) {
     let routeValue;
     // eslint-disable-next-line no-restricted-syntax

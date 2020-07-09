@@ -133,6 +133,7 @@ test('do not start with "/"', () => {
   expect(breadcrumb).toMatchSnapshot();
 });
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const layout_Router_config: any = [
   {
     path: '/',
