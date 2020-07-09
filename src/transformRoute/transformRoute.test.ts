@@ -243,3 +243,175 @@ test('layout Router config with "/"', () => {
   expect(userMenuData).toMatchSnapshot();
   expect(breadcrumb).toMatchSnapshot();
 });
+
+const flatMenu = [
+  {
+    exact: false,
+    key: 'qixian',
+    flatMenu: true, // 菜单中隐藏此项，子项往上提
+    path: '/',
+    routes: [
+      {
+        path:
+          '_webapp' /** 添加重定向 参考：https://bigfish.antfin-inc.com/doc/deploy-assets */,
+        redirect: '/',
+      },
+      { path: '/', redirect: '/dashboard/disaster-dashboard' }, // 首页跳转到「容灾数据大盘」
+      { path: 'index', component: './Welcome' }, // 历史 hash 路由，跳转到新路由
+      {
+        name: 'Dashboard',
+        path: '/dashboard',
+        icon: 'dashboard',
+        routes: [
+          {
+            name: '容灾数据大盘',
+            path: 'disaster-dashboard',
+            component: './Welcome',
+          },
+          {
+            name: '全站演练大盘',
+            path: 'drill-dashboard',
+            component: './Welcome',
+          },
+        ],
+      },
+      {
+        name: '容灾演练管理',
+        path: '/dr-capacity',
+        icon: 'global',
+        routes: [
+          // 老的容灾日历
+          // {
+          //   name: '容灾日历',
+          //   path: 'drill-calendar',
+          //   component: './DrCapacity/DrillCalendar',
+          // },
+          {
+            name: '容灾日历',
+            path: 'drill/calendar',
+            component: './Welcome',
+          },
+          {
+            name: '演练场景',
+            path: 'drill',
+            component: './Welcome',
+          },
+          {
+            path: 'drill/list',
+            component: './Welcome',
+          },
+          {
+            path: 'drill/edit',
+            component: './Welcome',
+            exact: true,
+          },
+          {
+            path: 'drill/new',
+            component: './Welcome',
+            exact: true,
+          },
+          {
+            path: 'drill/detail',
+            component: './Welcome',
+            exact: true,
+          },
+          {
+            path: 'drill/:id',
+            component: './Welcome',
+            exact: true,
+          },
+          {
+            path: 'drill/edit/:id',
+            component: './Welcome',
+            exact: true,
+          },
+          {
+            name: '容灾恢复分析',
+            path: 'analysis',
+            component: './Welcome',
+          },
+          {
+            path: 'analysis/:id',
+            component: './Welcome',
+          },
+          // 老的演练场景
+          {
+            name: '演练场景(老)',
+            path: 'drill-list',
+            component: './Welcome',
+          },
+          {
+            name: '采集指标',
+            path: 'indicator-config-list',
+            component: './Welcome',
+          },
+          {
+            path: 'indicator-config/new',
+            component: './Welcome',
+          },
+          {
+            path: 'indicator-config/edit/:id',
+            component: './Welcome',
+          },
+          {
+            path: 'indicator-config/import',
+            component: './Welcome',
+          },
+          {
+            path: 'indicator-config/:id',
+            component: './Welcome',
+          },
+          {
+            path: 'indicator-config/history/:id',
+            component: './Welcome',
+          },
+          {
+            name: '采集记录',
+            path: 'indicator-record-list',
+            component: './Welcome',
+          },
+          {
+            path: 'indicator-record/edit/:id',
+            component: './Welcome',
+          },
+          {
+            path: 'indicator-record/:id',
+            component: './Welcome',
+          },
+          {
+            name: '演练问题',
+            path: 'issue-list',
+            component: './Welcome',
+          },
+          {
+            name: '演练 Action',
+            path: 'drill-action-list',
+            component: './Welcome',
+          },
+          {
+            path: 'drill-report/manage/:id',
+            component: './Welcome',
+          },
+          {
+            path: 'drill-report/display/:id',
+            component: './Welcome',
+          },
+        ],
+      },
+      {
+        // 其它路由情况, 用于兜底
+        path: '/*',
+        redirect: './Exception/404',
+      },
+    ],
+  },
+];
+
+test('layout flatMenu', () => {
+  const { menuData: userMenuData, breadcrumb } = transformRoute(
+    flatMenu,
+    false,
+  );
+  expect(userMenuData).toMatchSnapshot();
+  expect(breadcrumb).toMatchSnapshot();
+});

@@ -175,8 +175,7 @@ function formatter(
       if (item.unaccessible) {
         return false;
       }
-
-      if (item?.menu?.name || item?.menu?.flatMenu) {
+      if (item?.menu?.name || item?.flatMenu || item?.menu?.flatMenu) {
         return true;
       }
       // 兼容性，bigfish的兼容
@@ -208,6 +207,7 @@ function formatter(
         pro_layout_parentKeys = [],
         children,
         icon,
+        flatMenu,
         ...restParent
       } = parent;
 
@@ -215,6 +215,7 @@ function formatter(
         ...restParent,
         ...item,
         path,
+        
         locale,
         key: item.key || getKeyByPath({ ...item, path }),
         routes: null,
@@ -229,7 +230,6 @@ function formatter(
       } else {
         delete finallyItem.name;
       }
-
       if (item.routes || item.children) {
         const formatterChildren = formatter(
           {
@@ -251,7 +251,7 @@ function formatter(
       }
 
       return bigfishCompatibleConversions(finallyItem, props);
-    });
+    }).flat(1);
 }
 
 const memoizeOneFormatter = memoizeOne(formatter, isEqual);
