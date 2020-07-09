@@ -583,14 +583,14 @@ Map {
     ],
     "routes": null,
   },
-  "/single/welcome3/:id?" => Object {
+  "/single/welcome3/:id" => Object {
     "component": "./Welcome",
     "hideInMenu": true,
     "icon": "smile",
-    "key": "/single/welcome3/:id?",
+    "key": "/single/welcome3/:id",
     "locale": "menu.Single.two3",
     "name": "two3",
-    "path": "/single/welcome3/:id?",
+    "path": "/single/welcome3/:id",
     "pro_layout_parentKeys": Array [
       "/0444d8c15d130c7d18d025e0439e4adf74c67fe4086bde705431032554af2f71",
       "/single",
@@ -629,10 +629,10 @@ Map {
         "component": "./Welcome",
         "hideInMenu": true,
         "icon": "smile",
-        "key": "/single/welcome3/:id?",
+        "key": "/single/welcome3/:id",
         "locale": "menu.Single.two3",
         "name": "two3",
-        "path": "/single/welcome3/:id?",
+        "path": "/single/welcome3/:id",
         "pro_layout_parentKeys": Array [
           "/0444d8c15d130c7d18d025e0439e4adf74c67fe4086bde705431032554af2f71",
           "/single",
@@ -815,10 +815,10 @@ Map {
             "component": "./Welcome",
             "hideInMenu": true,
             "icon": "smile",
-            "key": "/single/welcome3/:id?",
+            "key": "/single/welcome3/:id",
             "locale": "menu.Single.two3",
             "name": "two3",
-            "path": "/single/welcome3/:id?",
+            "path": "/single/welcome3/:id",
             "pro_layout_parentKeys": Array [
               "/0444d8c15d130c7d18d025e0439e4adf74c67fe4086bde705431032554af2f71",
               "/single",

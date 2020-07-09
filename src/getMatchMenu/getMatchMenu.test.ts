@@ -61,7 +61,7 @@ const layout_Router_config: any = [
   {
     name: 'flex 布局测试',
     icon: 'smile',
-    path: 'flex',
+    path: 'flex?name=qixian',
     component: './FlexDemo',
   },
   {
