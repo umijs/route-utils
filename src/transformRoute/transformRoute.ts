@@ -1,7 +1,7 @@
 import isEqual from 'lodash.isequal';
 import memoizeOne from 'memoize-one';
 import hash from 'hash.js';
-import pathToRegexp from 'path-to-regexp';
+import { pathToRegexp } from '@qixian.cs/path-to-regexp';
 
 import { MenuDataItem, Route, MessageDescriptor } from '../types';
 
@@ -99,12 +99,12 @@ const bigfishCompatibleConversions = (
   // 拼接 childrenRoutes, 处理存在 indexRoute 时的逻辑
   const childrenRoutes = indexRoute
     ? [
-      {
-        path,
-        menu,
-        ...indexRoute,
-      },
-    ].concat(children || [])
+        {
+          path,
+          menu,
+          ...indexRoute,
+        },
+      ].concat(children || [])
     : children;
 
   // 拼接返回的 menu 数据
@@ -274,14 +274,20 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
       return { ...item, children: undefined };
     })
     .filter(item => item);
-class RoutesMap<K, V> extends Map<K, V> {
+class RoutesMap<V> extends Map<string, V> {
+  // eslint-disable-next-line no-useless-constructor
   constructor() {
-    super()
+    super();
   }
-  get(pathname: K) {
+
+  get(pathname: string) {
     let routeValue;
-    for (let [key, value] of this.entries()) {
-      if (pathToRegexp(key as any).test(pathname as any)) {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const [key, value] of this.entries()) {
+      if (
+        !isUrl(key as string) &&
+        pathToRegexp(key as any, []).test(pathname as any)
+      ) {
         routeValue = value;
         break;
       }
@@ -295,9 +301,9 @@ class RoutesMap<K, V> extends Map<K, V> {
  */
 const getBreadcrumbNameMap = (
   menuData: MenuDataItem[],
-): RoutesMap<string, MenuDataItem> => {
+): RoutesMap<MenuDataItem> => {
   // Map is used to ensure the order of keys
-  const routerMap = new RoutesMap<string, MenuDataItem>();
+  const routerMap = new RoutesMap<MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
     data.forEach(menuItem => {
       if (!menuItem) {
