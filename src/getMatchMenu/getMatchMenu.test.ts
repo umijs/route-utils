@@ -48,6 +48,7 @@ const routes = [
   { path: '/', name: '/welcome', exact: true, unaccessible: false },
 ];
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const layout_Router_config: any = [
   {
     path: 'https://github.com/ant-design/ant-design-pro-layout/issues',

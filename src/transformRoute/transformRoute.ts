@@ -1,6 +1,7 @@
 import isEqual from 'lodash.isequal';
 import memoizeOne from 'memoize-one';
 import hash from 'hash.js';
+import { pathToRegexp } from '@qixian.cs/path-to-regexp';
 
 import { MenuDataItem, Route, MessageDescriptor } from '../types';
 
@@ -197,6 +198,7 @@ function formatter(
           ? formatMessage({ id: locale, defaultMessage: name })
           : name;
       const {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         pro_layout_parentKeys = [],
         children,
         icon,
@@ -275,14 +277,33 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
     .filter(item => item);
 
 /**
+ * support pathToRegexp get string
+ */
+class RoutesMap<V> extends Map<string, V> {
+  get(pathname: string) {
+    let routeValue;
+    // eslint-disable-next-line no-restricted-syntax
+    for (const [key, value] of this.entries()) {
+      if (
+        !isUrl(key as string) &&
+        pathToRegexp(key as any, []).test(pathname as any)
+      ) {
+        routeValue = value;
+        break;
+      }
+    }
+    return routeValue;
+  }
+}
+/**
  * 获取面包屑映射
  * @param MenuDataItem[] menuData 菜单配置
  */
 const getBreadcrumbNameMap = (
   menuData: MenuDataItem[],
-): Map<string, MenuDataItem> => {
+): RoutesMap<MenuDataItem> => {
   // Map is used to ensure the order of keys
-  const routerMap = new Map<string, MenuDataItem>();
+  const routerMap = new RoutesMap<MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
     data.forEach(menuItem => {
       if (!menuItem) {

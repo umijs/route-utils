@@ -15,5 +15,6 @@
       "@/*": ["src/*"]
     },
     "allowSyntheticDefaultImports": true
-  }
+  },
+  "include": ["src", ".eslintrc.js", ".fatherrc.ts"]
 }
