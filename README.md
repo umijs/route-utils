@@ -1,3 +1,4 @@
+![](https://codecov.io/gh/umijs/route-utils/branch/master/graph/badge.svg) [![npm package](https://img.shields.io/npm/v/@umijs/route-utils.svg?style=flat-square?style=flat-square)](https://www.npmjs.com/package/@umijs/route-utils)
 # @umijs/route-utils
 
 ## Usage
