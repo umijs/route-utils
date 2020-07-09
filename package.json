@@ -18,6 +18,7 @@
   "scripts": {
     "build": "father build && tsc -d",
     "test": "umi-test ./src",
+    "test:coverage": "umi-test ./src --coverage",
     "lint": "npm run lint-eslint",
     "lint-eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty",
@@ -40,5 +41,9 @@
     "hash.js": "^1.1.7",
     "lodash.isequal": "^4.5.0",
     "memoize-one": "^5.1.1"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }

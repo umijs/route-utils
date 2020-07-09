@@ -15,3 +15,5 @@ jobs:
         run: npm run lint && npm run tsc
       - name: test
         run: npm run test
+      - name: Generate coverage
+        run: bash <(curl -s https://codecov.io/bash)
