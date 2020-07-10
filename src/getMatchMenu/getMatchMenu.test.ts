@@ -222,86 +222,47 @@ test('test_layout_router', () => {
 });
 
 const layoutConfig = [
-  {
-    path: '/',
-    redirect: '/home',
-  },
+  { path: '/', redirect: '/home', exact: true, unaccessible: false },
   {
     name: '首页',
     path: '/home',
-    component: './Home',
-    icon: 'HomeOutlined',
+    exact: true,
+    unaccessible: false,
   },
   {
     name: '报告',
-    path: 'navigation/reportlist',
-    component: './ReportLists',
-    icon: 'LineChartOutlined',
-    routes: [
-      {
-        name: '添加数据集',
-        path: 'add',
-        component: './ReportLists/AddDataSets',
-      },
-    ],
+    path: '/navigation/reportlist',
+    exact: true,
+    unaccessible: false,
   },
   {
-    name: 'qtr测试',
-    path: 'navigation/testqtr',
-    component: './TestQtr',
+    path: '/reporting/:id',
+    layout: { hideNav: true, hideMenu: true },
+    exact: true,
+    unaccessible: false,
   },
   {
-    name: '预览报表',
-    path: 'reporting/:id',
-    component: './ReportPreview',
-    layout: {
-      hideNav: true,
-      hideMenu: true,
-    },
+    path: '/embed/reporting/:id',
+    layout: { hideNav: true, hideMenu: true },
+    exact: true,
+    unaccessible: false,
   },
   {
-    name: '预览报表',
-    path: 'embed/reporting/:id',
-    component: './EmbedReport',
-    layout: {
-      hideNav: true,
-      hideMenu: true,
-    },
-  },
-  {
-    name: '报告',
-    path: 'navigation/reporting',
-    component: './Reporting',
-    layout: {
-      hideMenu: true,
-      hideNav: true,
-    },
+    path: '/navigation/reporting',
+    layout: { hideMenu: true, hideNav: true },
+    exact: true,
+    unaccessible: false,
   },
   {
     name: '数据表',
-    path: 'navigation/datasheet',
-    component: './DataSheet',
-    icon: 'UnorderedListOutlined',
+    path: '/navigation/datasheet',
+    exact: true,
+    unaccessible: false,
   },
   {
-    // name: '数据详情',
-    path: 'navigation/datasheetdetails',
-    component: './DataSheetDetails',
-  },
-  {
-    name: 'TestTable',
-    path: 'navigation/testTable',
-    component: './TestTablePage',
-  },
-  {
-    name: '权限演示',
-    path: '/access',
-    component: './Access',
-  },
-  {
-    name: '工作台',
-    path: '/workbench',
-    component: './WorkbrenchTwo',
+    path: '/navigation/datasheetdetails',
+    exact: true,
+    unaccessible: false,
   },
   {
     name: 'Toolbox',
@@ -309,22 +270,33 @@ const layoutConfig = [
     routes: [
       {
         name: '生成Holo导入Query',
-        path: 'genHoloImportQuery',
-        component: './GenHoloImportQuery',
+        path: '/toolbox/genHoloImportQuery',
+        exact: true,
+        unaccessible: false,
       },
     ],
+    children: [
+      {
+        name: '生成Holo导入Query',
+        path: '/toolbox/genHoloImportQuery',
+        exact: true,
+        unaccessible: false,
+      },
+    ],
+    unaccessible: false,
   },
-  {
-    name: 'SearchTable',
-    path: '/searchtable',
-    component: './SearchTable',
-  },
+  { path: '/tech-ui-preview/:category/:id', unaccessible: false },
 ];
 
 test('test layout config', () => {
-  const { menuData: userMenuData } = transformRoute(layoutConfig, false);
+  const { menuData: userMenuData } = transformRoute(
+    layoutConfig || [],
+    undefined,
+    undefined,
+    true,
+  );
   let openMenuItems = getMatchMenu('/navigation/reporting', userMenuData);
-  let layout = openMenuItems?.pop()?.layout||{};
+  let layout = openMenuItems?.pop()?.layout || {};
   expect(layout.hideNav).toEqual(true);
 
   openMenuItems = getMatchMenu('/reporting/2144', userMenuData);

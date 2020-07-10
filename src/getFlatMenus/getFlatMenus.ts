@@ -13,7 +13,7 @@ export const getFlatMenus = (
   let menus: {
     [key: string]: MenuDataItem;
   } = {};
-  menuData.forEach(item => {
+  menuData.forEach((item) => {
     if (!item || !item.key) {
       return;
     }

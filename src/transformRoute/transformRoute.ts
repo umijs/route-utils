@@ -3,12 +3,10 @@ import memoizeOne from 'memoize-one';
 import hash from 'hash.js';
 import { pathToRegexp } from '@qixian.cs/path-to-regexp';
 
-
 import { MenuDataItem, Route, MessageDescriptor } from '../types';
 
-
-function stripQueryStringAndHashFromPath(url:string) {
-  return url.split("?")[0].split("#")[0];
+function stripQueryStringAndHashFromPath(url: string) {
+  return url.split('?')[0].split('#')[0];
 }
 
 /* eslint no-useless-escape:0 import/prefer-default-export:0 */
@@ -17,7 +15,7 @@ const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(
 export const isUrl = (path: string): boolean => reg.test(path);
 
 export function guid() {
-  return 'xxxxxxxx'.replace(/[xy]/g, c => {
+  return 'xxxxxxxx'.replace(/[xy]/g, (c) => {
     // eslint-disable-next-line no-bitwise
     const r = (Math.random() * 16) | 0;
     // eslint-disable-next-line no-bitwise
@@ -33,10 +31,7 @@ export const getKeyByPath = (item: MenuDataItem) => {
   }
   // 如果还是没有，用对象的hash 生成一个
   try {
-    return `/${hash
-      .sha256()
-      .update(JSON.stringify(item))
-      .digest('hex')}`;
+    return `/${hash.sha256().update(JSON.stringify(item)).digest('hex')}`;
   } catch (error) {
     // dom some thing
   }
@@ -147,6 +142,7 @@ const bigfishCompatibleConversions = (
 
     result.children = routers;
   }
+
   return result;
 };
 
@@ -164,13 +160,16 @@ function formatter(
     return [];
   }
   return data
-    .filter(item => {
+    .filter((item) => {
       if (!item) return false;
       if (item.routes || item.children) return true;
-      if (item.name && item.path) return true;
+      if (item.path) return true;
+      if (item.layout) return true;
+      // 重定向
+      if (item.redirect) return false;
       return false;
     })
-    .filter(item => {
+    .filter((item) => {
       // 是否没有权限查看
       if (item.unaccessible) {
         return false;
@@ -188,11 +187,12 @@ function formatter(
       if (item.menu === false) {
         return false;
       }
-
       return true;
     })
     .map((item = { path: '/' }) => {
-      const path = stripQueryStringAndHashFromPath(mergePath(item.path, parent ? parent.path : '/'));
+      const path = stripQueryStringAndHashFromPath(
+        mergePath(item.path, parent ? parent.path : '/'),
+      );
       const { name } = item;
       const locale = getItemLocaleName(item, parentName || 'menu');
 
@@ -215,14 +215,14 @@ function formatter(
         ...restParent,
         ...item,
         path,
-        
+
         locale,
         key: item.key || getKeyByPath({ ...item, path }),
         routes: null,
         pro_layout_parentKeys: [
           ...pro_layout_parentKeys,
           `/${parent.key || ''}`.replace(/\/\//g, '/').replace(/\/\//g, '/'),
-        ].filter(key => key && key !== '/'),
+        ].filter((key) => key && key !== '/'),
       };
 
       if (localeName) {
@@ -249,9 +249,9 @@ function formatter(
           delete finallyItem.children;
         }
       }
-
       return bigfishCompatibleConversions(finallyItem, props);
-    }).flat(1);
+    })
+    .flat(1);
 }
 
 const memoizeOneFormatter = memoizeOne(formatter, isEqual);
@@ -280,7 +280,7 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
       }
       return { ...item, children: undefined };
     })
-    .filter(item => item);
+    .filter((item) => item);
 
 /**
  * support pathToRegexp get string
@@ -311,7 +311,7 @@ const getBreadcrumbNameMap = (
   // Map is used to ensure the order of keys
   const routerMap = new RoutesMap<MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
-    data.forEach(menuItem => {
+    data.forEach((menuItem) => {
       if (!menuItem) {
         return;
       }
@@ -343,11 +343,12 @@ const clearChildren = (menuData: MenuDataItem[] = []): MenuDataItem[] => {
         const children = clearChildren(item.children);
         if (children.length) return { ...item, children };
       }
+
       const finallyItem = { ...item };
       delete finallyItem.children;
       return finallyItem;
     })
-    .filter(item => item);
+    .filter((item) => item);
 };
 
 /**
