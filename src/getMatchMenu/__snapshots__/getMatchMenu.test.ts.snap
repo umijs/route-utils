@@ -76,6 +76,8 @@ Array [
 ]
 `;
 
+exports[`test layout config 1`] = `Array []`;
+
 exports[`test router 1`] = `
 Array [
   Object {

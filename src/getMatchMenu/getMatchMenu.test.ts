@@ -220,3 +220,115 @@ test('test_layout_router', () => {
   expect(openMenuItems.length).toEqual(3);
   expect(openMenuItems).toMatchSnapshot();
 });
+
+const layoutConfig = [
+  {
+    path: '/',
+    redirect: '/home',
+  },
+  {
+    name: '首页',
+    path: '/home',
+    component: './Home',
+    icon: 'HomeOutlined',
+  },
+  {
+    name: '报告',
+    path: 'navigation/reportlist',
+    component: './ReportLists',
+    icon: 'LineChartOutlined',
+    routes: [
+      {
+        name: '添加数据集',
+        path: 'add',
+        component: './ReportLists/AddDataSets',
+      },
+    ],
+  },
+  {
+    name: 'qtr测试',
+    path: 'navigation/testqtr',
+    component: './TestQtr',
+  },
+  {
+    name: '预览报表',
+    path: 'reporting/:id',
+    component: './ReportPreview',
+    layout: {
+      hideNav: true,
+      hideMenu: true,
+    },
+  },
+  {
+    name: '预览报表',
+    path: 'embed/reporting/:id',
+    component: './EmbedReport',
+    layout: {
+      hideNav: true,
+      hideMenu: true,
+    },
+  },
+  {
+    name: '报告',
+    path: 'navigation/reporting',
+    component: './Reporting',
+    layout: {
+      hideMenu: true,
+      hideNav: true,
+    },
+  },
+  {
+    name: '数据表',
+    path: 'navigation/datasheet',
+    component: './DataSheet',
+    icon: 'UnorderedListOutlined',
+  },
+  {
+    // name: '数据详情',
+    path: 'navigation/datasheetdetails',
+    component: './DataSheetDetails',
+  },
+  {
+    name: 'TestTable',
+    path: 'navigation/testTable',
+    component: './TestTablePage',
+  },
+  {
+    name: '权限演示',
+    path: '/access',
+    component: './Access',
+  },
+  {
+    name: '工作台',
+    path: '/workbench',
+    component: './WorkbrenchTwo',
+  },
+  {
+    name: 'Toolbox',
+    path: '/toolbox',
+    routes: [
+      {
+        name: '生成Holo导入Query',
+        path: 'genHoloImportQuery',
+        component: './GenHoloImportQuery',
+      },
+    ],
+  },
+  {
+    name: 'SearchTable',
+    path: '/searchtable',
+    component: './SearchTable',
+  },
+];
+
+test('test layout config', () => {
+  const { menuData: userMenuData } = transformRoute(layoutConfig, false);
+  let openMenuItems = getMatchMenu('/navigation/reporting', userMenuData);
+  let layout = openMenuItems?.pop()?.layout||{};
+  expect(layout.hideNav).toEqual(true);
+
+  openMenuItems = getMatchMenu('/reporting/2144', userMenuData);
+  layout = openMenuItems?.pop()?.layout || {};
+  expect(layout.hideMenu).toEqual(true);
+  expect(openMenuItems).toMatchSnapshot();
+});
