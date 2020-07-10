@@ -56,10 +56,7 @@ const getItemLocaleName = (
   const { name, locale } = item;
 
   // 如果配置了 locale 并且 locale 为 false或 ""
-  if ('locale' in item && !locale) {
-    return '';
-  }
-  if (!name || locale === false) {
+  if (('locale' in item && locale === false) || !name) {
     return false;
   }
   return item.locale || `${parentName}.${name}`;
