@@ -42,6 +42,7 @@ const routes = [
     access: 'canAdmin',
     component: './Admin',
     hideInMenu: true,
+    indexRoute: { redirect: '/admin/sub-page2' },
     routes: [
       {
         path: '/admin/sub-page2',

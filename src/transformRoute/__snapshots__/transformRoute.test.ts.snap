@@ -69,6 +69,9 @@ Array [
     "component": "./Admin",
     "hideInMenu": true,
     "icon": "crown",
+    "indexRoute": Object {
+      "redirect": "/admin/sub-page2",
+    },
     "key": "/admin2",
     "locale": "menu.admin",
     "name": "admin",
@@ -193,6 +196,9 @@ Map {
     "component": "./Admin",
     "hideInMenu": true,
     "icon": "crown",
+    "indexRoute": Object {
+      "redirect": "/admin/sub-page2",
+    },
     "key": "/admin2",
     "locale": "menu.admin",
     "name": "admin",
@@ -1991,6 +1997,9 @@ Map {
     "component": "./Admin",
     "hideInMenu": true,
     "icon": "crown",
+    "indexRoute": Object {
+      "redirect": "/admin/sub-page2",
+    },
     "key": "/admin2",
     "locale": "menu.admin",
     "name": "管理页",
@@ -2089,6 +2098,9 @@ Array [
     "component": "./Admin",
     "hideInMenu": true,
     "icon": "crown",
+    "indexRoute": Object {
+      "redirect": "/admin/sub-page2",
+    },
     "key": "/admin2",
     "locale": "menu.admin",
     "name": "管理页",
@@ -2213,6 +2225,9 @@ Map {
     "component": "./Admin",
     "hideInMenu": true,
     "icon": "crown",
+    "indexRoute": Object {
+      "redirect": "/admin/sub-page2",
+    },
     "key": "/admin2",
     "locale": "menu.admin",
     "name": "管理页",

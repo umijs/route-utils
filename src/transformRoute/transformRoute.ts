@@ -15,7 +15,7 @@ const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(
 export const isUrl = (path: string): boolean => reg.test(path);
 
 export function guid() {
-  return 'xxxxxxxx'.replace(/[xy]/g, c => {
+  return 'xxxxxxxx'.replace(/[xy]/g, (c) => {
     // eslint-disable-next-line no-bitwise
     const r = (Math.random() * 16) | 0;
     // eslint-disable-next-line no-bitwise
@@ -31,10 +31,7 @@ export const getKeyByPath = (item: MenuDataItem) => {
   }
   // 如果还是没有，用对象的hash 生成一个
   try {
-    return `/${hash
-      .sha256()
-      .update(JSON.stringify(item))
-      .digest('hex')}`;
+    return `/${hash.sha256().update(JSON.stringify(item)).digest('hex')}`;
   } catch (error) {
     // dom some thing
   }
@@ -101,15 +98,18 @@ const bigfishCompatibleConversions = (
     flatMenu = route.flatMenu,
   } = menu as Route; // 兼容平铺式写法
   // 拼接 childrenRoutes, 处理存在 indexRoute 时的逻辑
-  const childrenRoutes = indexRoute
-    ? [
-        {
-          path,
-          menu,
-          ...indexRoute,
-        },
-      ].concat(children || [])
-    : children;
+  const childrenRoutes =
+    indexRoute &&
+    // 如果只有 redirect,不用处理的
+    Object.keys(indexRoute).join(',') !== 'redirect'
+      ? [
+          {
+            path,
+            menu,
+            ...indexRoute,
+          },
+        ].concat(children || [])
+      : children;
 
   // 拼接返回的 menu 数据
   const result = {
@@ -163,7 +163,7 @@ function formatter(
     return [];
   }
   return data
-    .filter(item => {
+    .filter((item) => {
       if (!item) return false;
       if (item.routes || item.children) return true;
       if (item.path) return true;
@@ -172,7 +172,7 @@ function formatter(
       if (item.redirect) return false;
       return false;
     })
-    .filter(item => {
+    .filter((item) => {
       // 是否没有权限查看
       if (item.unaccessible) {
         return false;
@@ -211,6 +211,7 @@ function formatter(
         children,
         icon,
         flatMenu,
+        indexRoute,
         ...restParent
       } = parent;
 
@@ -225,7 +226,7 @@ function formatter(
         pro_layout_parentKeys: [
           ...pro_layout_parentKeys,
           `/${parent.key || ''}`.replace(/\/\//g, '/').replace(/\/\//g, '/'),
-        ].filter(key => key && key !== '/'),
+        ].filter((key) => key && key !== '/'),
       };
 
       if (localeName) {
@@ -283,7 +284,7 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
       }
       return { ...item, children: undefined };
     })
-    .filter(item => item);
+    .filter((item) => item);
 
 /**
  * support pathToRegexp get string
@@ -314,7 +315,7 @@ const getBreadcrumbNameMap = (
   // Map is used to ensure the order of keys
   const routerMap = new RoutesMap<MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
-    data.forEach(menuItem => {
+    data.forEach((menuItem) => {
       if (!menuItem) {
         return;
       }
@@ -351,7 +352,7 @@ const clearChildren = (menuData: MenuDataItem[] = []): MenuDataItem[] => {
       delete finallyItem.children;
       return finallyItem;
     })
-    .filter(item => item);
+    .filter((item) => item);
 };
 
 /**
