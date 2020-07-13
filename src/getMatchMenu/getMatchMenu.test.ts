@@ -286,6 +286,11 @@ const layoutConfig = [
     unaccessible: false,
   },
   { path: '/tech-ui-preview/:category/:id', unaccessible: false },
+  {
+    // 其它路由情况, 用于兜底
+    path: '/*',
+    redirect: './Exception/404',
+  },
 ];
 
 test('test layout config', () => {

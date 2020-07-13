@@ -33,7 +33,7 @@ export const getMenuMatches = (
   },
 ): string | undefined =>
   flatMenuKeys
-    .filter(item => {
+    .filter((item) => {
       // 如果配置了 hideInMenu 就不需要选中了
       if (flatMenus[item].hideInMenu) {
         return false;
@@ -41,14 +41,18 @@ export const getMenuMatches = (
       if (item === '/' && path === '/') {
         return true;
       }
-      if (item !== '/' && item && !isUrl(item)) {
-        // /a
-        if (pathToRegexp(`${item}`, []).test(path)) {
-          return true;
-        }
-        // /a/b/b
-        if (pathToRegexp(`${item}(.*)`).test(path)) {
-          return true;
+      if (item !== '/' && item !== '/*' && item && !isUrl(item)) {
+        try {
+          // /a
+          if (pathToRegexp(`${item}`, []).test(path)) {
+            return true;
+          }
+          // /a/b/b
+          if (pathToRegexp(`${item}(.*)`).test(path)) {
+            return true;
+          }
+        } catch (error) {
+          console.log(error, path);
         }
       }
       return false;
@@ -89,14 +93,14 @@ export const getMatchMenu = (
   // 去重
   const map = new Map();
   const parentItems = (menuItem.pro_layout_parentKeys || [])
-    .map(key => {
+    .map((key) => {
       if (map.has(key)) {
         return null;
       }
       map.set(key, true);
       return flatMenus[key];
     })
-    .filter(item => item) as MenuDataItem[];
+    .filter((item) => item) as MenuDataItem[];
   if (menuItem.key) {
     parentItems.push(menuItem);
   }
