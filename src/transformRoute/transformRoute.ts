@@ -15,7 +15,7 @@ const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(
 export const isUrl = (path: string): boolean => reg.test(path);
 
 export function guid() {
-  return 'xxxxxxxx'.replace(/[xy]/g, (c) => {
+  return 'xxxxxxxx'.replace(/[xy]/g, c => {
     // eslint-disable-next-line no-bitwise
     const r = (Math.random() * 16) | 0;
     // eslint-disable-next-line no-bitwise
@@ -31,7 +31,10 @@ export const getKeyByPath = (item: MenuDataItem) => {
   }
   // 如果还是没有，用对象的hash 生成一个
   try {
-    return `/${hash.sha256().update(JSON.stringify(item)).digest('hex')}`;
+    return `/${hash
+      .sha256()
+      .update(JSON.stringify(item))
+      .digest('hex')}`;
   } catch (error) {
     // dom some thing
   }
@@ -160,7 +163,7 @@ function formatter(
     return [];
   }
   return data
-    .filter((item) => {
+    .filter(item => {
       if (!item) return false;
       if (item.routes || item.children) return true;
       if (item.path) return true;
@@ -169,7 +172,7 @@ function formatter(
       if (item.redirect) return false;
       return false;
     })
-    .filter((item) => {
+    .filter(item => {
       // 是否没有权限查看
       if (item.unaccessible) {
         return false;
@@ -199,7 +202,7 @@ function formatter(
       // if enableMenuLocale use item.name,
       // close menu international
       const localeName =
-        locale !== false && menuLocale !== false && formatMessage
+        locale !== false && menuLocale !== false && formatMessage && locale
           ? formatMessage({ id: locale, defaultMessage: name })
           : name;
       const {
@@ -222,7 +225,7 @@ function formatter(
         pro_layout_parentKeys: [
           ...pro_layout_parentKeys,
           `/${parent.key || ''}`.replace(/\/\//g, '/').replace(/\/\//g, '/'),
-        ].filter((key) => key && key !== '/'),
+        ].filter(key => key && key !== '/'),
       };
 
       if (localeName) {
@@ -280,7 +283,7 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
       }
       return { ...item, children: undefined };
     })
-    .filter((item) => item);
+    .filter(item => item);
 
 /**
  * support pathToRegexp get string
@@ -311,7 +314,7 @@ const getBreadcrumbNameMap = (
   // Map is used to ensure the order of keys
   const routerMap = new RoutesMap<MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
-    data.forEach((menuItem) => {
+    data.forEach(menuItem => {
       if (!menuItem) {
         return;
       }
@@ -348,7 +351,7 @@ const clearChildren = (menuData: MenuDataItem[] = []): MenuDataItem[] => {
       delete finallyItem.children;
       return finallyItem;
     })
-    .filter((item) => item);
+    .filter(item => item);
 };
 
 /**
