@@ -329,7 +329,7 @@ Array [
         "component": "./Welcome",
         "icon": "smile",
         "key": "https://github.com/ant-design/ant-design-pro-layout/issues",
-        "locale": "",
+        "locale": false,
         "name": "site",
         "path": "https://github.com/ant-design/ant-design-pro-layout/issues",
         "pro_layout_parentKeys": Array [
@@ -506,7 +506,7 @@ Map {
     "component": "./Welcome",
     "icon": "smile",
     "key": "https://github.com/ant-design/ant-design-pro-layout/issues",
-    "locale": "",
+    "locale": false,
     "name": "site",
     "path": "https://github.com/ant-design/ant-design-pro-layout/issues",
     "pro_layout_parentKeys": Array [
@@ -662,7 +662,7 @@ Map {
         "component": "./Welcome",
         "icon": "smile",
         "key": "https://github.com/ant-design/ant-design-pro-layout/issues",
-        "locale": "",
+        "locale": false,
         "name": "site",
         "path": "https://github.com/ant-design/ant-design-pro-layout/issues",
         "pro_layout_parentKeys": Array [
@@ -777,7 +777,7 @@ Map {
           Object {
             "component": "../layouts/BasicLayout",
             "key": "/07864012d5f938207a2a72970368f2e6068e094494871d08b3636dda5ee452aa",
-            "locale": "",
+            "locale": false,
             "path": "/",
             "pro_layout_parentKeys": Array [
               "/0444d8c15d130c7d18d025e0439e4adf74c67fe4086bde705431032554af2f71",
@@ -789,7 +789,7 @@ Map {
           Object {
             "component": "../layouts/BasicLayout",
             "key": "/welcome",
-            "locale": "",
+            "locale": false,
             "path": "/welcome",
             "pro_layout_parentKeys": Array [
               "/0444d8c15d130c7d18d025e0439e4adf74c67fe4086bde705431032554af2f71",
@@ -1111,7 +1111,7 @@ Map {
   "/_webapp" => Object {
     "exact": false,
     "key": "/_webapp",
-    "locale": "",
+    "locale": false,
     "path": "/_webapp",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1122,7 +1122,7 @@ Map {
   "/" => Object {
     "exact": false,
     "key": "/7fe1e392588d9ee7449687adc28b85f106e52eb096b0a1c9ab582ae898a45152",
-    "locale": "",
+    "locale": false,
     "path": "/",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1134,7 +1134,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/index",
-    "locale": "",
+    "locale": false,
     "path": "/index",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1237,7 +1237,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/dr-capacity/drill/list",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/drill/list",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1249,7 +1249,7 @@ Map {
     "component": "./Welcome",
     "exact": true,
     "key": "/dr-capacity/drill/edit",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/drill/edit",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1261,7 +1261,7 @@ Map {
     "component": "./Welcome",
     "exact": true,
     "key": "/dr-capacity/drill/new",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/drill/new",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1273,7 +1273,7 @@ Map {
     "component": "./Welcome",
     "exact": true,
     "key": "/dr-capacity/drill/detail",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/drill/detail",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1285,7 +1285,7 @@ Map {
     "component": "./Welcome",
     "exact": true,
     "key": "/dr-capacity/drill/:id",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/drill/:id",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1297,7 +1297,7 @@ Map {
     "component": "./Welcome",
     "exact": true,
     "key": "/dr-capacity/drill/edit/:id",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/drill/edit/:id",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1322,7 +1322,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/dr-capacity/analysis/:id",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/analysis/:id",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1360,7 +1360,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/dr-capacity/indicator-config/new",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/indicator-config/new",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1372,7 +1372,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/dr-capacity/indicator-config/edit/:id",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/indicator-config/edit/:id",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1384,7 +1384,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/dr-capacity/indicator-config/import",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/indicator-config/import",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1396,7 +1396,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/dr-capacity/indicator-config/:id",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/indicator-config/:id",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1408,7 +1408,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/dr-capacity/indicator-config/history/:id",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/indicator-config/history/:id",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1433,7 +1433,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/dr-capacity/indicator-record/edit/:id",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/indicator-record/edit/:id",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1445,7 +1445,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/dr-capacity/indicator-record/:id",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/indicator-record/:id",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1483,7 +1483,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/dr-capacity/drill-report/manage/:id",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/drill-report/manage/:id",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1495,7 +1495,7 @@ Map {
     "component": "./Welcome",
     "exact": false,
     "key": "/dr-capacity/drill-report/display/:id",
-    "locale": "",
+    "locale": false,
     "path": "/dr-capacity/drill-report/display/:id",
     "pro_layout_parentKeys": Array [
       "/qixian",
@@ -1535,7 +1535,7 @@ Map {
         "component": "./Welcome",
         "exact": false,
         "key": "/dr-capacity/drill/list",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/drill/list",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1547,7 +1547,7 @@ Map {
         "component": "./Welcome",
         "exact": true,
         "key": "/dr-capacity/drill/edit",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/drill/edit",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1559,7 +1559,7 @@ Map {
         "component": "./Welcome",
         "exact": true,
         "key": "/dr-capacity/drill/new",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/drill/new",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1571,7 +1571,7 @@ Map {
         "component": "./Welcome",
         "exact": true,
         "key": "/dr-capacity/drill/detail",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/drill/detail",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1583,7 +1583,7 @@ Map {
         "component": "./Welcome",
         "exact": true,
         "key": "/dr-capacity/drill/:id",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/drill/:id",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1595,7 +1595,7 @@ Map {
         "component": "./Welcome",
         "exact": true,
         "key": "/dr-capacity/drill/edit/:id",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/drill/edit/:id",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1620,7 +1620,7 @@ Map {
         "component": "./Welcome",
         "exact": false,
         "key": "/dr-capacity/analysis/:id",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/analysis/:id",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1658,7 +1658,7 @@ Map {
         "component": "./Welcome",
         "exact": false,
         "key": "/dr-capacity/indicator-config/new",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/indicator-config/new",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1670,7 +1670,7 @@ Map {
         "component": "./Welcome",
         "exact": false,
         "key": "/dr-capacity/indicator-config/edit/:id",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/indicator-config/edit/:id",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1682,7 +1682,7 @@ Map {
         "component": "./Welcome",
         "exact": false,
         "key": "/dr-capacity/indicator-config/import",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/indicator-config/import",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1694,7 +1694,7 @@ Map {
         "component": "./Welcome",
         "exact": false,
         "key": "/dr-capacity/indicator-config/:id",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/indicator-config/:id",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1706,7 +1706,7 @@ Map {
         "component": "./Welcome",
         "exact": false,
         "key": "/dr-capacity/indicator-config/history/:id",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/indicator-config/history/:id",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1731,7 +1731,7 @@ Map {
         "component": "./Welcome",
         "exact": false,
         "key": "/dr-capacity/indicator-record/edit/:id",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/indicator-record/edit/:id",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1743,7 +1743,7 @@ Map {
         "component": "./Welcome",
         "exact": false,
         "key": "/dr-capacity/indicator-record/:id",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/indicator-record/:id",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1781,7 +1781,7 @@ Map {
         "component": "./Welcome",
         "exact": false,
         "key": "/dr-capacity/drill-report/manage/:id",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/drill-report/manage/:id",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1793,7 +1793,7 @@ Map {
         "component": "./Welcome",
         "exact": false,
         "key": "/dr-capacity/drill-report/display/:id",
-        "locale": "",
+        "locale": false,
         "path": "/dr-capacity/drill-report/display/:id",
         "pro_layout_parentKeys": Array [
           "/qixian",
@@ -1816,7 +1816,7 @@ Map {
   "/*" => Object {
     "exact": false,
     "key": "/*",
-    "locale": "",
+    "locale": false,
     "path": "/*",
     "pro_layout_parentKeys": Array [
       "/qixian",
