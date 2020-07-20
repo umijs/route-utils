@@ -171,8 +171,9 @@ function formatter(
     })
     .filter((item) => {
       // 是否没有权限查看
+      // 这样就不会显示，是一个兼容性的方式
       if (item.unaccessible) {
-        return false;
+        delete item.name;
       }
       if (item?.menu?.name || item?.flatMenu || item?.menu?.flatMenu) {
         return true;
