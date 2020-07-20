@@ -309,3 +309,62 @@ test('test layout config', () => {
   expect(layout.hideMenu).toEqual(true);
   expect(openMenuItems).toMatchSnapshot();
 });
+
+test('test yfd layout config', () => {
+  let openMenuItems = getMatchMenu('/bkmng/authority/my', [
+    {
+      path: '/',
+      redirect: '/bkmng/authority/my',
+      exact: true,
+      unaccessible: false,
+      locale: false,
+      key: '/710c8209d70454012a0cacef5e4c67ef9c6f40ed7b56311cd60545bd50437341',
+      routes: null,
+      pro_layout_parentKeys: [],
+    },
+    {
+      path: '/bkmng/authority',
+      name: '我的权限',
+      routes: null,
+      children: [
+        {
+          path: '/bkmng/authority/my',
+          name: '权限列表',
+          routes: null,
+          unaccessible: false,
+          locale: 'menu.我的权限.权限列表',
+          key: '/yfd/bkmng/authority/my',
+          exact: true,
+          pro_layout_parentKeys: ['/yfd/bkmng/authority'],
+        },
+        {
+          path: '/bkmng/authority/apply',
+          name: '申请权限',
+          routes: null,
+          unaccessible: false,
+          locale: 'menu.我的权限.申请权限',
+          key: '/yfd/bkmng/authority/apply',
+          exact: true,
+          pro_layout_parentKeys: ['/yfd/bkmng/authority'],
+        },
+      ],
+      unaccessible: false,
+      locale: 'menu.我的权限',
+      key: '/yfd/bkmng/authority',
+      pro_layout_parentKeys: [],
+    },
+    {
+      path: '/bkmng',
+      yunfengdieApp: '21704052',
+      exact: false,
+      unaccessible: false,
+      locale: false,
+      key: '/bkmng',
+      routes: null,
+      pro_layout_parentKeys: [],
+    },
+  ]);
+  expect(openMenuItems.length).toBe(1);
+  expect(openMenuItems[0].path).toBe('/bkmng/authority/my');
+  expect(openMenuItems).toMatchSnapshot();
+});

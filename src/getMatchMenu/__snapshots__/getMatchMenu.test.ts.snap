@@ -250,6 +250,23 @@ Array [
 ]
 `;
 
+exports[`test yfd layout config 1`] = `
+Array [
+  Object {
+    "exact": true,
+    "key": "/yfd/bkmng/authority/my",
+    "locale": "menu.我的权限.权限列表",
+    "name": "权限列表",
+    "path": "/bkmng/authority/my",
+    "pro_layout_parentKeys": Array [
+      "/yfd/bkmng/authority",
+    ],
+    "routes": null,
+    "unaccessible": false,
+  },
+]
+`;
+
 exports[`test_config_router2 1`] = `
 Array [
   Object {
