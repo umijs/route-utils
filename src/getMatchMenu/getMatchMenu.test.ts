@@ -364,7 +364,8 @@ test('test yfd layout config', () => {
       pro_layout_parentKeys: [],
     },
   ]);
-  expect(openMenuItems.length).toBe(1);
-  expect(openMenuItems[0].path).toBe('/bkmng/authority/my');
+  expect(openMenuItems.length).toBe(2);
+  expect(openMenuItems[0].path).toBe('/bkmng/authority');
+  expect(openMenuItems[1].path).toBe('/bkmng/authority/my');
   expect(openMenuItems).toMatchSnapshot();
 });

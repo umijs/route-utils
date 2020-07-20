@@ -17,11 +17,9 @@ export const getFlatMenus = (
     if (!item || !item.key) {
       return;
     }
-    if (item.path !== '/') {
-      menus[item.path || item.key || '/'] = { ...item };
-    } else {
-      menus[item.key || item.path || '/'] = { ...item };
-    }
+
+    menus[item.path || item.key || '/'] = { ...item };
+    menus[item.key || item.path || '/'] = { ...item };
 
     if (item.children) {
       menus = { ...menus, ...getFlatMenus(item.children) };

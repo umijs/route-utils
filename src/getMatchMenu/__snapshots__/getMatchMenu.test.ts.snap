@@ -166,6 +166,89 @@ Array [
   Object {
     "children": Array [
       Object {
+        "children": Array [
+          Object {
+            "exact": true,
+            "icon": Object {
+              "_owner": null,
+              "_store": Object {},
+              "key": null,
+              "props": Object {},
+              "ref": null,
+              "type": Object {},
+            },
+            "key": "/welcome/repertoryFw",
+            "locale": "menu.welcome.one.two",
+            "name": "two",
+            "path": "/welcome/repertoryFw",
+            "pro_layout_parentKeys": Array [
+              "/",
+              "welcome",
+              "/welcome",
+            ],
+            "routes": null,
+          },
+          Object {
+            "exact": true,
+            "icon": Object {
+              "_owner": null,
+              "_store": Object {},
+              "key": null,
+              "props": Object {},
+              "ref": null,
+              "type": Object {},
+            },
+            "key": "/welcome/repertory",
+            "locale": "menu.welcome.one.two2",
+            "name": "two2",
+            "path": "/welcome/repertory",
+            "pro_layout_parentKeys": Array [
+              "/",
+              "welcome",
+              "/welcome",
+            ],
+            "routes": null,
+          },
+        ],
+        "icon": Object {
+          "_owner": null,
+          "_store": Object {},
+          "key": null,
+          "props": Object {},
+          "ref": null,
+          "type": Object {},
+        },
+        "key": "/welcome",
+        "locale": "menu.welcome.one",
+        "name": "one",
+        "path": "/welcome",
+        "pro_layout_parentKeys": Array [
+          "/",
+          "welcome",
+        ],
+        "routes": null,
+      },
+    ],
+    "icon": Object {
+      "_owner": null,
+      "_store": Object {},
+      "key": null,
+      "props": Object {},
+      "ref": null,
+      "type": Object {},
+    },
+    "key": "welcome",
+    "locale": "menu.welcome",
+    "name": "welcome",
+    "path": "/",
+    "pro_layout_parentKeys": Array [
+      "/",
+    ],
+    "routes": null,
+  },
+  Object {
+    "children": Array [
+      Object {
         "exact": true,
         "icon": Object {
           "_owner": null,
@@ -252,6 +335,41 @@ Array [
 
 exports[`test yfd layout config 1`] = `
 Array [
+  Object {
+    "children": Array [
+      Object {
+        "exact": true,
+        "key": "/yfd/bkmng/authority/my",
+        "locale": "menu.我的权限.权限列表",
+        "name": "权限列表",
+        "path": "/bkmng/authority/my",
+        "pro_layout_parentKeys": Array [
+          "/yfd/bkmng/authority",
+        ],
+        "routes": null,
+        "unaccessible": false,
+      },
+      Object {
+        "exact": true,
+        "key": "/yfd/bkmng/authority/apply",
+        "locale": "menu.我的权限.申请权限",
+        "name": "申请权限",
+        "path": "/bkmng/authority/apply",
+        "pro_layout_parentKeys": Array [
+          "/yfd/bkmng/authority",
+        ],
+        "routes": null,
+        "unaccessible": false,
+      },
+    ],
+    "key": "/yfd/bkmng/authority",
+    "locale": "menu.我的权限",
+    "name": "我的权限",
+    "path": "/bkmng/authority",
+    "pro_layout_parentKeys": Array [],
+    "routes": null,
+    "unaccessible": false,
+  },
   Object {
     "exact": true,
     "key": "/yfd/bkmng/authority/my",
