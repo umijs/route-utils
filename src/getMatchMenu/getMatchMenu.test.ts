@@ -311,7 +311,7 @@ test('test layout config', () => {
 });
 
 test('test yfd layout config', () => {
-  let openMenuItems = getMatchMenu('/bkmng/authority/my', [
+  const openMenuItems = getMatchMenu('/bkmng/authority/my', [
     {
       path: '/',
       redirect: '/bkmng/authority/my',
