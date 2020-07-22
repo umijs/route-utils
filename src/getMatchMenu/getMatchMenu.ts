@@ -34,10 +34,6 @@ export const getMenuMatches = (
 ): string | undefined =>
   flatMenuKeys
     .filter((item) => {
-      // 如果配置了 hideInMenu 就不需要选中了
-      if (flatMenus[item].hideInMenu) {
-        return false;
-      }
       if (item === '/' && path === '/') {
         return true;
       }

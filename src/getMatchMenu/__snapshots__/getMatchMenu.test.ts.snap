@@ -78,6 +78,38 @@ Array [
 
 exports[`test layout config 1`] = `Array []`;
 
+exports[`test morse layout config 1`] = `
+Array [
+  Object {
+    "exact": true,
+    "key": "/project/:projectId/strategy/data",
+    "locale": false,
+    "path": "/project/:projectId/strategy/data",
+    "pro_layout_parentKeys": Array [
+      "/project/:projectId/strategy/data",
+    ],
+    "redirect": "/project/:projectId/strategy/data/dataset",
+    "routes": null,
+  },
+  Object {
+    "component": Object {
+      "displayName": "LoadableComponent",
+    },
+    "exact": true,
+    "hasLayout": true,
+    "hideInMenu": true,
+    "key": "/project/:projectId/strategy/data/virtualDataSet/:sampleId",
+    "locale": "menu.实验区.数据准备详情",
+    "name": "数据准备详情",
+    "path": "/project/:projectId/strategy/data/virtualDataSet/:sampleId",
+    "pro_layout_parentKeys": Array [
+      "/project/:projectId/strategy/data",
+    ],
+    "routes": null,
+  },
+]
+`;
+
 exports[`test router 1`] = `
 Array [
   Object {
