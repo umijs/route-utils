@@ -1000,8 +1000,12 @@ Array [
         "key": "/dr-capacity/drill",
         "locale": "menu.容灾演练管理.演练场景",
         "name": "演练场景",
+        "parentKeys": Array [
+          "/dashboard",
+        ],
         "path": "/dr-capacity/drill",
         "pro_layout_parentKeys": Array [
+          "/dashboard",
           "/qixian",
           "/dr-capacity",
         ],
@@ -1226,8 +1230,12 @@ Map {
     "key": "/dr-capacity/drill",
     "locale": "menu.容灾演练管理.演练场景",
     "name": "演练场景",
+    "parentKeys": Array [
+      "/dashboard",
+    ],
     "path": "/dr-capacity/drill",
     "pro_layout_parentKeys": Array [
+      "/dashboard",
       "/qixian",
       "/dr-capacity",
     ],
@@ -1524,8 +1532,12 @@ Map {
         "key": "/dr-capacity/drill",
         "locale": "menu.容灾演练管理.演练场景",
         "name": "演练场景",
+        "parentKeys": Array [
+          "/dashboard",
+        ],
         "path": "/dr-capacity/drill",
         "pro_layout_parentKeys": Array [
+          "/dashboard",
           "/qixian",
           "/dr-capacity",
         ],

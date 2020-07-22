@@ -295,6 +295,7 @@ const flatMenu = [
           {
             name: '演练场景',
             path: 'drill',
+            parentKeys: ['/dashboard'],
             component: './Welcome',
           },
           {

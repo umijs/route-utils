@@ -221,10 +221,13 @@ function formatter(
         locale,
         key: item.key || getKeyByPath({ ...item, path }),
         routes: null,
-        pro_layout_parentKeys: [
-          ...pro_layout_parentKeys,
-          `/${parent.key || ''}`.replace(/\/\//g, '/').replace(/\/\//g, '/'),
-        ].filter((key) => key && key !== '/'),
+        pro_layout_parentKeys: Array.from(
+          new Set([
+            ...(item.parentKeys || []),
+            ...pro_layout_parentKeys,
+            `/${parent.key || ''}`.replace(/\/\//g, '/').replace(/\/\//g, '/'),
+          ]),
+        ).filter((key) => key && key !== '/'),
       };
 
       if (localeName) {

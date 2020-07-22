@@ -18,5 +18,6 @@ export interface MenuDataItem {
   key?: string;
   pro_layout_parentKeys?: string[];
   path?: string;
+  parentKeys?: string[];
   [key: string]: any;
 }
