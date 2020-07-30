@@ -16,15 +16,16 @@ export const isUrl = (path: string): boolean => reg.test(path);
 
 export const getKeyByPath = (item: MenuDataItem) => {
   const { path } = item;
-  if (path && path !== '/') {
-    return path;
+  if (!path || path === '/') {
+    // 如果还是没有，用对象的hash 生成一个
+    try {
+      return `/${hash.sha256().update(JSON.stringify(item)).digest('hex')}`;
+    } catch (error) {
+      // dom some thing
+    }
   }
-  // 如果还是没有，用对象的hash 生成一个
-  try {
-    return `/${hash.sha256().update(JSON.stringify(item)).digest('hex')}`;
-  } catch (error) {
-    // dom some thing
-  }
+
+  return path;
 };
 
 /**
@@ -161,6 +162,7 @@ function formatter(
       // 是否没有权限查看
       // 这样就不会显示，是一个兼容性的方式
       if (item.unaccessible) {
+        // eslint-disable-next-line no-param-reassign
         delete item.name;
       }
       if (item?.menu?.name || item?.flatMenu || item?.menu?.flatMenu) {
