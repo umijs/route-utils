@@ -14,29 +14,18 @@ const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(
 
 export const isUrl = (path: string): boolean => reg.test(path);
 
-export function guid() {
-  return 'xxxxxxxx'.replace(/[xy]/g, (c) => {
-    // eslint-disable-next-line no-bitwise
-    const r = (Math.random() * 16) | 0;
-    // eslint-disable-next-line no-bitwise
-    const v = c === 'x' ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
-  });
-}
-
 export const getKeyByPath = (item: MenuDataItem) => {
   const { path } = item;
-  if (path && path !== '/') {
-    return path;
+  if (!path || path === '/') {
+    // 如果还是没有，用对象的hash 生成一个
+    try {
+      return `/${hash.sha256().update(JSON.stringify(item)).digest('hex')}`;
+    } catch (error) {
+      // dom some thing
+    }
   }
-  // 如果还是没有，用对象的hash 生成一个
-  try {
-    return `/${hash.sha256().update(JSON.stringify(item)).digest('hex')}`;
-  } catch (error) {
-    // dom some thing
-  }
-  // 要是还是不行，返回一个随机值
-  return guid();
+
+  return path;
 };
 
 /**
@@ -173,13 +162,10 @@ function formatter(
       // 是否没有权限查看
       // 这样就不会显示，是一个兼容性的方式
       if (item.unaccessible) {
+        // eslint-disable-next-line no-param-reassign
         delete item.name;
       }
       if (item?.menu?.name || item?.flatMenu || item?.menu?.flatMenu) {
-        return true;
-      }
-      // 兼容性，bigfish的兼容
-      if (item?.indexRoute?.menu?.name || item?.indexRoute?.menu?.flatMenu) {
         return true;
       }
 
@@ -317,9 +303,6 @@ const getBreadcrumbNameMap = (
   const routerMap = new RoutesMap<MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
     data.forEach((menuItem) => {
-      if (!menuItem) {
-        return;
-      }
       if (menuItem && menuItem.children) {
         flattenMenuData(menuItem.children, menuItem);
       }

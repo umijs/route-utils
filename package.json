@@ -18,7 +18,7 @@
   "scripts": {
     "build": "father-build && tsc -d -p tsconfig.build.json",
     "test": "umi-test",
-    "test:coverage": "umi-test ./src --coverage",
+    "test:coverage": "umi-test ./test --coverage",
     "lint": "npm run lint-eslint",
     "lint-eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty",

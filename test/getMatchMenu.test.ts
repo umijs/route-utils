@@ -1,5 +1,5 @@
-import getMatchMenu from './getMatchMenu';
-import transformRoute from '../transformRoute/transformRoute';
+import getMatchMenu from '../src/getMatchMenu/getMatchMenu';
+import transformRoute from '../src/transformRoute/transformRoute';
 import testMenuData from './test.menu';
 
 // @ts-ignore
@@ -945,7 +945,7 @@ const morseMenu: any[] = [
     ],
     locale: 'menu.生产配置区',
     key: '/project/:projectId/strategy/',
-    pro_layout_parentKeys: [],
+    pro_layout_parentKeys: ['a', 'a', 'a'],
   },
 ];
 
@@ -959,5 +959,28 @@ test('test morse layout config', () => {
   expect(openMenuItems[1].path).toBe(
     '/project/:projectId/strategy/data/virtualDataSet/:sampleId',
   );
+  expect(openMenuItems).toMatchSnapshot();
+});
+
+test('test empty menu', () => {
+  const openMenuItems = getMatchMenu(
+    '/project/p_202007131935192683/strategy/data/virtualDataSet/sample_202007131937303220',
+    [],
+  );
+  expect(openMenuItems).toMatchSnapshot();
+});
+
+test('test pro_layout_parentKeys menu', () => {
+  const openMenuItems = getMatchMenu('/', [
+    {
+      locale: 'menu.生产配置区',
+      key: '/project/:projectId/strategy/',
+    },
+    {
+      locale: 'menu',
+      key: '/',
+      pro_layout_parentKeys: ['a', 'a', 'a'],
+    },
+  ]);
   expect(openMenuItems).toMatchSnapshot();
 });

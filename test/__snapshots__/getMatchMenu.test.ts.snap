@@ -76,6 +76,8 @@ Array [
 ]
 `;
 
+exports[`test empty menu 1`] = `Array []`;
+
 exports[`test layout config 1`] = `Array []`;
 
 exports[`test morse layout config 1`] = `
@@ -106,6 +108,20 @@ Array [
       "/project/:projectId/strategy/data",
     ],
     "routes": null,
+  },
+]
+`;
+
+exports[`test pro_layout_parentKeys menu 1`] = `
+Array [
+  Object {
+    "key": "/",
+    "locale": "menu",
+    "pro_layout_parentKeys": Array [
+      "a",
+      "a",
+      "a",
+    ],
   },
 ]
 `;
