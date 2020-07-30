@@ -1,4 +1,4 @@
-import transformRoute from './transformRoute';
+import transformRoute from '../src/transformRoute/transformRoute';
 
 const routes = [
   {
@@ -18,6 +18,9 @@ const routes = [
     name: 'welcome',
     icon: 'smile',
     component: './Welcome',
+    indexRoute: {
+      component: './Welcome',
+    },
   },
   {
     path: '/admin',
@@ -78,6 +81,7 @@ test('normal', () => {
     if (id === 'menu.welcome') return '欢迎';
     return id;
   });
+  expect(breadcrumb.get('/admin')).toMatchSnapshot();
   expect(menuData).toMatchSnapshot();
   expect(breadcrumb).toMatchSnapshot();
 });
@@ -123,7 +127,10 @@ test('do not start with "/"', () => {
         name: '人员组织管理',
         path: 'admin/userMng/',
         children: [
-          { name: '人员管理', path: '/admin/userMng/users' },
+          {
+            name: '人员管理',
+            path: '/admin/userMng/users',
+          },
           { name: '单位管理', path: '/admin/userMng/companies' },
         ],
       },
@@ -258,7 +265,7 @@ const flatMenu = [
         redirect: '/',
       },
       { path: '/', redirect: '/dashboard/disaster-dashboard' }, // 首页跳转到「容灾数据大盘」
-      { path: 'index', component: './Welcome' }, // 历史 hash 路由，跳转到新路由
+      { path: 'index', unaccessible: true, component: './Welcome' }, // 历史 hash 路由，跳转到新路由
       {
         name: 'Dashboard',
         path: '/dashboard',
@@ -387,6 +394,7 @@ const flatMenu = [
           },
           {
             name: '演练 Action',
+            menu: false,
             path: 'drill-action-list',
             component: './Welcome',
           },
@@ -414,6 +422,13 @@ test('layout flatMenu', () => {
     flatMenu,
     false,
   );
+  expect(userMenuData).toMatchSnapshot();
+  expect(breadcrumb).toMatchSnapshot();
+});
+
+test('layout flatMenu', () => {
+  // @ts-expect-error
+  const { menuData: userMenuData, breadcrumb } = transformRoute({}, false);
   expect(userMenuData).toMatchSnapshot();
   expect(breadcrumb).toMatchSnapshot();
 });

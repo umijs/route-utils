@@ -3,34 +3,9 @@ import { MenuDataItem } from '../types';
 import getFlatMenu from '../getFlatMenus/getFlatMenus';
 import { isUrl } from '../transformRoute/transformRoute';
 
-/**
- * a-b-c
- * [
- *  "a",
- *  "a-b",
- *  "a-b-c"
- * ]
- * @param menuKey
- */
-export const genKeysToArray = (menuKey: string) => {
-  const keys = menuKey.split('-');
-  const keyArray: string[] = [];
-  keys.forEach((key, index) => {
-    if (index === 0) {
-      keyArray.push(key);
-      return;
-    }
-    keyArray.push(keys.slice(0, index + 1).join('-'));
-  });
-  return keyArray;
-};
-
 export const getMenuMatches = (
   flatMenuKeys: string[] = [],
   path: string,
-  flatMenus: {
-    [key: string]: MenuDataItem;
-  },
 ): string | undefined =>
   flatMenuKeys
     .filter((item) => {
@@ -48,7 +23,7 @@ export const getMenuMatches = (
             return true;
           }
         } catch (error) {
-          console.log(error, path);
+          // console.log(error, path);
         }
       }
       return false;
@@ -77,7 +52,7 @@ export const getMatchMenu = (
 ): MenuDataItem[] => {
   const flatMenus = getFlatMenu(menuData);
   const flatMenuKeys = Object.keys(flatMenus);
-  const menuPathKey = getMenuMatches(flatMenuKeys, pathname || '/', flatMenus);
+  const menuPathKey = getMenuMatches(flatMenuKeys, pathname || '/');
   if (!menuPathKey) {
     return [];
   }

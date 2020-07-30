@@ -25,8 +25,24 @@ Array [
     "routes": null,
   },
   Object {
+    "children": Array [
+      Object {
+        "component": "./Welcome",
+        "key": "/welcome",
+        "locale": false,
+        "menu": Object {},
+        "path": "/welcome",
+        "pro_layout_parentKeys": Array [
+          "/welcome",
+        ],
+        "routes": null,
+      },
+    ],
     "component": "./Welcome",
     "icon": "smile",
+    "indexRoute": Object {
+      "component": "./Welcome",
+    },
     "key": "/welcome",
     "locale": "menu.welcome",
     "name": "welcome",
@@ -138,8 +154,24 @@ Map {
     "routes": null,
   },
   "/welcome" => Object {
+    "children": Array [
+      Object {
+        "component": "./Welcome",
+        "key": "/welcome",
+        "locale": false,
+        "menu": Object {},
+        "path": "/welcome",
+        "pro_layout_parentKeys": Array [
+          "/welcome",
+        ],
+        "routes": null,
+      },
+    ],
     "component": "./Welcome",
     "icon": "smile",
+    "indexRoute": Object {
+      "component": "./Welcome",
+    },
     "key": "/welcome",
     "locale": "menu.welcome",
     "name": "welcome",
@@ -1081,20 +1113,6 @@ Array [
         ],
         "routes": null,
       },
-      Object {
-        "children": undefined,
-        "component": "./Welcome",
-        "exact": false,
-        "key": "/dr-capacity/drill-action-list",
-        "locale": "menu.容灾演练管理.演练 Action",
-        "name": "演练 Action",
-        "path": "/dr-capacity/drill-action-list",
-        "pro_layout_parentKeys": Array [
-          "/qixian",
-          "/dr-capacity",
-        ],
-        "routes": null,
-      },
     ],
     "exact": false,
     "icon": "global",
@@ -1144,6 +1162,7 @@ Map {
       "/qixian",
     ],
     "routes": null,
+    "unaccessible": true,
   },
   "/dashboard/disaster-dashboard" => Object {
     "component": "./Welcome",
@@ -1474,19 +1493,6 @@ Map {
     ],
     "routes": null,
   },
-  "/dr-capacity/drill-action-list" => Object {
-    "component": "./Welcome",
-    "exact": false,
-    "key": "/dr-capacity/drill-action-list",
-    "locale": "menu.容灾演练管理.演练 Action",
-    "name": "演练 Action",
-    "path": "/dr-capacity/drill-action-list",
-    "pro_layout_parentKeys": Array [
-      "/qixian",
-      "/dr-capacity",
-    ],
-    "routes": null,
-  },
   "/dr-capacity/drill-report/manage/:id" => Object {
     "component": "./Welcome",
     "exact": false,
@@ -1779,19 +1785,6 @@ Map {
       Object {
         "component": "./Welcome",
         "exact": false,
-        "key": "/dr-capacity/drill-action-list",
-        "locale": "menu.容灾演练管理.演练 Action",
-        "name": "演练 Action",
-        "path": "/dr-capacity/drill-action-list",
-        "pro_layout_parentKeys": Array [
-          "/qixian",
-          "/dr-capacity",
-        ],
-        "routes": null,
-      },
-      Object {
-        "component": "./Welcome",
-        "exact": false,
         "key": "/dr-capacity/drill-report/manage/:id",
         "locale": false,
         "path": "/dr-capacity/drill-report/manage/:id",
@@ -1839,7 +1832,28 @@ Map {
 }
 `;
 
+exports[`layout flatMenu 3`] = `Array []`;
+
+exports[`layout flatMenu 4`] = `Map {}`;
+
 exports[`normal 1`] = `
+Object {
+  "access": "canAdmin",
+  "component": "./Admin",
+  "icon": "crown",
+  "key": "/admin",
+  "locale": "menu.admin",
+  "menu": Object {
+    "hideChildren": true,
+  },
+  "name": "管理页",
+  "path": "/admin",
+  "pro_layout_parentKeys": Array [],
+  "routes": null,
+}
+`;
+
+exports[`normal 2`] = `
 Array [
   Object {
     "children": Array [
@@ -1868,6 +1882,9 @@ Array [
     "children": undefined,
     "component": "./Welcome",
     "icon": "smile",
+    "indexRoute": Object {
+      "component": "./Welcome",
+    },
     "key": "/welcome",
     "locale": "menu.welcome",
     "name": "欢迎",
@@ -1914,7 +1931,7 @@ Array [
 ]
 `;
 
-exports[`normal 2`] = `
+exports[`normal 3`] = `
 Map {
   "/user/login" => Object {
     "component": "./user/login",
@@ -1951,8 +1968,24 @@ Map {
     "routes": null,
   },
   "/welcome" => Object {
+    "children": Array [
+      Object {
+        "component": "./Welcome",
+        "key": "/welcome",
+        "locale": false,
+        "menu": Object {},
+        "path": "/welcome",
+        "pro_layout_parentKeys": Array [
+          "/welcome",
+        ],
+        "routes": null,
+      },
+    ],
     "component": "./Welcome",
     "icon": "smile",
+    "indexRoute": Object {
+      "component": "./Welcome",
+    },
     "key": "/welcome",
     "locale": "menu.welcome",
     "name": "欢迎",
@@ -2066,8 +2099,24 @@ Array [
     "routes": null,
   },
   Object {
+    "children": Array [
+      Object {
+        "component": "./Welcome",
+        "key": "/welcome",
+        "locale": false,
+        "menu": Object {},
+        "path": "/welcome",
+        "pro_layout_parentKeys": Array [
+          "/welcome",
+        ],
+        "routes": null,
+      },
+    ],
     "component": "./Welcome",
     "icon": "smile",
+    "indexRoute": Object {
+      "component": "./Welcome",
+    },
     "key": "/welcome",
     "locale": "menu.welcome",
     "name": "欢迎",
@@ -2179,8 +2228,24 @@ Map {
     "routes": null,
   },
   "/welcome" => Object {
+    "children": Array [
+      Object {
+        "component": "./Welcome",
+        "key": "/welcome",
+        "locale": false,
+        "menu": Object {},
+        "path": "/welcome",
+        "pro_layout_parentKeys": Array [
+          "/welcome",
+        ],
+        "routes": null,
+      },
+    ],
     "component": "./Welcome",
     "icon": "smile",
+    "indexRoute": Object {
+      "component": "./Welcome",
+    },
     "key": "/welcome",
     "locale": "menu.welcome",
     "name": "欢迎",

@@ -14,16 +14,6 @@ const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(
 
 export const isUrl = (path: string): boolean => reg.test(path);
 
-export function guid() {
-  return 'xxxxxxxx'.replace(/[xy]/g, (c) => {
-    // eslint-disable-next-line no-bitwise
-    const r = (Math.random() * 16) | 0;
-    // eslint-disable-next-line no-bitwise
-    const v = c === 'x' ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
-  });
-}
-
 export const getKeyByPath = (item: MenuDataItem) => {
   const { path } = item;
   if (path && path !== '/') {
@@ -35,8 +25,6 @@ export const getKeyByPath = (item: MenuDataItem) => {
   } catch (error) {
     // dom some thing
   }
-  // 要是还是不行，返回一个随机值
-  return guid();
 };
 
 /**
@@ -178,10 +166,6 @@ function formatter(
       if (item?.menu?.name || item?.flatMenu || item?.menu?.flatMenu) {
         return true;
       }
-      // 兼容性，bigfish的兼容
-      if (item?.indexRoute?.menu?.name || item?.indexRoute?.menu?.flatMenu) {
-        return true;
-      }
 
       // 显示指定在 menu 中隐藏该项
       // layout 插件的功能，其实不应该存在的
@@ -317,9 +301,6 @@ const getBreadcrumbNameMap = (
   const routerMap = new RoutesMap<MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
     data.forEach((menuItem) => {
-      if (!menuItem) {
-        return;
-      }
       if (menuItem && menuItem.children) {
         flattenMenuData(menuItem.children, menuItem);
       }

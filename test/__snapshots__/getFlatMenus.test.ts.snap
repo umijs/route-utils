@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`normal 1`] = `
+exports[`getFlatMenus normal 1`] = `
 Object {
   "/admin": Object {
     "access": "canAdmin",
