@@ -5,7 +5,7 @@ import { pathToRegexp } from '@qixian.cs/path-to-regexp';
 
 import { MenuDataItem, Route, MessageDescriptor } from '../types';
 
-function stripQueryStringAndHashFromPath(url: string) {
+export function stripQueryStringAndHashFromPath(url: string) {
   return url.split('?')[0].split('#')[0];
 }
 
@@ -25,7 +25,7 @@ export const getKeyByPath = (item: MenuDataItem) => {
     }
   }
 
-  return path;
+  return path ? stripQueryStringAndHashFromPath(path) : path;
 };
 
 /**
@@ -177,9 +177,7 @@ function formatter(
       return true;
     })
     .map((item = { path: '/' }) => {
-      const path = stripQueryStringAndHashFromPath(
-        mergePath(item.path, parent ? parent.path : '/'),
-      );
+      const path = mergePath(item.path, parent ? parent.path : '/');
       const { name } = item;
       const locale = getItemLocaleName(item, parentName || 'menu');
 
@@ -279,16 +277,22 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
 class RoutesMap<V> extends Map<string, V> {
   get(pathname: string) {
     let routeValue;
-    // eslint-disable-next-line no-restricted-syntax
-    for (const [key, value] of this.entries()) {
-      if (
-        !isUrl(key as string) &&
-        pathToRegexp(key as any, []).test(pathname as any)
-      ) {
-        routeValue = value;
-        break;
+    try {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const [key, value] of this.entries()) {
+        const path = stripQueryStringAndHashFromPath(key);
+        if (
+          !isUrl(key as string) &&
+          pathToRegexp(path as any, []).test(pathname as any)
+        ) {
+          routeValue = value;
+          break;
+        }
       }
+    } catch (error) {
+      routeValue = undefined;
     }
+
     return routeValue;
   }
 }
@@ -308,7 +312,7 @@ const getBreadcrumbNameMap = (
       }
       // Reduce memory usage
       const path = mergePath(menuItem.path, parent ? parent.path : '/');
-      routerMap.set(path, menuItem);
+      routerMap.set(stripQueryStringAndHashFromPath(path), menuItem);
     });
   };
   flattenMenuData(menuData);

@@ -1,4 +1,5 @@
 import { MenuDataItem } from '../types';
+import { stripQueryStringAndHashFromPath } from '../transformRoute/transformRoute';
 
 /**
  * 获取打平的 menuData
@@ -18,7 +19,9 @@ export const getFlatMenus = (
       return;
     }
 
-    menus[item.path || item.key || '/'] = { ...item };
+    menus[stripQueryStringAndHashFromPath(item.path || item.key || '/')] = {
+      ...item,
+    };
     menus[item.key || item.path || '/'] = { ...item };
 
     if (item.children) {

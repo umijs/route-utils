@@ -100,7 +100,7 @@ const layout_Router_config: any = [
         component: './Welcome',
       },
       {
-        path: 'welcome3/:id?',
+        path: 'welcome3/:id?name=12121',
         name: 'two3',
         hideInMenu: true,
         icon: 'smile',
