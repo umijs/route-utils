@@ -4,6 +4,13 @@ const routes = [
   {
     path: '/user',
     layout: false,
+    menu: {
+      name: 'overview',
+      icon: 'testicon',
+      flatMenu: false,
+      hideInMenu: false,
+      hideChildrenInMenu: false,
+    },
     routes: [
       {
         name: 'login',

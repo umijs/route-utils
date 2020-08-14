@@ -199,9 +199,9 @@ function formatter(
 
       const finallyItem: MenuDataItem = {
         ...restParent,
+        menu: undefined,
         ...item,
         path,
-
         locale,
         key: item.key || getKeyByPath({ ...item, path }),
         routes: null,
@@ -218,6 +218,9 @@ function formatter(
         finallyItem.name = localeName;
       } else {
         delete finallyItem.name;
+      }
+      if (finallyItem.menu === undefined) {
+        delete finallyItem.menu;
       }
       if (item.routes || item.children) {
         const formatterChildren = formatter(
