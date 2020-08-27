@@ -984,3 +984,20 @@ test('test pro_layout_parentKeys menu', () => {
   ]);
   expect(openMenuItems).toMatchSnapshot();
 });
+
+test('test same path menu', () => {
+  const openMenuItems = getMatchMenu('/project/4/outline', [
+    {
+      name: 'menu',
+      path: '/project/4000',
+      key: '2',
+    },
+    {
+      name: 'menu.生产配置区',
+      path: '/project/4',
+      key: '1',
+    },
+  ]);
+  expect(openMenuItems.length).toBe(1);
+  expect(openMenuItems[0].path).toBe('/project/4');
+});
