@@ -9,7 +9,7 @@ import {
 export const getMenuMatches = (
   flatMenuKeys: string[] = [],
   path: string,
-): string | undefined =>
+): string[] | undefined =>
   flatMenuKeys
     .filter((item) => {
       if (item === '/' && path === '/') {
@@ -41,8 +41,7 @@ export const getMenuMatches = (
         return -10;
       }
       return a.substr(1).split('/').length - b.substr(1).split('/').length;
-    })
-    .pop();
+    }) as string[];
 
 /**
  * 获取当前的选中菜单列表
@@ -53,33 +52,44 @@ export const getMenuMatches = (
 export const getMatchMenu = (
   pathname: string,
   menuData: MenuDataItem[],
+  /**
+   * 要不要展示全部的 key
+   */
+  fullKeys?: boolean,
 ): MenuDataItem[] => {
   const flatMenus = getFlatMenu(menuData);
   const flatMenuKeys = Object.keys(flatMenus);
-  const menuPathKey = getMenuMatches(flatMenuKeys, pathname || '/');
-  if (!menuPathKey) {
+  let menuPathKeys = getMenuMatches(flatMenuKeys, pathname || '/');
+  if (!menuPathKeys || menuPathKeys.length < 1) {
     return [];
   }
-  const menuItem = flatMenus[menuPathKey] || {
-    pro_layout_parentKeys: '',
-    key: '',
-  };
-
-  // 去重
-  const map = new Map();
-  const parentItems = (menuItem.pro_layout_parentKeys || [])
-    .map((key) => {
-      if (map.has(key)) {
-        return null;
-      }
-      map.set(key, true);
-      return flatMenus[key];
-    })
-    .filter((item) => item) as MenuDataItem[];
-  if (menuItem.key) {
-    parentItems.push(menuItem);
+  if (!fullKeys) {
+    menuPathKeys = [menuPathKeys[menuPathKeys.length - 1]];
   }
-  return parentItems;
+  return menuPathKeys
+    .map((menuPathKey) => {
+      const menuItem = flatMenus[menuPathKey] || {
+        pro_layout_parentKeys: '',
+        key: '',
+      };
+
+      // 去重
+      const map = new Map();
+      const parentItems = (menuItem.pro_layout_parentKeys || [])
+        .map((key) => {
+          if (map.has(key)) {
+            return null;
+          }
+          map.set(key, true);
+          return flatMenus[key];
+        })
+        .filter((item) => item) as MenuDataItem[];
+      if (menuItem.key) {
+        parentItems.push(menuItem);
+      }
+      return parentItems;
+    })
+    .flat(1);
 };
 
 export default getMatchMenu;
