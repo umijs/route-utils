@@ -1001,3 +1001,69 @@ test('test same path menu', () => {
   expect(openMenuItems.length).toBe(1);
   expect(openMenuItems[0].path).toBe('/project/4');
 });
+
+describe('test fullKeys  ', () => {
+  it('same path menu', () => {
+    const openMenuItems = getMatchMenu(
+      '/project/4/00011',
+      [
+        {
+          name: 'menu',
+          path: '/project/4000',
+          key: '2',
+        },
+        {
+          name: 'menu.生产配置区',
+          path: '/project/4',
+          key: '1',
+        },
+      ],
+      true,
+    );
+    expect(openMenuItems.length).toBe(1);
+    expect(openMenuItems[0].path).toBe('/project/4');
+  });
+
+  it('path menu', () => {
+    const openMenuItems = getMatchMenu(
+      '/project/4/000/1213',
+      [
+        {
+          name: 'menu',
+          path: '/project/4/000',
+          key: '2',
+        },
+        {
+          name: 'menu.生产配置区',
+          path: '/project/4',
+          key: '1',
+        },
+      ],
+      true,
+    );
+    expect(openMenuItems.length).toBe(2);
+    expect(openMenuItems[0].path).toBe('/project/4');
+    expect(openMenuItems[1].path).toBe('/project/4/000');
+  });
+
+  it('path menu', () => {
+    const openMenuItems = getMatchMenu(
+      '/welcome2',
+      [
+        {
+          name: 'menu',
+          path: '/welcome',
+          key: '2',
+        },
+        {
+          name: 'menu.生产配置区',
+          path: '/welcome2',
+          key: '1',
+        },
+      ],
+      true,
+    );
+    expect(openMenuItems.length).toBe(1);
+    expect(openMenuItems[0].path).toBe('/welcome2');
+  });
+});
