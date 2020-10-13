@@ -23,7 +23,7 @@ export const getMenuMatches = (
             return true;
           }
           // /a/b/b
-          if (pathToRegexp(`${pathKey}(.*)`).test(path)) {
+          if (pathToRegexp(`${pathKey}/(.*)`).test(path)) {
             return true;
           }
         } catch (error) {
