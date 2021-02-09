@@ -1,4 +1,4 @@
-import isEqual from 'lodash.isequal';
+import isEqual from 'fast-deep-equal/es6/index';
 import memoizeOne from 'memoize-one';
 import hash from 'hash.js';
 import { pathToRegexp } from '@qixian.cs/path-to-regexp';
