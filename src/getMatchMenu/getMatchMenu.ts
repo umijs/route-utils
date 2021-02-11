@@ -1,5 +1,5 @@
 import { pathToRegexp } from '@qixian.cs/path-to-regexp';
-import { MenuDataItem } from '../types';
+import type { MenuDataItem } from '../types';
 import getFlatMenu from '../getFlatMenus/getFlatMenus';
 import {
   isUrl,
@@ -19,17 +19,18 @@ export const getMenuMatches = (
       if (item !== '/' && item !== '/*' && item && !isUrl(item)) {
         const pathKey = stripQueryStringAndHashFromPath(item);
         try {
-          // /a
-          if (pathToRegexp(`${pathKey}`, []).test(path)) {
-            return true;
-          }
           // exact
           if (exact) {
             if (pathToRegexp(`${pathKey}`).test(path)) {
               return true;
             }
-            // /a/b/b
-          } else if (pathToRegexp(`${pathKey}/(.*)`).test(path)) {
+          }
+          // /a
+          if (pathToRegexp(`${pathKey}`, []).test(path)) {
+            return true;
+          }
+          // /a/b/b
+          if (pathToRegexp(`${pathKey}/(.*)`).test(path)) {
             return true;
           }
         } catch (error) {

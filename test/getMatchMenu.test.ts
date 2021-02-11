@@ -155,7 +155,7 @@ const { menuData } = transformRoute(routes, true, ({ id }) => {
 });
 
 test('normal', () => {
-  const openMenuItems = getMatchMenu('/admin/sub-page', menuData);
+  const openMenuItems = getMatchMenu('/admin/sub-page', menuData, false, true);
   expect(openMenuItems.length).toEqual(2);
 
   expect(openMenuItems[0].name).toEqual('管理页');
@@ -164,6 +164,16 @@ test('normal', () => {
 });
 
 test('three path', () => {
+  const openMenuItems = getMatchMenu('/admin/sub-page/list', menuData);
+  expect(openMenuItems.length).toEqual(3);
+
+  expect(openMenuItems[0].name).toEqual('管理页');
+  expect(openMenuItems[1].name).toEqual('二级管理页');
+  expect(openMenuItems[2].name).toEqual('三级管理页');
+  expect(openMenuItems).toMatchSnapshot();
+});
+
+test('exact', () => {
   const openMenuItems = getMatchMenu('/admin/sub-page/list', menuData);
   expect(openMenuItems.length).toEqual(3);
 
