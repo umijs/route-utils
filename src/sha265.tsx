@@ -251,13 +251,13 @@ function sha256_update(data: string, inputLen: number) {
 
   /* Transform as many times as possible */
   for (i = 0; i + 63 < inputLen; i += 64) {
-    for (var j = index; j < 64; j++) buffer[j] = data.charCodeAt(curpos++);
+    for (let j = index; j < 64; j++) buffer[j] = data.charCodeAt(curpos++);
     sha256_transform();
     index = 0;
   }
 
   /* Buffer remaining input */
-  for (var j = 0; j < remainder; j++) buffer[j] = data.charCodeAt(curpos++);
+  for (let j = 0; j < remainder; j++) buffer[j] = data.charCodeAt(curpos++);
 }
 
 /* Finish the computation by operations such as padding */
@@ -265,11 +265,11 @@ function sha256_final() {
   let index = (count[0] >> 3) & 0x3f;
   buffer[index++] = 0x80;
   if (index <= 56) {
-    for (var i = index; i < 56; i++) buffer[i] = 0;
+    for (let i = index; i < 56; i++) buffer[i] = 0;
   } else {
-    for (var i = index; i < 64; i++) buffer[i] = 0;
+    for (let i = index; i < 64; i++) buffer[i] = 0;
     sha256_transform();
-    for (var i = 0; i < 56; i++) buffer[i] = 0;
+    for (let i = 0; i < 56; i++) buffer[i] = 0;
   }
   buffer[56] = (count[1] >>> 24) & 0xff;
   buffer[57] = (count[1] >>> 16) & 0xff;
