@@ -17,7 +17,7 @@ yarn add @umijs/route-utils
 import {
   transformRoute,
   getMatchMenu,
-} from ' @umijs/route-utils';
+} from '@umijs/route-utils';
 
 const routes = [
   {

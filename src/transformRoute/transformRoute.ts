@@ -1,7 +1,7 @@
-import isEqual from 'lodash.isequal';
+import isEqual from 'fast-deep-equal/es6/index';
 import memoizeOne from 'memoize-one';
-import hash from 'hash.js';
 import { pathToRegexp } from '@qixian.cs/path-to-regexp';
+import sha265 from '../sha265';
 
 import { MenuDataItem, Route, MessageDescriptor } from '../types';
 
@@ -19,7 +19,7 @@ export const getKeyByPath = (item: MenuDataItem) => {
   if (!path || path === '/') {
     // 如果还是没有，用对象的hash 生成一个
     try {
-      return `/${hash.sha256().update(JSON.stringify(item)).digest('hex')}`;
+      return `/${sha265(JSON.stringify(item))}`;
     } catch (error) {
       // dom some thing
     }
