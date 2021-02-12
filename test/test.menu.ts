@@ -18,6 +18,24 @@ export default [
     pro_layout_parentKeys: ['/'],
   },
   {
+    path: 'https://baidu.com/#test',
+    name: 'baidu',
+    icon: {
+      type: {},
+      key: null,
+      ref: null,
+      props: {},
+      _owner: null,
+      _store: {},
+    },
+    locale: '',
+    target: '_blank',
+    exact: true,
+    key: 'https://baidu.com/#test',
+    routes: null,
+    pro_layout_parentKeys: ['/'],
+  },
+  {
     path: '/flex',
     name: 'flex 布局测试',
     icon: {
