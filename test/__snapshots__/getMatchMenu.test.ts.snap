@@ -1,5 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`exact 1`] = `
+Array [
+  Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "children": Array [
+          Object {
+            "access": "canAdmin",
+            "children": undefined,
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "routes": null,
+            "unaccessible": false,
+          },
+        ],
+        "exact": true,
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "path": "/admin/sub-page",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+        ],
+        "routes": null,
+        "unaccessible": false,
+      },
+    ],
+    "key": "/admin",
+    "locale": "menu.admin",
+    "name": "管理页",
+    "path": "/admin",
+    "pro_layout_parentKeys": Array [],
+    "routes": null,
+  },
+  Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "children": undefined,
+        "exact": true,
+        "key": "/admin/sub-page/list",
+        "locale": "menu.admin.sub-page.sub-page-list",
+        "name": "三级管理页",
+        "path": "/admin/sub-page/list",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+          "/admin/sub-page",
+        ],
+        "routes": null,
+        "unaccessible": false,
+      },
+    ],
+    "exact": true,
+    "key": "/admin/sub-page",
+    "locale": "menu.admin.sub-page",
+    "name": "二级管理页",
+    "path": "/admin/sub-page",
+    "pro_layout_parentKeys": Array [
+      "/admin",
+    ],
+    "routes": null,
+    "unaccessible": false,
+  },
+  Object {
+    "access": "canAdmin",
+    "children": undefined,
+    "exact": true,
+    "key": "/admin/sub-page/list",
+    "locale": "menu.admin.sub-page.sub-page-list",
+    "name": "三级管理页",
+    "path": "/admin/sub-page/list",
+    "pro_layout_parentKeys": Array [
+      "/admin",
+      "/admin/sub-page",
+    ],
+    "routes": null,
+    "unaccessible": false,
+  },
+]
+`;
+
 exports[`normal 1`] = `
 Array [
   Object {

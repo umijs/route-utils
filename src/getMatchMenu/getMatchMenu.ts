@@ -1,5 +1,5 @@
 import { pathToRegexp } from '@qixian.cs/path-to-regexp';
-import { MenuDataItem } from '../types';
+import type { MenuDataItem } from '../types';
 import getFlatMenu from '../getFlatMenus/getFlatMenus';
 import {
   isUrl,
@@ -9,6 +9,7 @@ import {
 export const getMenuMatches = (
   flatMenuKeys: string[] = [],
   path: string,
+  exact?: boolean,
 ): string[] | undefined =>
   flatMenuKeys
     .filter((item) => {
@@ -18,6 +19,12 @@ export const getMenuMatches = (
       if (item !== '/' && item !== '/*' && item && !isUrl(item)) {
         const pathKey = stripQueryStringAndHashFromPath(item);
         try {
+          // exact
+          if (exact) {
+            if (pathToRegexp(`${pathKey}`).test(path)) {
+              return true;
+            }
+          }
           // /a
           if (pathToRegexp(`${pathKey}`, []).test(path)) {
             return true;
@@ -56,10 +63,11 @@ export const getMatchMenu = (
    * 要不要展示全部的 key
    */
   fullKeys?: boolean,
+  exact?: boolean,
 ): MenuDataItem[] => {
   const flatMenus = getFlatMenu(menuData);
   const flatMenuKeys = Object.keys(flatMenus);
-  let menuPathKeys = getMenuMatches(flatMenuKeys, pathname || '/');
+  let menuPathKeys = getMenuMatches(flatMenuKeys, pathname || '/', exact);
   if (!menuPathKeys || menuPathKeys.length < 1) {
     return [];
   }

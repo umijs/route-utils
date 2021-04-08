@@ -173,6 +173,16 @@ test('three path', () => {
   expect(openMenuItems).toMatchSnapshot();
 });
 
+test('exact', () => {
+  const openMenuItems = getMatchMenu('/admin/sub-page/list', menuData, false, true);
+  expect(openMenuItems.length).toEqual(3);
+
+  expect(openMenuItems[0].name).toEqual('管理页');
+  expect(openMenuItems[1].name).toEqual('二级管理页');
+  expect(openMenuItems[2].name).toEqual('三级管理页');
+  expect(openMenuItems).toMatchSnapshot();
+});
+
 test('var path', () => {
   const openMenuItems = getMatchMenu('/list/1234', menuData);
   expect(openMenuItems.length).toEqual(1);
