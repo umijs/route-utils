@@ -14,7 +14,7 @@ export default [
     target: '_blank',
     exact: true,
     key: 'https://github.com/ant-design/ant-design-pro-layout/issues',
-    routes: null,
+
     pro_layout_parentKeys: ['/'],
   },
   {
@@ -32,7 +32,7 @@ export default [
     target: '_blank',
     exact: true,
     key: 'https://baidu.com/#test',
-    routes: null,
+
     pro_layout_parentKeys: ['/'],
   },
   {
@@ -49,7 +49,7 @@ export default [
     exact: true,
     locale: 'menu.flex 布局测试',
     key: '/flex',
-    routes: null,
+
     pro_layout_parentKeys: ['/'],
   },
   {
@@ -66,7 +66,7 @@ export default [
     exact: true,
     locale: 'menu.分析页',
     key: '/dashboardanalysis',
-    routes: null,
+
     pro_layout_parentKeys: ['/'],
   },
   {
@@ -83,7 +83,7 @@ export default [
     exact: true,
     locale: 'menu.个人设置',
     key: '/accountsettings',
-    routes: null,
+
     pro_layout_parentKeys: ['/'],
   },
   {
@@ -100,18 +100,17 @@ export default [
     exact: true,
     locale: 'menu.高级表单',
     key: '/formadvancedform',
-    routes: null,
+
     pro_layout_parentKeys: ['/'],
   },
   {
     path: '/single',
     name: 'Single',
-    routes: null,
-    children: [
+    routes: [
       {
         path: '/single/welcome',
         name: 'two',
-        routes: null,
+
         locale: 'menu.Single.two',
         key: '/single/welcome',
         icon: {
@@ -128,7 +127,7 @@ export default [
       {
         path: '/single/welcome2',
         name: 'two2',
-        routes: null,
+
         locale: 'menu.Single.two2',
         key: '/single/welcome2',
         icon: {
@@ -158,8 +157,7 @@ export default [
       _owner: null,
       _store: {},
     },
-    routes: null,
-    children: [
+    routes: [
       {
         path: '/welcome',
         name: 'one',
@@ -171,10 +169,9 @@ export default [
           _owner: null,
           _store: {},
         },
-        routes: null,
         locale: 'menu.welcome.one',
         key: '/welcome',
-        children: [
+        routes: [
           {
             path: '/welcome/repertoryFw',
             name: 'two',
@@ -186,7 +183,7 @@ export default [
               _owner: null,
               _store: {},
             },
-            routes: null,
+
             locale: 'menu.welcome.one.two',
             key: '/welcome/repertoryFw',
             exact: true,
@@ -203,7 +200,7 @@ export default [
               _owner: null,
               _store: {},
             },
-            routes: null,
+
             locale: 'menu.welcome.one.two2',
             key: '/welcome/repertory',
             exact: true,

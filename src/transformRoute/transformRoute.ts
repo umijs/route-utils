@@ -83,7 +83,7 @@ const bigfishCompatibleConversions = (
   route: MenuDataItem,
   props: FormatterProps,
 ) => {
-  const { menu = {}, indexRoute, path = '', children } = route;
+  const { menu = {}, indexRoute, path = '', routers } = route;
   const {
     name = route.name,
     icon = route.icon,
@@ -101,8 +101,8 @@ const bigfishCompatibleConversions = (
             menu,
             ...indexRoute,
           },
-        ].concat(children || [])
-      : children;
+        ].concat(routers || [])
+      : routers;
 
   // 拼接返回的 menu 数据
   const result = {
@@ -118,12 +118,12 @@ const bigfishCompatibleConversions = (
   if (childrenRoutes && childrenRoutes.length) {
     /** 在菜单中隐藏子项 */
     if (hideChildren) {
-      delete result.children;
+      delete result.routers;
       return result;
     }
 
     // 需要重新进行一次
-    const routers = formatter(
+    const finRouters = formatter(
       {
         ...props,
         data: childrenRoutes,
@@ -133,10 +133,10 @@ const bigfishCompatibleConversions = (
 
     /** 在菜单中只隐藏此项，子项往上提，仍旧展示 */
     if (flatMenu) {
-      return routers;
+      return finRouters;
     }
 
-    result.children = routers;
+    result.routers = finRouters;
   }
 
   return result;
@@ -158,7 +158,7 @@ function formatter(
   return data
     .filter((item) => {
       if (!item) return false;
-      if (item.routes || item.children) return true;
+      if (item.routes) return true;
       if (item.path) return true;
       if (item.layout) return true;
       // 重定向
@@ -197,7 +197,7 @@ function formatter(
       const {
         // eslint-disable-next-line @typescript-eslint/naming-convention
         pro_layout_parentKeys = [],
-        children,
+        routers,
         icon,
         flatMenu,
         indexRoute,
@@ -211,7 +211,7 @@ function formatter(
         path,
         locale,
         key: item.key || getKeyByPath({ ...item, path }),
-        routes: null,
+
         pro_layout_parentKeys: Array.from(
           new Set([
             ...(item.parentKeys || []),
@@ -229,23 +229,23 @@ function formatter(
       if (finallyItem.menu === undefined) {
         delete finallyItem.menu;
       }
-      if (item.routes || item.children) {
+      if (item.routes) {
         const formatterChildren = formatter(
           {
             ...props,
-            data: item.routes || item.children,
+            data: item.routes,
             parentName: locale || '',
           },
           finallyItem,
         );
         // Reduce memory usage
-        finallyItem.children =
+        finallyItem.routes =
           formatterChildren && formatterChildren.length > 0
             ? formatterChildren
             : undefined;
 
-        if (!finallyItem.children) {
-          delete finallyItem.children;
+        if (!finallyItem.routes) {
+          delete finallyItem.routes;
         }
       }
       return bigfishCompatibleConversions(finallyItem, props);
@@ -263,21 +263,21 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
     .filter(
       (item: MenuDataItem) =>
         item &&
-        (item.name || item.children) &&
+        (item.name || item.routes) &&
         !item.hideInMenu &&
         !item.redirect,
     )
     .map((item: MenuDataItem) => {
       if (
-        item.children &&
-        Array.isArray(item.children) &&
+        item.routes &&
+        Array.isArray(item.routes) &&
         !item.hideChildrenInMenu &&
-        item.children.some((child: MenuDataItem) => child && !!child.name)
+        item.routes.some((child: MenuDataItem) => child && !!child.name)
       ) {
-        const children = defaultFilterMenuData(item.children);
-        if (children.length) return { ...item, children };
+        const routes = defaultFilterMenuData(item.routes);
+        if (routes.length) return { ...item, routes };
       }
-      return { ...item, children: undefined };
+      return { ...item, routes: undefined };
     })
     .filter((item) => item);
 
@@ -317,8 +317,8 @@ const getBreadcrumbNameMap = (
   const routerMap = new RoutesMap<MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
     data.forEach((menuItem) => {
-      if (menuItem && menuItem.children) {
-        flattenMenuData(menuItem.children, menuItem);
+      if (menuItem && menuItem.routes) {
+        flattenMenuData(menuItem.routes, menuItem);
       }
       // Reduce memory usage
       const path = mergePath(menuItem.path, parent ? parent.path : '/');
@@ -337,17 +337,13 @@ const memoizeOneGetBreadcrumbNameMap = memoizeOne(
 const clearChildren = (menuData: MenuDataItem[] = []): MenuDataItem[] => {
   return menuData
     .map((item: MenuDataItem) => {
-      if (
-        item.children &&
-        Array.isArray(item.children) &&
-        item.children.length > 0
-      ) {
-        const children = clearChildren(item.children);
-        if (children.length) return { ...item, children };
+      if (item.routes && Array.isArray(item.routes) && item.routes.length > 0) {
+        const routes = clearChildren(item.routes);
+        if (routes.length) return { ...item, routes };
       }
 
       const finallyItem = { ...item };
-      delete finallyItem.children;
+      delete finallyItem.routes;
       return finallyItem;
     })
     .filter((item) => item);

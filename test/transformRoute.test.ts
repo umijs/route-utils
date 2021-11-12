@@ -68,7 +68,7 @@ const routes = [
     path: '/list',
     component: './ListTableList',
     routes: [],
-    children: [],
+    routes: [],
   },
   {
     path: '/',
@@ -133,7 +133,7 @@ test('do not start with "/"', () => {
       {
         name: '人员组织管理',
         path: 'admin/userMng/',
-        children: [
+        routes: [
           {
             name: '人员管理',
             path: '/admin/userMng/users',

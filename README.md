@@ -1,4 +1,5 @@
 ![](https://codecov.io/gh/umijs/route-utils/branch/master/graph/badge.svg) [![npm package](https://img.shields.io/npm/v/@umijs/route-utils.svg?style=flat-square?style=flat-square)](https://www.npmjs.com/package/@umijs/route-utils)
+
 # @umijs/route-utils
 
 ## Usage
@@ -14,10 +15,7 @@ yarn add @umijs/route-utils
 ## API
 
 ```tsx
-import {
-  transformRoute,
-  getMatchMenu,
-} from '@umijs/route-utils';
+import { transformRoute, getMatchMenu } from '@umijs/route-utils';
 
 const routes = [
   {
@@ -48,7 +46,7 @@ console.log(breadcrumb.get('/welcome').name); // welcome
 import { MenuDataItem } from '@umijs/route-utils';
 
 export interface MenuDataItem {
-  children?: MenuDataItem[];
+  routes?: MenuDataItem[];
   hideChildrenInMenu?: boolean;
   hideInMenu?: boolean;
   icon?: React.ReactNode;

@@ -4,13 +4,25 @@ exports[`exact 1`] = `
 Array [
   Object {
     "access": "canAdmin",
-    "children": Array [
+    "key": "/admin",
+    "locale": "menu.admin",
+    "name": "管理页",
+    "path": "/admin",
+    "pro_layout_parentKeys": Array [],
+    "routes": Array [
       Object {
         "access": "canAdmin",
-        "children": Array [
+        "exact": true,
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "path": "/admin/sub-page",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+        ],
+        "routes": Array [
           Object {
             "access": "canAdmin",
-            "children": undefined,
             "exact": true,
             "key": "/admin/sub-page/list",
             "locale": "menu.admin.sub-page.sub-page-list",
@@ -20,35 +32,35 @@ Array [
               "/admin",
               "/admin/sub-page",
             ],
-            "routes": null,
+            "routes": Array [
+              Object {
+                "exact": true,
+                "name": "sub-page-list",
+                "path": "/admin/sub-page/list",
+                "routes": undefined,
+                "unaccessible": false,
+              },
+            ],
             "unaccessible": false,
           },
         ],
-        "exact": true,
-        "key": "/admin/sub-page",
-        "locale": "menu.admin.sub-page",
-        "name": "二级管理页",
-        "path": "/admin/sub-page",
-        "pro_layout_parentKeys": Array [
-          "/admin",
-        ],
-        "routes": null,
         "unaccessible": false,
       },
     ],
-    "key": "/admin",
-    "locale": "menu.admin",
-    "name": "管理页",
-    "path": "/admin",
-    "pro_layout_parentKeys": Array [],
-    "routes": null,
   },
   Object {
     "access": "canAdmin",
-    "children": Array [
+    "exact": true,
+    "key": "/admin/sub-page",
+    "locale": "menu.admin.sub-page",
+    "name": "二级管理页",
+    "path": "/admin/sub-page",
+    "pro_layout_parentKeys": Array [
+      "/admin",
+    ],
+    "routes": Array [
       Object {
         "access": "canAdmin",
-        "children": undefined,
         "exact": true,
         "key": "/admin/sub-page/list",
         "locale": "menu.admin.sub-page.sub-page-list",
@@ -58,24 +70,22 @@ Array [
           "/admin",
           "/admin/sub-page",
         ],
-        "routes": null,
+        "routes": Array [
+          Object {
+            "exact": true,
+            "name": "sub-page-list",
+            "path": "/admin/sub-page/list",
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
         "unaccessible": false,
       },
     ],
-    "exact": true,
-    "key": "/admin/sub-page",
-    "locale": "menu.admin.sub-page",
-    "name": "二级管理页",
-    "path": "/admin/sub-page",
-    "pro_layout_parentKeys": Array [
-      "/admin",
-    ],
-    "routes": null,
     "unaccessible": false,
   },
   Object {
     "access": "canAdmin",
-    "children": undefined,
     "exact": true,
     "key": "/admin/sub-page/list",
     "locale": "menu.admin.sub-page.sub-page-list",
@@ -85,7 +95,15 @@ Array [
       "/admin",
       "/admin/sub-page",
     ],
-    "routes": null,
+    "routes": Array [
+      Object {
+        "exact": true,
+        "name": "sub-page-list",
+        "path": "/admin/sub-page/list",
+        "routes": undefined,
+        "unaccessible": false,
+      },
+    ],
     "unaccessible": false,
   },
 ]
@@ -95,13 +113,25 @@ exports[`normal 1`] = `
 Array [
   Object {
     "access": "canAdmin",
-    "children": Array [
+    "key": "/admin",
+    "locale": "menu.admin",
+    "name": "管理页",
+    "path": "/admin",
+    "pro_layout_parentKeys": Array [],
+    "routes": Array [
       Object {
         "access": "canAdmin",
-        "children": Array [
+        "exact": true,
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "path": "/admin/sub-page",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+        ],
+        "routes": Array [
           Object {
             "access": "canAdmin",
-            "children": undefined,
             "exact": true,
             "key": "/admin/sub-page/list",
             "locale": "menu.admin.sub-page.sub-page-list",
@@ -111,35 +141,35 @@ Array [
               "/admin",
               "/admin/sub-page",
             ],
-            "routes": null,
+            "routes": Array [
+              Object {
+                "exact": true,
+                "name": "sub-page-list",
+                "path": "/admin/sub-page/list",
+                "routes": undefined,
+                "unaccessible": false,
+              },
+            ],
             "unaccessible": false,
           },
         ],
-        "exact": true,
-        "key": "/admin/sub-page",
-        "locale": "menu.admin.sub-page",
-        "name": "二级管理页",
-        "path": "/admin/sub-page",
-        "pro_layout_parentKeys": Array [
-          "/admin",
-        ],
-        "routes": null,
         "unaccessible": false,
       },
     ],
-    "key": "/admin",
-    "locale": "menu.admin",
-    "name": "管理页",
-    "path": "/admin",
-    "pro_layout_parentKeys": Array [],
-    "routes": null,
   },
   Object {
     "access": "canAdmin",
-    "children": Array [
+    "exact": true,
+    "key": "/admin/sub-page",
+    "locale": "menu.admin.sub-page",
+    "name": "二级管理页",
+    "path": "/admin/sub-page",
+    "pro_layout_parentKeys": Array [
+      "/admin",
+    ],
+    "routes": Array [
       Object {
         "access": "canAdmin",
-        "children": undefined,
         "exact": true,
         "key": "/admin/sub-page/list",
         "locale": "menu.admin.sub-page.sub-page-list",
@@ -149,19 +179,18 @@ Array [
           "/admin",
           "/admin/sub-page",
         ],
-        "routes": null,
+        "routes": Array [
+          Object {
+            "exact": true,
+            "name": "sub-page-list",
+            "path": "/admin/sub-page/list",
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
         "unaccessible": false,
       },
     ],
-    "exact": true,
-    "key": "/admin/sub-page",
-    "locale": "menu.admin.sub-page",
-    "name": "二级管理页",
-    "path": "/admin/sub-page",
-    "pro_layout_parentKeys": Array [
-      "/admin",
-    ],
-    "routes": null,
     "unaccessible": false,
   },
 ]
@@ -182,7 +211,6 @@ Array [
       "/project/:projectId/strategy/data",
     ],
     "redirect": "/project/:projectId/strategy/data/dataset",
-    "routes": null,
   },
   Object {
     "component": Object {
@@ -198,7 +226,6 @@ Array [
     "pro_layout_parentKeys": Array [
       "/project/:projectId/strategy/data",
     ],
-    "routes": null,
   },
 ]
 `;
@@ -220,9 +247,40 @@ Array [
 exports[`test router 1`] = `
 Array [
   Object {
-    "children": Array [
+    "icon": Object {
+      "_owner": null,
+      "_store": Object {},
+      "key": null,
+      "props": Object {},
+      "ref": null,
+      "type": Object {},
+    },
+    "key": "welcome",
+    "locale": "menu.welcome",
+    "name": "welcome",
+    "path": "/",
+    "pro_layout_parentKeys": Array [
+      "/",
+    ],
+    "routes": Array [
       Object {
-        "children": Array [
+        "icon": Object {
+          "_owner": null,
+          "_store": Object {},
+          "key": null,
+          "props": Object {},
+          "ref": null,
+          "type": Object {},
+        },
+        "key": "/welcome",
+        "locale": "menu.welcome.one",
+        "name": "one",
+        "path": "/welcome",
+        "pro_layout_parentKeys": Array [
+          "/",
+          "welcome",
+        ],
+        "routes": Array [
           Object {
             "exact": true,
             "icon": Object {
@@ -242,7 +300,6 @@ Array [
               "welcome",
               "/welcome",
             ],
-            "routes": null,
           },
           Object {
             "exact": true,
@@ -263,9 +320,29 @@ Array [
               "welcome",
               "/welcome",
             ],
-            "routes": null,
           },
         ],
+      },
+    ],
+  },
+  Object {
+    "icon": Object {
+      "_owner": null,
+      "_store": Object {},
+      "key": null,
+      "props": Object {},
+      "ref": null,
+      "type": Object {},
+    },
+    "key": "welcome",
+    "locale": "menu.welcome",
+    "name": "welcome",
+    "path": "/",
+    "pro_layout_parentKeys": Array [
+      "/",
+    ],
+    "routes": Array [
+      Object {
         "icon": Object {
           "_owner": null,
           "_store": Object {},
@@ -282,30 +359,7 @@ Array [
           "/",
           "welcome",
         ],
-        "routes": null,
-      },
-    ],
-    "icon": Object {
-      "_owner": null,
-      "_store": Object {},
-      "key": null,
-      "props": Object {},
-      "ref": null,
-      "type": Object {},
-    },
-    "key": "welcome",
-    "locale": "menu.welcome",
-    "name": "welcome",
-    "path": "/",
-    "pro_layout_parentKeys": Array [
-      "/",
-    ],
-    "routes": null,
-  },
-  Object {
-    "children": Array [
-      Object {
-        "children": Array [
+        "routes": Array [
           Object {
             "exact": true,
             "icon": Object {
@@ -325,7 +379,6 @@ Array [
               "welcome",
               "/welcome",
             ],
-            "routes": null,
           },
           Object {
             "exact": true,
@@ -346,28 +399,12 @@ Array [
               "welcome",
               "/welcome",
             ],
-            "routes": null,
           },
         ],
-        "icon": Object {
-          "_owner": null,
-          "_store": Object {},
-          "key": null,
-          "props": Object {},
-          "ref": null,
-          "type": Object {},
-        },
-        "key": "/welcome",
-        "locale": "menu.welcome.one",
-        "name": "one",
-        "path": "/welcome",
-        "pro_layout_parentKeys": Array [
-          "/",
-          "welcome",
-        ],
-        "routes": null,
       },
     ],
+  },
+  Object {
     "icon": Object {
       "_owner": null,
       "_store": Object {},
@@ -376,17 +413,15 @@ Array [
       "ref": null,
       "type": Object {},
     },
-    "key": "welcome",
-    "locale": "menu.welcome",
-    "name": "welcome",
-    "path": "/",
+    "key": "/welcome",
+    "locale": "menu.welcome.one",
+    "name": "one",
+    "path": "/welcome",
     "pro_layout_parentKeys": Array [
       "/",
+      "welcome",
     ],
-    "routes": null,
-  },
-  Object {
-    "children": Array [
+    "routes": Array [
       Object {
         "exact": true,
         "icon": Object {
@@ -406,7 +441,6 @@ Array [
           "welcome",
           "/welcome",
         ],
-        "routes": null,
       },
       Object {
         "exact": true,
@@ -427,26 +461,8 @@ Array [
           "welcome",
           "/welcome",
         ],
-        "routes": null,
       },
     ],
-    "icon": Object {
-      "_owner": null,
-      "_store": Object {},
-      "key": null,
-      "props": Object {},
-      "ref": null,
-      "type": Object {},
-    },
-    "key": "/welcome",
-    "locale": "menu.welcome.one",
-    "name": "one",
-    "path": "/welcome",
-    "pro_layout_parentKeys": Array [
-      "/",
-      "welcome",
-    ],
-    "routes": null,
   },
   Object {
     "exact": true,
@@ -467,7 +483,6 @@ Array [
       "welcome",
       "/welcome",
     ],
-    "routes": null,
   },
 ]
 `;
@@ -475,7 +490,12 @@ Array [
 exports[`test yfd layout config 1`] = `
 Array [
   Object {
-    "children": Array [
+    "key": "/yfd/bkmng/authority",
+    "locale": "menu.我的权限",
+    "name": "我的权限",
+    "path": "/bkmng/authority",
+    "pro_layout_parentKeys": Array [],
+    "routes": Array [
       Object {
         "exact": true,
         "key": "/yfd/bkmng/authority/my",
@@ -485,7 +505,6 @@ Array [
         "pro_layout_parentKeys": Array [
           "/yfd/bkmng/authority",
         ],
-        "routes": null,
         "unaccessible": false,
       },
       Object {
@@ -497,16 +516,9 @@ Array [
         "pro_layout_parentKeys": Array [
           "/yfd/bkmng/authority",
         ],
-        "routes": null,
         "unaccessible": false,
       },
     ],
-    "key": "/yfd/bkmng/authority",
-    "locale": "menu.我的权限",
-    "name": "我的权限",
-    "path": "/bkmng/authority",
-    "pro_layout_parentKeys": Array [],
-    "routes": null,
     "unaccessible": false,
   },
   Object {
@@ -518,7 +530,6 @@ Array [
     "pro_layout_parentKeys": Array [
       "/yfd/bkmng/authority",
     ],
-    "routes": null,
     "unaccessible": false,
   },
 ]
@@ -527,7 +538,6 @@ Array [
 exports[`test_config_router2 1`] = `
 Array [
   Object {
-    "children": undefined,
     "component": "./keyMangement/ExperienceScenario",
     "key": "/experienceScenario",
     "locale": "menu.name",
@@ -537,7 +547,7 @@ Array [
     "path": "/experienceScenario",
     "permission": "KM_WORKFLOW",
     "pro_layout_parentKeys": Array [],
-    "routes": null,
+    "routes": undefined,
   },
 ]
 `;
@@ -545,11 +555,24 @@ Array [
 exports[`test_layout_router 1`] = `
 Array [
   Object {
-    "children": Array [
+    "icon": "smile",
+    "key": "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+    "locale": "menu.welcome",
+    "name": "welcome",
+    "path": "/",
+    "pro_layout_parentKeys": Array [],
+    "routes": Array [
       Object {
-        "children": Array [
+        "component": "./Welcome",
+        "key": "/welcome",
+        "locale": "menu.welcome.one",
+        "name": "one",
+        "path": "/welcome",
+        "pro_layout_parentKeys": Array [
+          "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+        ],
+        "routes": Array [
           Object {
-            "children": undefined,
             "component": "./Welcome",
             "icon": "smile",
             "key": "/welcome/repertoryFw",
@@ -560,10 +583,24 @@ Array [
               "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
               "/welcome",
             ],
-            "routes": null,
+            "routes": Array [
+              Object {
+                "component": "./Welcome",
+                "icon": "smile",
+                "name": "two",
+                "path": "repertoryFw",
+                "routes": undefined,
+              },
+              Object {
+                "component": "./Welcome",
+                "icon": "smile",
+                "name": "two2",
+                "path": "repertory",
+                "routes": undefined,
+              },
+            ],
           },
           Object {
-            "children": undefined,
             "component": "./Welcome",
             "icon": "smile",
             "key": "/welcome/repertory",
@@ -574,32 +611,38 @@ Array [
               "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
               "/welcome",
             ],
-            "routes": null,
+            "routes": Array [
+              Object {
+                "component": "./Welcome",
+                "icon": "smile",
+                "name": "two",
+                "path": "repertoryFw",
+                "routes": undefined,
+              },
+              Object {
+                "component": "./Welcome",
+                "icon": "smile",
+                "name": "two2",
+                "path": "repertory",
+                "routes": undefined,
+              },
+            ],
           },
         ],
-        "component": "./Welcome",
-        "key": "/welcome",
-        "locale": "menu.welcome.one",
-        "name": "one",
-        "path": "/welcome",
-        "pro_layout_parentKeys": Array [
-          "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-        ],
-        "routes": null,
       },
     ],
-    "icon": "smile",
-    "key": "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-    "locale": "menu.welcome",
-    "name": "welcome",
-    "path": "/",
-    "pro_layout_parentKeys": Array [],
-    "routes": null,
   },
   Object {
-    "children": Array [
+    "component": "./Welcome",
+    "key": "/welcome",
+    "locale": "menu.welcome.one",
+    "name": "one",
+    "path": "/welcome",
+    "pro_layout_parentKeys": Array [
+      "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+    ],
+    "routes": Array [
       Object {
-        "children": undefined,
         "component": "./Welcome",
         "icon": "smile",
         "key": "/welcome/repertoryFw",
@@ -610,10 +653,24 @@ Array [
           "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
           "/welcome",
         ],
-        "routes": null,
+        "routes": Array [
+          Object {
+            "component": "./Welcome",
+            "icon": "smile",
+            "name": "two",
+            "path": "repertoryFw",
+            "routes": undefined,
+          },
+          Object {
+            "component": "./Welcome",
+            "icon": "smile",
+            "name": "two2",
+            "path": "repertory",
+            "routes": undefined,
+          },
+        ],
       },
       Object {
-        "children": undefined,
         "component": "./Welcome",
         "icon": "smile",
         "key": "/welcome/repertory",
@@ -624,21 +681,26 @@ Array [
           "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
           "/welcome",
         ],
-        "routes": null,
+        "routes": Array [
+          Object {
+            "component": "./Welcome",
+            "icon": "smile",
+            "name": "two",
+            "path": "repertoryFw",
+            "routes": undefined,
+          },
+          Object {
+            "component": "./Welcome",
+            "icon": "smile",
+            "name": "two2",
+            "path": "repertory",
+            "routes": undefined,
+          },
+        ],
       },
     ],
-    "component": "./Welcome",
-    "key": "/welcome",
-    "locale": "menu.welcome.one",
-    "name": "one",
-    "path": "/welcome",
-    "pro_layout_parentKeys": Array [
-      "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-    ],
-    "routes": null,
   },
   Object {
-    "children": undefined,
     "component": "./Welcome",
     "icon": "smile",
     "key": "/welcome/repertoryFw",
@@ -649,7 +711,22 @@ Array [
       "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
       "/welcome",
     ],
-    "routes": null,
+    "routes": Array [
+      Object {
+        "component": "./Welcome",
+        "icon": "smile",
+        "name": "two",
+        "path": "repertoryFw",
+        "routes": undefined,
+      },
+      Object {
+        "component": "./Welcome",
+        "icon": "smile",
+        "name": "two2",
+        "path": "repertory",
+        "routes": undefined,
+      },
+    ],
   },
 ]
 `;
@@ -658,13 +735,25 @@ exports[`three path 1`] = `
 Array [
   Object {
     "access": "canAdmin",
-    "children": Array [
+    "key": "/admin",
+    "locale": "menu.admin",
+    "name": "管理页",
+    "path": "/admin",
+    "pro_layout_parentKeys": Array [],
+    "routes": Array [
       Object {
         "access": "canAdmin",
-        "children": Array [
+        "exact": true,
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "path": "/admin/sub-page",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+        ],
+        "routes": Array [
           Object {
             "access": "canAdmin",
-            "children": undefined,
             "exact": true,
             "key": "/admin/sub-page/list",
             "locale": "menu.admin.sub-page.sub-page-list",
@@ -674,35 +763,35 @@ Array [
               "/admin",
               "/admin/sub-page",
             ],
-            "routes": null,
+            "routes": Array [
+              Object {
+                "exact": true,
+                "name": "sub-page-list",
+                "path": "/admin/sub-page/list",
+                "routes": undefined,
+                "unaccessible": false,
+              },
+            ],
             "unaccessible": false,
           },
         ],
-        "exact": true,
-        "key": "/admin/sub-page",
-        "locale": "menu.admin.sub-page",
-        "name": "二级管理页",
-        "path": "/admin/sub-page",
-        "pro_layout_parentKeys": Array [
-          "/admin",
-        ],
-        "routes": null,
         "unaccessible": false,
       },
     ],
-    "key": "/admin",
-    "locale": "menu.admin",
-    "name": "管理页",
-    "path": "/admin",
-    "pro_layout_parentKeys": Array [],
-    "routes": null,
   },
   Object {
     "access": "canAdmin",
-    "children": Array [
+    "exact": true,
+    "key": "/admin/sub-page",
+    "locale": "menu.admin.sub-page",
+    "name": "二级管理页",
+    "path": "/admin/sub-page",
+    "pro_layout_parentKeys": Array [
+      "/admin",
+    ],
+    "routes": Array [
       Object {
         "access": "canAdmin",
-        "children": undefined,
         "exact": true,
         "key": "/admin/sub-page/list",
         "locale": "menu.admin.sub-page.sub-page-list",
@@ -712,24 +801,22 @@ Array [
           "/admin",
           "/admin/sub-page",
         ],
-        "routes": null,
+        "routes": Array [
+          Object {
+            "exact": true,
+            "name": "sub-page-list",
+            "path": "/admin/sub-page/list",
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
         "unaccessible": false,
       },
     ],
-    "exact": true,
-    "key": "/admin/sub-page",
-    "locale": "menu.admin.sub-page",
-    "name": "二级管理页",
-    "path": "/admin/sub-page",
-    "pro_layout_parentKeys": Array [
-      "/admin",
-    ],
-    "routes": null,
     "unaccessible": false,
   },
   Object {
     "access": "canAdmin",
-    "children": undefined,
     "exact": true,
     "key": "/admin/sub-page/list",
     "locale": "menu.admin.sub-page.sub-page-list",
@@ -739,7 +826,15 @@ Array [
       "/admin",
       "/admin/sub-page",
     ],
-    "routes": null,
+    "routes": Array [
+      Object {
+        "exact": true,
+        "name": "sub-page-list",
+        "path": "/admin/sub-page/list",
+        "routes": undefined,
+        "unaccessible": false,
+      },
+    ],
     "unaccessible": false,
   },
 ]
@@ -748,9 +843,13 @@ Array [
 exports[`user path test 1`] = `
 Array [
   Object {
-    "children": Array [
+    "key": "/admin/userMng/",
+    "locale": "menu.人员组织管理",
+    "name": "人员组织管理",
+    "path": "/admin/userMng/",
+    "pro_layout_parentKeys": Array [],
+    "routes": Array [
       Object {
-        "children": undefined,
         "key": "/admin/userMng/users",
         "locale": "menu.人员组织管理.人员管理",
         "name": "人员管理",
@@ -758,10 +857,20 @@ Array [
         "pro_layout_parentKeys": Array [
           "/admin/userMng/",
         ],
-        "routes": null,
+        "routes": Array [
+          Object {
+            "name": "人员管理",
+            "path": "/admin/userMng/users",
+            "routes": undefined,
+          },
+          Object {
+            "name": "单位管理",
+            "path": "/admin/userMng/companies",
+            "routes": undefined,
+          },
+        ],
       },
       Object {
-        "children": undefined,
         "key": "/admin/userMng/companies",
         "locale": "menu.人员组织管理.单位管理",
         "name": "单位管理",
@@ -769,18 +878,22 @@ Array [
         "pro_layout_parentKeys": Array [
           "/admin/userMng/",
         ],
-        "routes": null,
+        "routes": Array [
+          Object {
+            "name": "人员管理",
+            "path": "/admin/userMng/users",
+            "routes": undefined,
+          },
+          Object {
+            "name": "单位管理",
+            "path": "/admin/userMng/companies",
+            "routes": undefined,
+          },
+        ],
       },
     ],
-    "key": "/admin/userMng/",
-    "locale": "menu.人员组织管理",
-    "name": "人员组织管理",
-    "path": "/admin/userMng/",
-    "pro_layout_parentKeys": Array [],
-    "routes": null,
   },
   Object {
-    "children": undefined,
     "key": "/admin/userMng/companies",
     "locale": "menu.人员组织管理.单位管理",
     "name": "单位管理",
@@ -788,7 +901,18 @@ Array [
     "pro_layout_parentKeys": Array [
       "/admin/userMng/",
     ],
-    "routes": null,
+    "routes": Array [
+      Object {
+        "name": "人员管理",
+        "path": "/admin/userMng/users",
+        "routes": undefined,
+      },
+      Object {
+        "name": "单位管理",
+        "path": "/admin/userMng/companies",
+        "routes": undefined,
+      },
+    ],
   },
 ]
 `;
@@ -796,14 +920,13 @@ Array [
 exports[`var path 1`] = `
 Array [
   Object {
-    "children": undefined,
     "exact": true,
     "key": "/list/:id",
     "locale": "menu.list.table.result",
     "name": "数据详情",
     "path": "/list/:id",
     "pro_layout_parentKeys": Array [],
-    "routes": null,
+    "routes": undefined,
     "unaccessible": false,
   },
 ]

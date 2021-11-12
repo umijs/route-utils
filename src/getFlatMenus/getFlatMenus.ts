@@ -24,8 +24,8 @@ export const getFlatMenus = (
     };
     menus[item.key || item.path || '/'] = { ...item };
 
-    if (item.children) {
-      menus = { ...menus, ...getFlatMenus(item.children) };
+    if (item.routes) {
+      menus = { ...menus, ...getFlatMenus(item.routes) };
     }
   });
   return menus;

@@ -174,7 +174,12 @@ test('three path', () => {
 });
 
 test('exact', () => {
-  const openMenuItems = getMatchMenu('/admin/sub-page/list', menuData, false, true);
+  const openMenuItems = getMatchMenu(
+    '/admin/sub-page/list',
+    menuData,
+    false,
+    true,
+  );
   expect(openMenuItems.length).toEqual(3);
 
   expect(openMenuItems[0].name).toEqual('管理页');
@@ -201,7 +206,7 @@ test('user path test', () => {
       {
         name: '人员组织管理',
         path: '/admin/userMng/',
-        children: [
+        routes: [
           { name: '人员管理', path: '/admin/userMng/users' },
           { name: '单位管理', path: '/admin/userMng/companies' },
         ],
@@ -285,14 +290,6 @@ const layoutConfig = [
         unaccessible: false,
       },
     ],
-    children: [
-      {
-        name: '生成Holo导入Query',
-        path: '/toolbox/genHoloImportQuery',
-        exact: true,
-        unaccessible: false,
-      },
-    ],
     unaccessible: false,
   },
   { path: '/tech-ui-preview/:category/:id', unaccessible: false },
@@ -329,18 +326,17 @@ test('test yfd layout config', () => {
       unaccessible: false,
       locale: false,
       key: '/710c8209d70454012a0cacef5e4c67ef9c6f40ed7b56311cd60545bd50437341',
-      routes: null,
+
       pro_layout_parentKeys: [],
     },
     {
       path: '/bkmng/authority',
       name: '我的权限',
-      routes: null,
-      children: [
+      routes: [
         {
           path: '/bkmng/authority/my',
           name: '权限列表',
-          routes: null,
+
           unaccessible: false,
           locale: 'menu.我的权限.权限列表',
           key: '/yfd/bkmng/authority/my',
@@ -350,7 +346,7 @@ test('test yfd layout config', () => {
         {
           path: '/bkmng/authority/apply',
           name: '申请权限',
-          routes: null,
+
           unaccessible: false,
           locale: 'menu.我的权限.申请权限',
           key: '/yfd/bkmng/authority/apply',
@@ -370,7 +366,7 @@ test('test yfd layout config', () => {
       unaccessible: false,
       locale: false,
       key: '/bkmng',
-      routes: null,
+
       pro_layout_parentKeys: [],
     },
   ]);
@@ -387,7 +383,7 @@ const morseMenu: any[] = [
     exact: true,
     locale: false,
     key: '/project/:projectId/strategy',
-    routes: null,
+
     pro_layout_parentKeys: [],
   },
   {
@@ -398,7 +394,7 @@ const morseMenu: any[] = [
     exact: true,
     locale: 'menu.数据准备',
     key: '/project/:projectId/strategy/virtualDataSet/new',
-    routes: null,
+
     pro_layout_parentKeys: [],
   },
   {
@@ -409,7 +405,7 @@ const morseMenu: any[] = [
     exact: true,
     locale: 'menu.实验数据',
     key: '/project/:projectId/strategy/virtualFuse/sampleset',
-    routes: null,
+
     pro_layout_parentKeys: [],
   },
   {
@@ -421,7 +417,7 @@ const morseMenu: any[] = [
     exact: true,
     locale: 'menu.实验数据',
     key: '/project/:projectId/strategy/sampleset/:samplesetId',
-    routes: null,
+
     pro_layout_parentKeys: [],
   },
   {
@@ -433,17 +429,17 @@ const morseMenu: any[] = [
     exact: true,
     locale: 'menu.实验数据',
     key: '/project/:projectId/strategy/sampleset/:samplesetId/filter',
-    routes: null,
+
     pro_layout_parentKeys: [],
   },
   {
     path: '/project/:projectId/strategy/data',
     name: '实验区',
-    routes: null,
-    children: [
+
+    routes: [
       {
         path: '/project/:projectId/strategy/data',
-        routes: null,
+
         locale: false,
         key: '/project/:projectId/strategy/data',
         redirect: '/project/:projectId/strategy/data/dataset',
@@ -453,7 +449,7 @@ const morseMenu: any[] = [
       {
         path: '/project/:projectId/strategy/data/dataset',
         name: '数据准备',
-        routes: null,
+
         locale: 'menu.实验区.数据准备',
         key: '/project/:projectId/strategy/data/dataset',
         hasLayout: true,
@@ -465,7 +461,7 @@ const morseMenu: any[] = [
       {
         path: '/project/:projectId/strategy/data/virtualDataSet/:sampleId',
         name: '数据准备详情',
-        routes: null,
+
         locale: 'menu.实验区.数据准备详情',
         key: '/project/:projectId/strategy/data/virtualDataSet/:sampleId',
         component: { displayName: 'LoadableComponent' },
@@ -477,7 +473,7 @@ const morseMenu: any[] = [
       {
         path: '/project/:projectId/strategy/data/sampleset',
         name: '实验数据集',
-        routes: null,
+
         locale: 'menu.实验区.实验数据集',
         key: '/project/:projectId/strategy/data/sampleset',
         hasLayout: true,
@@ -495,23 +491,23 @@ const morseMenu: any[] = [
     path: '/project/:projectId/strategy',
     name: '生产配置区',
     hideBreadcrumb: true,
-    routes: null,
-    children: [
+
+    routes: [
       {
         path: '/project/:projectId/strategy/dataset',
         name: '策略数据源',
         hideBreadcrumb: true,
-        routes: null,
+
         locale: 'menu.生产配置区.策略数据源',
         key: '/project/:projectId/strategy/dataset',
         hasLayout: true,
         isListPage: true,
         hideChildrenInMenu: true,
-        children: [
+        routes: [
           {
             path: '/project/:projectId/strategy/dataset',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: false,
             key: '/project/:projectId/strategy/dataset',
             hasLayout: true,
@@ -528,7 +524,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/dataset/list',
             name: '策略数据源',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.策略数据源.策略数据源',
             key: '/project/:projectId/strategy/dataset/list',
             hasLayout: true,
@@ -545,7 +541,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/dataset/:sampleId',
             name: '策略数据源详情',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.策略数据源.策略数据源详情',
             key: '/project/:projectId/strategy/dataset/:sampleId',
             hasLayout: true,
@@ -566,17 +562,17 @@ const morseMenu: any[] = [
         path: '/project/:projectId/strategy/vars',
         name: '变量中心',
         hideBreadcrumb: true,
-        routes: null,
+
         locale: 'menu.生产配置区.变量中心',
         key: '/project/:projectId/strategy/vars',
         hasLayout: true,
         isListPage: true,
         hideChildrenInMenu: true,
-        children: [
+        routes: [
           {
             path: '/project/:projectId/strategy/vars',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: false,
             key: '/project/:projectId/strategy/vars',
             hasLayout: true,
@@ -593,7 +589,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/vars/list',
             name: '变量中心',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.变量中心.变量中心',
             key: '/project/:projectId/strategy/vars/list',
             hasLayout: true,
@@ -610,7 +606,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/vars/:id',
             name: '变量中心详情',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.变量中心.变量中心详情',
             key: '/project/:projectId/strategy/vars/:id',
             hasLayout: true,
@@ -631,17 +627,17 @@ const morseMenu: any[] = [
         path: '/project/:projectId/strategy/manger',
         name: '策略管理',
         hideBreadcrumb: true,
-        routes: null,
+
         locale: 'menu.生产配置区.策略管理',
         key: '/project/:projectId/strategy/manger',
         hasLayout: true,
         isListPage: true,
         hideChildrenInMenu: true,
-        children: [
+        routes: [
           {
             path: '/project/:projectId/strategy/manger',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: false,
             key: '/project/:projectId/strategy/manger',
             hasLayout: true,
@@ -658,7 +654,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/manger/list',
             name: '策略管理',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.策略管理.策略管理',
             key: '/project/:projectId/strategy/manger/list',
             hasLayout: true,
@@ -675,7 +671,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/manger/new',
             name: '新建策略管理',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.策略管理.新建策略管理',
             key: '/project/:projectId/strategy/manger/new',
             hasLayout: true,
@@ -693,7 +689,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/manger/edit/:id/:version',
             name: '修改策略管理',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.策略管理.修改策略管理',
             key: '/project/:projectId/strategy/manger/edit/:id/:version',
             hasLayout: true,
@@ -710,7 +706,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/manger/:id/:version',
             name: '策略管理详情',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.策略管理.策略管理详情',
             key: '/project/:projectId/strategy/manger/:id/:version',
             hasLayout: true,
@@ -727,7 +723,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/manger/:id',
             name: '修改策略管理',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.策略管理.修改策略管理',
             key: '/project/:projectId/strategy/manger/:id',
             hasLayout: true,
@@ -747,17 +743,17 @@ const morseMenu: any[] = [
         path: '/project/:projectId/strategy/rule',
         name: '规则集管理',
         hideBreadcrumb: true,
-        routes: null,
+
         locale: 'menu.生产配置区.规则集管理',
         key: '/project/:projectId/strategy/rule',
         hasLayout: true,
         isListPage: true,
         hideChildrenInMenu: true,
-        children: [
+        routes: [
           {
             path: '/project/:projectId/strategy/rule',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: false,
             key: '/project/:projectId/strategy/rule',
             hasLayout: true,
@@ -774,7 +770,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/rule/list',
             name: '规则集管理',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.规则集管理.规则集管理',
             key: '/project/:projectId/strategy/rule/list',
             hasLayout: true,
@@ -791,7 +787,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/rule/new',
             name: '新建规则集',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.规则集管理.新建规则集',
             key: '/project/:projectId/strategy/rule/new',
             hasLayout: true,
@@ -809,7 +805,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/rule/edit/:id',
             name: '编辑规则集',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.规则集管理.编辑规则集',
             key: '/project/:projectId/strategy/rule/edit/:id',
             hasLayout: true,
@@ -827,7 +823,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/rule/:id',
             name: '规则集管理详情',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.规则集管理.规则集管理详情',
             key: '/project/:projectId/strategy/rule/:id',
             hasLayout: true,
@@ -846,17 +842,17 @@ const morseMenu: any[] = [
         path: '/project/:projectId/strategy/simulation',
         name: '策略仿真',
         hideBreadcrumb: true,
-        routes: null,
+
         locale: 'menu.生产配置区.策略仿真',
         key: '/project/:projectId/strategy/simulation',
         hasLayout: true,
         isListPage: true,
         hideChildrenInMenu: true,
-        children: [
+        routes: [
           {
             path: '/project/:projectId/strategy/simulation',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: false,
             key: '/project/:projectId/strategy/simulation',
             hasLayout: true,
@@ -872,7 +868,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/simulation/list',
             name: '策略仿真',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.策略仿真.策略仿真',
             key: '/project/:projectId/strategy/simulation/list',
             hasLayout: true,
@@ -888,7 +884,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/simulation/new',
             name: '新建策略仿真',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.策略仿真.新建策略仿真',
             key: '/project/:projectId/strategy/simulation/new',
             hasLayout: true,
@@ -905,7 +901,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/simulation/edit/:id',
             name: '编辑策略仿真',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.策略仿真.编辑策略仿真',
             key: '/project/:projectId/strategy/simulation/edit/:id',
             hasLayout: true,
@@ -922,7 +918,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/simulation/:id',
             name: '策略仿真详情',
             hideBreadcrumb: true,
-            routes: null,
+
             locale: 'menu.生产配置区.策略仿真.策略仿真详情',
             key: '/project/:projectId/strategy/simulation/:id',
             hasLayout: true,
@@ -937,7 +933,7 @@ const morseMenu: any[] = [
             path: '/project/:projectId/strategy/simulation/report/:id',
             name: '数据详情',
             hideBreadcrumb: true,
-            routes: null,
+
             key: '/project/:projectId/strategy/simulation/report/:id',
             hasLayout: true,
             isListPage: true,
