@@ -199,6 +199,7 @@ function formatter(
         // eslint-disable-next-line @typescript-eslint/naming-convention
         pro_layout_parentKeys = [],
         routes,
+        children,
         icon,
         flatMenu,
         indexRoute,
