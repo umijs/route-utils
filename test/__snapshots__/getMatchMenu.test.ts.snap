@@ -32,15 +32,7 @@ Array [
               "/admin",
               "/admin/sub-page",
             ],
-            "routes": Array [
-              Object {
-                "exact": true,
-                "name": "sub-page-list",
-                "path": "/admin/sub-page/list",
-                "routes": undefined,
-                "unaccessible": false,
-              },
-            ],
+            "routes": undefined,
             "unaccessible": false,
           },
         ],
@@ -70,15 +62,7 @@ Array [
           "/admin",
           "/admin/sub-page",
         ],
-        "routes": Array [
-          Object {
-            "exact": true,
-            "name": "sub-page-list",
-            "path": "/admin/sub-page/list",
-            "routes": undefined,
-            "unaccessible": false,
-          },
-        ],
+        "routes": undefined,
         "unaccessible": false,
       },
     ],
@@ -95,15 +79,7 @@ Array [
       "/admin",
       "/admin/sub-page",
     ],
-    "routes": Array [
-      Object {
-        "exact": true,
-        "name": "sub-page-list",
-        "path": "/admin/sub-page/list",
-        "routes": undefined,
-        "unaccessible": false,
-      },
-    ],
+    "routes": undefined,
     "unaccessible": false,
   },
 ]
@@ -141,15 +117,7 @@ Array [
               "/admin",
               "/admin/sub-page",
             ],
-            "routes": Array [
-              Object {
-                "exact": true,
-                "name": "sub-page-list",
-                "path": "/admin/sub-page/list",
-                "routes": undefined,
-                "unaccessible": false,
-              },
-            ],
+            "routes": undefined,
             "unaccessible": false,
           },
         ],
@@ -179,15 +147,7 @@ Array [
           "/admin",
           "/admin/sub-page",
         ],
-        "routes": Array [
-          Object {
-            "exact": true,
-            "name": "sub-page-list",
-            "path": "/admin/sub-page/list",
-            "routes": undefined,
-            "unaccessible": false,
-          },
-        ],
+        "routes": undefined,
         "unaccessible": false,
       },
     ],
@@ -583,22 +543,7 @@ Array [
               "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
               "/welcome",
             ],
-            "routes": Array [
-              Object {
-                "component": "./Welcome",
-                "icon": "smile",
-                "name": "two",
-                "path": "repertoryFw",
-                "routes": undefined,
-              },
-              Object {
-                "component": "./Welcome",
-                "icon": "smile",
-                "name": "two2",
-                "path": "repertory",
-                "routes": undefined,
-              },
-            ],
+            "routes": undefined,
           },
           Object {
             "component": "./Welcome",
@@ -611,22 +556,7 @@ Array [
               "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
               "/welcome",
             ],
-            "routes": Array [
-              Object {
-                "component": "./Welcome",
-                "icon": "smile",
-                "name": "two",
-                "path": "repertoryFw",
-                "routes": undefined,
-              },
-              Object {
-                "component": "./Welcome",
-                "icon": "smile",
-                "name": "two2",
-                "path": "repertory",
-                "routes": undefined,
-              },
-            ],
+            "routes": undefined,
           },
         ],
       },
@@ -653,22 +583,7 @@ Array [
           "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
           "/welcome",
         ],
-        "routes": Array [
-          Object {
-            "component": "./Welcome",
-            "icon": "smile",
-            "name": "two",
-            "path": "repertoryFw",
-            "routes": undefined,
-          },
-          Object {
-            "component": "./Welcome",
-            "icon": "smile",
-            "name": "two2",
-            "path": "repertory",
-            "routes": undefined,
-          },
-        ],
+        "routes": undefined,
       },
       Object {
         "component": "./Welcome",
@@ -681,22 +596,7 @@ Array [
           "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
           "/welcome",
         ],
-        "routes": Array [
-          Object {
-            "component": "./Welcome",
-            "icon": "smile",
-            "name": "two",
-            "path": "repertoryFw",
-            "routes": undefined,
-          },
-          Object {
-            "component": "./Welcome",
-            "icon": "smile",
-            "name": "two2",
-            "path": "repertory",
-            "routes": undefined,
-          },
-        ],
+        "routes": undefined,
       },
     ],
   },
@@ -711,22 +611,7 @@ Array [
       "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
       "/welcome",
     ],
-    "routes": Array [
-      Object {
-        "component": "./Welcome",
-        "icon": "smile",
-        "name": "two",
-        "path": "repertoryFw",
-        "routes": undefined,
-      },
-      Object {
-        "component": "./Welcome",
-        "icon": "smile",
-        "name": "two2",
-        "path": "repertory",
-        "routes": undefined,
-      },
-    ],
+    "routes": undefined,
   },
 ]
 `;
@@ -763,15 +648,7 @@ Array [
               "/admin",
               "/admin/sub-page",
             ],
-            "routes": Array [
-              Object {
-                "exact": true,
-                "name": "sub-page-list",
-                "path": "/admin/sub-page/list",
-                "routes": undefined,
-                "unaccessible": false,
-              },
-            ],
+            "routes": undefined,
             "unaccessible": false,
           },
         ],
@@ -801,15 +678,7 @@ Array [
           "/admin",
           "/admin/sub-page",
         ],
-        "routes": Array [
-          Object {
-            "exact": true,
-            "name": "sub-page-list",
-            "path": "/admin/sub-page/list",
-            "routes": undefined,
-            "unaccessible": false,
-          },
-        ],
+        "routes": undefined,
         "unaccessible": false,
       },
     ],
@@ -826,15 +695,7 @@ Array [
       "/admin",
       "/admin/sub-page",
     ],
-    "routes": Array [
-      Object {
-        "exact": true,
-        "name": "sub-page-list",
-        "path": "/admin/sub-page/list",
-        "routes": undefined,
-        "unaccessible": false,
-      },
-    ],
+    "routes": undefined,
     "unaccessible": false,
   },
 ]
@@ -857,18 +718,7 @@ Array [
         "pro_layout_parentKeys": Array [
           "/admin/userMng/",
         ],
-        "routes": Array [
-          Object {
-            "name": "人员管理",
-            "path": "/admin/userMng/users",
-            "routes": undefined,
-          },
-          Object {
-            "name": "单位管理",
-            "path": "/admin/userMng/companies",
-            "routes": undefined,
-          },
-        ],
+        "routes": undefined,
       },
       Object {
         "key": "/admin/userMng/companies",
@@ -878,18 +728,7 @@ Array [
         "pro_layout_parentKeys": Array [
           "/admin/userMng/",
         ],
-        "routes": Array [
-          Object {
-            "name": "人员管理",
-            "path": "/admin/userMng/users",
-            "routes": undefined,
-          },
-          Object {
-            "name": "单位管理",
-            "path": "/admin/userMng/companies",
-            "routes": undefined,
-          },
-        ],
+        "routes": undefined,
       },
     ],
   },
@@ -901,18 +740,7 @@ Array [
     "pro_layout_parentKeys": Array [
       "/admin/userMng/",
     ],
-    "routes": Array [
-      Object {
-        "name": "人员管理",
-        "path": "/admin/userMng/users",
-        "routes": undefined,
-      },
-      Object {
-        "name": "单位管理",
-        "path": "/admin/userMng/companies",
-        "routes": undefined,
-      },
-    ],
+    "routes": undefined,
   },
 ]
 `;

@@ -20,15 +20,7 @@ Object {
         "pro_layout_parentKeys": Array [
           "/admin",
         ],
-        "routes": Array [
-          Object {
-            "exact": true,
-            "name": "sub-page",
-            "path": "/admin/sub-page",
-            "routes": undefined,
-            "unaccessible": false,
-          },
-        ],
+        "routes": undefined,
         "unaccessible": false,
       },
     ],
@@ -43,15 +35,7 @@ Object {
     "pro_layout_parentKeys": Array [
       "/admin",
     ],
-    "routes": Array [
-      Object {
-        "exact": true,
-        "name": "sub-page",
-        "path": "/admin/sub-page",
-        "routes": undefined,
-        "unaccessible": false,
-      },
-    ],
+    "routes": undefined,
     "unaccessible": false,
   },
   "/list": Object {
