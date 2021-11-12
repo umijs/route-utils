@@ -3,7 +3,7 @@ import { stripQueryStringAndHashFromPath } from '../transformRoute/transformRout
 
 /**
  * 获取打平的 menuData
- * 已 path 为 key
+ * 以 path 为 key
  * @param menuData
  */
 export const getFlatMenus = (
