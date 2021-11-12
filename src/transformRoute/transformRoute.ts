@@ -83,7 +83,7 @@ const bigfishCompatibleConversions = (
   route: MenuDataItem,
   props: FormatterProps,
 ) => {
-  const { menu = {}, indexRoute, path = '', routers } = route;
+  const { menu = {}, indexRoute, path = '', routes } = route;
   const {
     name = route.name,
     icon = route.icon,
@@ -101,8 +101,8 @@ const bigfishCompatibleConversions = (
             menu,
             ...indexRoute,
           },
-        ].concat(routers || [])
-      : routers;
+        ].concat(routes || [])
+      : routes;
 
   // 拼接返回的 menu 数据
   const result = {
@@ -118,12 +118,12 @@ const bigfishCompatibleConversions = (
   if (childrenRoutes && childrenRoutes.length) {
     /** 在菜单中隐藏子项 */
     if (hideChildren) {
-      delete result.routers;
+      delete result.routes;
       return result;
     }
 
     // 需要重新进行一次
-    const finRouters = formatter(
+    const finroutes = formatter(
       {
         ...props,
         data: childrenRoutes,
@@ -133,10 +133,10 @@ const bigfishCompatibleConversions = (
 
     /** 在菜单中只隐藏此项，子项往上提，仍旧展示 */
     if (flatMenu) {
-      return finRouters;
+      return finroutes;
     }
 
-    result.routers = finRouters;
+    result.routes = finroutes;
   }
 
   return result;
@@ -163,6 +163,7 @@ function formatter(
       if (item.layout) return true;
       // 重定向
       if (item.redirect) return false;
+      if (item.unaccessible) return false;
       return false;
     })
     .filter((item) => {
@@ -197,7 +198,7 @@ function formatter(
       const {
         // eslint-disable-next-line @typescript-eslint/naming-convention
         pro_layout_parentKeys = [],
-        routers,
+        routes,
         icon,
         flatMenu,
         indexRoute,
@@ -268,14 +269,19 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
         !item.redirect,
     )
     .map((item: MenuDataItem) => {
+      const newItem = { ...item };
+      // 兼容一下使用了 children 的旧版，有空删除一下
+      if (newItem.children) {
+        newItem.routes = item.children;
+      }
       if (
-        item.routes &&
-        Array.isArray(item.routes) &&
-        !item.hideChildrenInMenu &&
-        item.routes.some((child: MenuDataItem) => child && !!child.name)
+        newItem.routes &&
+        Array.isArray(newItem.routes) &&
+        !newItem.hideChildrenInMenu &&
+        newItem.routes.some((child: MenuDataItem) => child && !!child.name)
       ) {
-        const routes = defaultFilterMenuData(item.routes);
-        if (routes.length) return { ...item, routes };
+        const routes = defaultFilterMenuData(newItem.routes);
+        if (routes.length) return { ...newItem, routes };
       }
       return { ...item, routes: undefined };
     })

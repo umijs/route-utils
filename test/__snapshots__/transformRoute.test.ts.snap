@@ -50,7 +50,7 @@ Array [
     "name": "welcome",
     "path": "/welcome",
     "pro_layout_parentKeys": Array [],
-    "routers": Array [
+    "routes": Array [
       Object {
         "component": "./Welcome",
         "key": "/welcome",
@@ -224,7 +224,7 @@ Map {
     "name": "welcome",
     "path": "/welcome",
     "pro_layout_parentKeys": Array [],
-    "routers": Array [
+    "routes": Array [
       Object {
         "component": "./Welcome",
         "key": "/welcome",
@@ -11481,7 +11481,7 @@ Array [
     "name": "欢迎",
     "path": "/welcome",
     "pro_layout_parentKeys": Array [],
-    "routers": Array [
+    "routes": Array [
       Object {
         "component": "./Welcome",
         "key": "/welcome",
@@ -11622,7 +11622,7 @@ Map {
     "name": "欢迎",
     "path": "/welcome",
     "pro_layout_parentKeys": Array [],
-    "routers": Array [
+    "routes": Array [
       Object {
         "component": "./Welcome",
         "key": "/welcome",
@@ -11818,7 +11818,7 @@ Array [
     "name": "欢迎",
     "path": "/welcome",
     "pro_layout_parentKeys": Array [],
-    "routers": Array [
+    "routes": Array [
       Object {
         "component": "./Welcome",
         "key": "/welcome",
@@ -11992,7 +11992,7 @@ Map {
     "name": "欢迎",
     "path": "/welcome",
     "pro_layout_parentKeys": Array [],
-    "routers": Array [
+    "routes": Array [
       Object {
         "component": "./Welcome",
         "key": "/welcome",
