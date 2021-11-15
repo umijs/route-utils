@@ -11,7 +11,7 @@ const routes = [
       hideInMenu: false,
       hideChildrenInMenu: false,
     },
-    routes: [
+    children: [
       {
         name: 'login',
         path: '/user/login',
@@ -67,7 +67,6 @@ const routes = [
     icon: 'table',
     path: '/list',
     component: './ListTableList',
-    routes: [],
     routes: [],
   },
   {

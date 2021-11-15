@@ -188,6 +188,8 @@ function formatter(
       if (item.children && !item.routes) {
         // eslint-disable-next-line no-param-reassign
         item.routes = item.children;
+        // eslint-disable-next-line no-param-reassign
+        delete item.children;
       }
 
       const path = mergePath(item.path, parent ? parent.path : '/');
@@ -277,7 +279,7 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
     .map((item: MenuDataItem) => {
       const newItem = { ...item };
       // 兼容一下使用了 children 的旧版，有空删除一下
-      if (newItem.children) {
+      if (newItem.children && !newItem.routes) {
         newItem.routes = item.children;
       }
       if (
