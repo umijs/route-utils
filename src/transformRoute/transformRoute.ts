@@ -185,6 +185,11 @@ function formatter(
       return true;
     })
     .map((item = { path: '/' }) => {
+      if (item.children && !item.routes) {
+        // eslint-disable-next-line no-param-reassign
+        item.routes = item.children;
+      }
+
       const path = mergePath(item.path, parent ? parent.path : '/');
       const { name } = item;
       const locale = getItemLocaleName(item, parentName || 'menu');
