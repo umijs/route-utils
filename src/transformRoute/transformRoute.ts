@@ -159,6 +159,7 @@ function formatter(
     .filter((item) => {
       if (!item) return false;
       if (item.routes) return true;
+      if (item.children) return true;
       if (item.path) return true;
       if (item.layout) return true;
       // 重定向
