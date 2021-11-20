@@ -190,7 +190,8 @@ function formatter(
         // eslint-disable-next-line no-param-reassign
         item.routes = item.children;
         // eslint-disable-next-line no-param-reassign
-        delete item.children;
+        // 支持react-router6的routeObject格式
+        // delete item.children;
       }
 
       const path = mergePath(item.path, parent ? parent.path : '/');
