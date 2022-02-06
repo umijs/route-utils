@@ -1,6 +1,6 @@
 {
   "name": "@umijs/route-utils",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Quickly process the routing of umi",
   "main": "lib/index.js",
   "module": "es/index.js",
