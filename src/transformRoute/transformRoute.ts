@@ -1,4 +1,4 @@
-import isEqual from 'fast-deep-equal/es6/index';
+import isEqual from 'fast-deep-equal/es6/react';
 import memoizeOne from 'memoize-one';
 import { pathToRegexp } from '@qixian.cs/path-to-regexp';
 import sha265 from '../sha265';
