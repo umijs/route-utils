@@ -12,7 +12,7 @@ const routes = [
     path: '/admin',
     name: 'admin',
     access: 'canAdmin',
-    routes: [
+    children: [
       {
         path: '/admin/sub-page',
         name: 'sub-page',

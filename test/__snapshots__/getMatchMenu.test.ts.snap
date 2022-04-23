@@ -4,6 +4,52 @@ exports[`exact 1`] = `
 Array [
   Object {
     "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "children": Array [
+          Object {
+            "access": "canAdmin",
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
+        "exact": true,
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "path": "/admin/sub-page",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+        ],
+        "routes": Array [
+          Object {
+            "access": "canAdmin",
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
+        "unaccessible": false,
+      },
+    ],
     "key": "/admin",
     "locale": "menu.admin",
     "name": "管理页",
@@ -12,6 +58,22 @@ Array [
     "routes": Array [
       Object {
         "access": "canAdmin",
+        "children": Array [
+          Object {
+            "access": "canAdmin",
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
         "exact": true,
         "key": "/admin/sub-page",
         "locale": "menu.admin.sub-page",
@@ -42,6 +104,22 @@ Array [
   },
   Object {
     "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "exact": true,
+        "key": "/admin/sub-page/list",
+        "locale": "menu.admin.sub-page.sub-page-list",
+        "name": "三级管理页",
+        "path": "/admin/sub-page/list",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+          "/admin/sub-page",
+        ],
+        "routes": undefined,
+        "unaccessible": false,
+      },
+    ],
     "exact": true,
     "key": "/admin/sub-page",
     "locale": "menu.admin.sub-page",
@@ -89,6 +167,52 @@ exports[`normal 1`] = `
 Array [
   Object {
     "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "children": Array [
+          Object {
+            "access": "canAdmin",
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
+        "exact": true,
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "path": "/admin/sub-page",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+        ],
+        "routes": Array [
+          Object {
+            "access": "canAdmin",
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
+        "unaccessible": false,
+      },
+    ],
     "key": "/admin",
     "locale": "menu.admin",
     "name": "管理页",
@@ -97,6 +221,22 @@ Array [
     "routes": Array [
       Object {
         "access": "canAdmin",
+        "children": Array [
+          Object {
+            "access": "canAdmin",
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
         "exact": true,
         "key": "/admin/sub-page",
         "locale": "menu.admin.sub-page",
@@ -127,6 +267,22 @@ Array [
   },
   Object {
     "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "exact": true,
+        "key": "/admin/sub-page/list",
+        "locale": "menu.admin.sub-page.sub-page-list",
+        "name": "三级管理页",
+        "path": "/admin/sub-page/list",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+          "/admin/sub-page",
+        ],
+        "routes": undefined,
+        "unaccessible": false,
+      },
+    ],
     "exact": true,
     "key": "/admin/sub-page",
     "locale": "menu.admin.sub-page",
@@ -515,6 +671,74 @@ Array [
 exports[`test_layout_router 1`] = `
 Array [
   Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "component": "./Welcome",
+            "icon": "smile",
+            "key": "/welcome/repertoryFw",
+            "locale": "menu.welcome.one.two",
+            "name": "two",
+            "path": "/welcome/repertoryFw",
+            "pro_layout_parentKeys": Array [
+              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+              "/welcome",
+            ],
+            "routes": undefined,
+          },
+          Object {
+            "component": "./Welcome",
+            "icon": "smile",
+            "key": "/welcome/repertory",
+            "locale": "menu.welcome.one.two2",
+            "name": "two2",
+            "path": "/welcome/repertory",
+            "pro_layout_parentKeys": Array [
+              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+              "/welcome",
+            ],
+            "routes": undefined,
+          },
+        ],
+        "component": "./Welcome",
+        "key": "/welcome",
+        "locale": "menu.welcome.one",
+        "name": "one",
+        "path": "/welcome",
+        "pro_layout_parentKeys": Array [
+          "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+        ],
+        "routes": Array [
+          Object {
+            "component": "./Welcome",
+            "icon": "smile",
+            "key": "/welcome/repertoryFw",
+            "locale": "menu.welcome.one.two",
+            "name": "two",
+            "path": "/welcome/repertoryFw",
+            "pro_layout_parentKeys": Array [
+              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+              "/welcome",
+            ],
+            "routes": undefined,
+          },
+          Object {
+            "component": "./Welcome",
+            "icon": "smile",
+            "key": "/welcome/repertory",
+            "locale": "menu.welcome.one.two2",
+            "name": "two2",
+            "path": "/welcome/repertory",
+            "pro_layout_parentKeys": Array [
+              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+              "/welcome",
+            ],
+            "routes": undefined,
+          },
+        ],
+      },
+    ],
     "icon": "smile",
     "key": "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
     "locale": "menu.welcome",
@@ -523,6 +747,34 @@ Array [
     "pro_layout_parentKeys": Array [],
     "routes": Array [
       Object {
+        "children": Array [
+          Object {
+            "component": "./Welcome",
+            "icon": "smile",
+            "key": "/welcome/repertoryFw",
+            "locale": "menu.welcome.one.two",
+            "name": "two",
+            "path": "/welcome/repertoryFw",
+            "pro_layout_parentKeys": Array [
+              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+              "/welcome",
+            ],
+            "routes": undefined,
+          },
+          Object {
+            "component": "./Welcome",
+            "icon": "smile",
+            "key": "/welcome/repertory",
+            "locale": "menu.welcome.one.two2",
+            "name": "two2",
+            "path": "/welcome/repertory",
+            "pro_layout_parentKeys": Array [
+              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+              "/welcome",
+            ],
+            "routes": undefined,
+          },
+        ],
         "component": "./Welcome",
         "key": "/welcome",
         "locale": "menu.welcome.one",
@@ -563,6 +815,34 @@ Array [
     ],
   },
   Object {
+    "children": Array [
+      Object {
+        "component": "./Welcome",
+        "icon": "smile",
+        "key": "/welcome/repertoryFw",
+        "locale": "menu.welcome.one.two",
+        "name": "two",
+        "path": "/welcome/repertoryFw",
+        "pro_layout_parentKeys": Array [
+          "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+          "/welcome",
+        ],
+        "routes": undefined,
+      },
+      Object {
+        "component": "./Welcome",
+        "icon": "smile",
+        "key": "/welcome/repertory",
+        "locale": "menu.welcome.one.two2",
+        "name": "two2",
+        "path": "/welcome/repertory",
+        "pro_layout_parentKeys": Array [
+          "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+          "/welcome",
+        ],
+        "routes": undefined,
+      },
+    ],
     "component": "./Welcome",
     "key": "/welcome",
     "locale": "menu.welcome.one",
@@ -620,6 +900,52 @@ exports[`three path 1`] = `
 Array [
   Object {
     "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "children": Array [
+          Object {
+            "access": "canAdmin",
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
+        "exact": true,
+        "key": "/admin/sub-page",
+        "locale": "menu.admin.sub-page",
+        "name": "二级管理页",
+        "path": "/admin/sub-page",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+        ],
+        "routes": Array [
+          Object {
+            "access": "canAdmin",
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
+        "unaccessible": false,
+      },
+    ],
     "key": "/admin",
     "locale": "menu.admin",
     "name": "管理页",
@@ -628,6 +954,22 @@ Array [
     "routes": Array [
       Object {
         "access": "canAdmin",
+        "children": Array [
+          Object {
+            "access": "canAdmin",
+            "exact": true,
+            "key": "/admin/sub-page/list",
+            "locale": "menu.admin.sub-page.sub-page-list",
+            "name": "三级管理页",
+            "path": "/admin/sub-page/list",
+            "pro_layout_parentKeys": Array [
+              "/admin",
+              "/admin/sub-page",
+            ],
+            "routes": undefined,
+            "unaccessible": false,
+          },
+        ],
         "exact": true,
         "key": "/admin/sub-page",
         "locale": "menu.admin.sub-page",
@@ -658,6 +1000,22 @@ Array [
   },
   Object {
     "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "exact": true,
+        "key": "/admin/sub-page/list",
+        "locale": "menu.admin.sub-page.sub-page-list",
+        "name": "三级管理页",
+        "path": "/admin/sub-page/list",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+          "/admin/sub-page",
+        ],
+        "routes": undefined,
+        "unaccessible": false,
+      },
+    ],
     "exact": true,
     "key": "/admin/sub-page",
     "locale": "menu.admin.sub-page",
@@ -704,6 +1062,28 @@ Array [
 exports[`user path test 1`] = `
 Array [
   Object {
+    "children": Array [
+      Object {
+        "key": "/admin/userMng/users",
+        "locale": "menu.人员组织管理.人员管理",
+        "name": "人员管理",
+        "path": "/admin/userMng/users",
+        "pro_layout_parentKeys": Array [
+          "/admin/userMng/",
+        ],
+        "routes": undefined,
+      },
+      Object {
+        "key": "/admin/userMng/companies",
+        "locale": "menu.人员组织管理.单位管理",
+        "name": "单位管理",
+        "path": "/admin/userMng/companies",
+        "pro_layout_parentKeys": Array [
+          "/admin/userMng/",
+        ],
+        "routes": undefined,
+      },
+    ],
     "key": "/admin/userMng/",
     "locale": "menu.人员组织管理",
     "name": "人员组织管理",

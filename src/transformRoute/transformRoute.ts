@@ -5,6 +5,8 @@ import sha265 from '../sha265';
 
 import { MenuDataItem, Route, MessageDescriptor } from '../types';
 
+export const childrenPropsName = 'routes';
+
 export function stripQueryStringAndHashFromPath(url: string) {
   return url.split('?')[0].split('#')[0];
 }
@@ -83,7 +85,9 @@ const bigfishCompatibleConversions = (
   route: MenuDataItem,
   props: FormatterProps,
 ) => {
-  const { menu = {}, indexRoute, path = '', routes } = route;
+  const { menu = {}, indexRoute, path = '' } = route;
+
+  const routerChildren = route.children || route[childrenPropsName];
   const {
     name = route.name,
     icon = route.icon,
@@ -91,7 +95,7 @@ const bigfishCompatibleConversions = (
     flatMenu = route.flatMenu,
   } = menu as Route; // 兼容平铺式写法
   // 拼接 childrenRoutes, 处理存在 indexRoute 时的逻辑
-  const childrenRoutes =
+  const childrenList =
     indexRoute &&
     // 如果只有 redirect,不用处理的
     Object.keys(indexRoute).join(',') !== 'redirect'
@@ -101,8 +105,8 @@ const bigfishCompatibleConversions = (
             menu,
             ...indexRoute,
           },
-        ].concat(routes || [])
-      : routes;
+        ].concat(routerChildren || [])
+      : routerChildren;
 
   // 拼接返回的 menu 数据
   const result = {
@@ -115,32 +119,35 @@ const bigfishCompatibleConversions = (
     result.icon = icon;
   }
 
-  if (childrenRoutes && childrenRoutes.length) {
+  if (childrenList && childrenList.length) {
     /** 在菜单中隐藏子项 */
     if (hideChildren) {
-      delete result.routes;
+      delete result[childrenPropsName];
+      delete result.children;
       return result;
     }
 
     // 需要重新进行一次
-    const finroutes = formatter(
+    const finalChildren = formatter(
       {
         ...props,
-        data: childrenRoutes,
+        data: childrenList,
       },
       route,
     );
 
     /** 在菜单中只隐藏此项，子项往上提，仍旧展示 */
     if (flatMenu) {
-      return finroutes;
+      return finalChildren;
     }
 
-    result.routes = finroutes;
+    result[childrenPropsName] = finalChildren;
   }
 
   return result;
 };
+
+const notNullArray = (value: any) => Array.isArray(value) && value.length > 0;
 
 /**
  *
@@ -158,8 +165,8 @@ function formatter(
   return data
     .filter((item) => {
       if (!item) return false;
-      if (item.routes) return true;
-      if (item.children) return true;
+      if (notNullArray(item[childrenPropsName])) return true;
+      if (notNullArray(item.children)) return true;
       if (item.path) return true;
       if (item.layout) return true;
       // 重定向
@@ -186,14 +193,7 @@ function formatter(
       return true;
     })
     .map((item = { path: '/' }) => {
-      if (item.children && !item.routes) {
-        // eslint-disable-next-line no-param-reassign
-        item.routes = item.children;
-        // eslint-disable-next-line no-param-reassign
-        // 支持react-router6的routeObject格式
-        // delete item.children;
-      }
-
+      const routerChildren = item.children || item[childrenPropsName];
       const path = mergePath(item.path, parent ? parent.path : '/');
       const { name } = item;
       const locale = getItemLocaleName(item, parentName || 'menu');
@@ -207,11 +207,11 @@ function formatter(
       const {
         // eslint-disable-next-line @typescript-eslint/naming-convention
         pro_layout_parentKeys = [],
-        routes,
         children,
         icon,
         flatMenu,
         indexRoute,
+        routes,
         ...restParent
       } = parent;
 
@@ -222,7 +222,6 @@ function formatter(
         path,
         locale,
         key: item.key || getKeyByPath({ ...item, path }),
-
         pro_layout_parentKeys: Array.from(
           new Set([
             ...(item.parentKeys || []),
@@ -240,23 +239,19 @@ function formatter(
       if (finallyItem.menu === undefined) {
         delete finallyItem.menu;
       }
-      if (item.routes) {
+      if (notNullArray(routerChildren)) {
         const formatterChildren = formatter(
           {
             ...props,
-            data: item.routes,
+            data: routerChildren,
             parentName: locale || '',
           },
           finallyItem,
         );
-        // Reduce memory usage
-        finallyItem.routes =
-          formatterChildren && formatterChildren.length > 0
-            ? formatterChildren
-            : undefined;
 
-        if (!finallyItem.routes) {
-          delete finallyItem.routes;
+        if (notNullArray(formatterChildren)) {
+          finallyItem[childrenPropsName] = formatterChildren;
+          finallyItem.children = formatterChildren;
         }
       }
       return bigfishCompatibleConversions(finallyItem, props);
@@ -274,33 +269,38 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
     .filter(
       (item: MenuDataItem) =>
         item &&
-        (item.name || item.routes) &&
+        (item.name ||
+          notNullArray(item[childrenPropsName]) ||
+          notNullArray(item.children)) &&
         !item.hideInMenu &&
         !item.redirect,
     )
     .map((item: MenuDataItem) => {
       const newItem = { ...item };
+      const routerChildren = newItem.children || newItem[childrenPropsName];
       // 兼容一下使用了 children 的旧版，有空删除一下
-      if (newItem.children && !newItem.routes) {
-        newItem.routes = item.children;
-      }
+
       if (
-        newItem.routes &&
-        Array.isArray(newItem.routes) &&
+        notNullArray(routerChildren) &&
         !newItem.hideChildrenInMenu &&
-        newItem.routes.some((child: MenuDataItem) => child && !!child.name)
+        routerChildren.some((child: MenuDataItem) => child && !!child.name)
       ) {
-        const routes = defaultFilterMenuData(newItem.routes);
-        if (routes.length) return { ...newItem, routes };
+        const newChildren = defaultFilterMenuData(routerChildren);
+        if (newChildren.length)
+          return {
+            ...newItem,
+            [childrenPropsName]: newChildren,
+            children: newChildren,
+          };
       }
-      return { ...item, routes: undefined };
+      return { ...item, [childrenPropsName]: undefined };
     })
     .filter((item) => item);
 
 /**
  * support pathToRegexp get string
  */
-class RoutesMap<V> extends Map<string, V> {
+class RouteListMap<V> extends Map<string, V> {
   get(pathname: string) {
     let routeValue;
     try {
@@ -328,13 +328,14 @@ class RoutesMap<V> extends Map<string, V> {
  */
 const getBreadcrumbNameMap = (
   menuData: MenuDataItem[],
-): RoutesMap<MenuDataItem> => {
+): RouteListMap<MenuDataItem> => {
   // Map is used to ensure the order of keys
-  const routerMap = new RoutesMap<MenuDataItem>();
+  const routerMap = new RouteListMap<MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
     data.forEach((menuItem) => {
-      if (menuItem && menuItem.routes) {
-        flattenMenuData(menuItem.routes, menuItem);
+      const routerChildren = menuItem.children || menuItem[childrenPropsName];
+      if (notNullArray(routerChildren)) {
+        flattenMenuData(routerChildren, menuItem);
       }
       // Reduce memory usage
       const path = mergePath(menuItem.path, parent ? parent.path : '/');
@@ -353,27 +354,29 @@ const memoizeOneGetBreadcrumbNameMap = memoizeOne(
 const clearChildren = (menuData: MenuDataItem[] = []): MenuDataItem[] => {
   return menuData
     .map((item: MenuDataItem) => {
-      if (item.routes && Array.isArray(item.routes) && item.routes.length > 0) {
-        const routes = clearChildren(item.routes);
-        if (routes.length) return { ...item, routes };
+      const routerChildren = item.children || item[childrenPropsName];
+      if (notNullArray(routerChildren)) {
+        const newChildren = clearChildren(routerChildren);
+        if (newChildren.length)
+          return { ...item, [childrenPropsName]: newChildren };
       }
-
       const finallyItem = { ...item };
-      delete finallyItem.routes;
+      delete finallyItem[childrenPropsName];
+      delete finallyItem.children;
       return finallyItem;
     })
     .filter((item) => item);
 };
 
 /**
- * @param routes 路由配置
+ * @param routeList 路由配置
  * @param locale 是否使用国际化
  * @param formatMessage 国际化的程序
  * @param ignoreFilter 是否筛选掉不展示的 menuItem 项，plugin-layout需要所有项目来计算布局样式
  * @returns { breadcrumb, menuData}
  */
 const transformRoute = (
-  routes: Route[],
+  routeList: Route[],
   locale?: boolean,
   formatMessage?: (message: MessageDescriptor) => string,
   ignoreFilter?: boolean,
@@ -382,7 +385,7 @@ const transformRoute = (
   menuData: MenuDataItem[];
 } => {
   const originalMenuData = memoizeOneFormatter({
-    data: routes,
+    data: routeList,
     formatMessage,
     locale,
   });

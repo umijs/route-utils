@@ -9,7 +9,7 @@ export interface MessageDescriptor {
 }
 
 export interface MenuDataItem {
-  routes?: MenuDataItem[];
+  children?: MenuDataItem[];
   hideChildrenInMenu?: boolean;
   hideInMenu?: boolean;
   icon?: any;

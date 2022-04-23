@@ -1,5 +1,8 @@
-import { MenuDataItem } from '../types';
-import { stripQueryStringAndHashFromPath } from '../transformRoute/transformRoute';
+import type { MenuDataItem } from '../types';
+import {
+  childrenPropsName,
+  stripQueryStringAndHashFromPath,
+} from '../transformRoute/transformRoute';
 
 /**
  * 获取打平的 menuData
@@ -8,24 +11,20 @@ import { stripQueryStringAndHashFromPath } from '../transformRoute/transformRout
  */
 export const getFlatMenus = (
   menuData: MenuDataItem[] = [],
-): {
-  [key: string]: MenuDataItem;
-} => {
-  let menus: {
-    [key: string]: MenuDataItem;
-  } = {};
+): Record<string, MenuDataItem> => {
+  let menus: Record<string, MenuDataItem> = {};
   menuData.forEach((item) => {
     if (!item || !item.key) {
       return;
     }
-
+    const routerChildren = item.children || item[childrenPropsName];
     menus[stripQueryStringAndHashFromPath(item.path || item.key || '/')] = {
       ...item,
     };
     menus[item.key || item.path || '/'] = { ...item };
 
-    if (item.routes) {
-      menus = { ...menus, ...getFlatMenus(item.routes) };
+    if (routerChildren) {
+      menus = { ...menus, ...getFlatMenus(routerChildren) };
     }
   });
   return menus;

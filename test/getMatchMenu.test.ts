@@ -16,13 +16,13 @@ const routes = [
     path: '/admin',
     name: 'admin',
     access: 'canAdmin',
-    routes: [
+    children: [
       {
         path: '/admin/sub-page',
         name: 'sub-page',
         exact: true,
         unaccessible: false,
-        routes: [
+        children: [
           {
             path: '/admin/sub-page/list',
             name: 'sub-page-list',
