@@ -2001,7 +2001,7 @@ Array [
         "name": "容灾数据大盘",
         "path": "/dashboard/disaster-dashboard",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dashboard",
         ],
         "routes": undefined,
@@ -2014,7 +2014,7 @@ Array [
         "name": "全站演练大盘",
         "path": "/dashboard/drill-dashboard",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dashboard",
         ],
         "routes": undefined,
@@ -2027,7 +2027,7 @@ Array [
     "name": "Dashboard",
     "path": "/dashboard",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
     ],
     "routes": Array [
       Object {
@@ -2038,7 +2038,7 @@ Array [
         "name": "容灾数据大盘",
         "path": "/dashboard/disaster-dashboard",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dashboard",
         ],
         "routes": undefined,
@@ -2051,7 +2051,7 @@ Array [
         "name": "全站演练大盘",
         "path": "/dashboard/drill-dashboard",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dashboard",
         ],
         "routes": undefined,
@@ -2068,7 +2068,7 @@ Array [
         "name": "容灾日历",
         "path": "/dr-capacity/drill/calendar",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2084,8 +2084,8 @@ Array [
         ],
         "path": "/dr-capacity/drill",
         "pro_layout_parentKeys": Array [
+          "qixian",
           "/dashboard",
-          "/qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2098,7 +2098,7 @@ Array [
         "name": "容灾恢复分析",
         "path": "/dr-capacity/analysis",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2111,7 +2111,7 @@ Array [
         "name": "演练场景(老)",
         "path": "/dr-capacity/drill-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2124,7 +2124,7 @@ Array [
         "name": "采集指标",
         "path": "/dr-capacity/indicator-config-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2137,7 +2137,7 @@ Array [
         "name": "采集记录",
         "path": "/dr-capacity/indicator-record-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2150,7 +2150,7 @@ Array [
         "name": "演练问题",
         "path": "/dr-capacity/issue-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2163,7 +2163,7 @@ Array [
     "name": "容灾演练管理",
     "path": "/dr-capacity",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
     ],
     "routes": Array [
       Object {
@@ -2174,7 +2174,7 @@ Array [
         "name": "容灾日历",
         "path": "/dr-capacity/drill/calendar",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2190,8 +2190,8 @@ Array [
         ],
         "path": "/dr-capacity/drill",
         "pro_layout_parentKeys": Array [
+          "qixian",
           "/dashboard",
-          "/qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2204,7 +2204,7 @@ Array [
         "name": "容灾恢复分析",
         "path": "/dr-capacity/analysis",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2217,7 +2217,7 @@ Array [
         "name": "演练场景(老)",
         "path": "/dr-capacity/drill-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2230,7 +2230,7 @@ Array [
         "name": "采集指标",
         "path": "/dr-capacity/indicator-config-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2243,7 +2243,7 @@ Array [
         "name": "采集记录",
         "path": "/dr-capacity/indicator-record-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2256,7 +2256,7 @@ Array [
         "name": "演练问题",
         "path": "/dr-capacity/issue-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
         "routes": undefined,
@@ -2274,7 +2274,7 @@ Map {
     "locale": false,
     "path": "/_webapp",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
     ],
     "redirect": "/",
   },
@@ -2284,7 +2284,7 @@ Map {
     "locale": false,
     "path": "/",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
     ],
     "redirect": "/dashboard/disaster-dashboard",
   },
@@ -2295,7 +2295,7 @@ Map {
     "locale": false,
     "path": "/index",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
     ],
     "unaccessible": true,
   },
@@ -2307,7 +2307,7 @@ Map {
     "name": "容灾数据大盘",
     "path": "/dashboard/disaster-dashboard",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dashboard",
     ],
   },
@@ -2319,7 +2319,7 @@ Map {
     "name": "全站演练大盘",
     "path": "/dashboard/drill-dashboard",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dashboard",
     ],
   },
@@ -2333,7 +2333,7 @@ Map {
         "name": "容灾数据大盘",
         "path": "/dashboard/disaster-dashboard",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dashboard",
         ],
       },
@@ -2345,7 +2345,7 @@ Map {
         "name": "全站演练大盘",
         "path": "/dashboard/drill-dashboard",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dashboard",
         ],
       },
@@ -2357,7 +2357,7 @@ Map {
     "name": "Dashboard",
     "path": "/dashboard",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
     ],
     "routes": Array [
       Object {
@@ -2368,7 +2368,7 @@ Map {
         "name": "容灾数据大盘",
         "path": "/dashboard/disaster-dashboard",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dashboard",
         ],
       },
@@ -2380,7 +2380,7 @@ Map {
         "name": "全站演练大盘",
         "path": "/dashboard/drill-dashboard",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dashboard",
         ],
       },
@@ -2394,7 +2394,7 @@ Map {
     "name": "容灾日历",
     "path": "/dr-capacity/drill/calendar",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2409,8 +2409,8 @@ Map {
     ],
     "path": "/dr-capacity/drill",
     "pro_layout_parentKeys": Array [
+      "qixian",
       "/dashboard",
-      "/qixian",
       "/dr-capacity",
     ],
   },
@@ -2421,7 +2421,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/drill/list",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2432,7 +2432,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/drill/edit",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2443,7 +2443,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/drill/new",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2454,7 +2454,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/drill/detail",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2465,7 +2465,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/drill/:id",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2476,7 +2476,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/drill/edit/:id",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2488,7 +2488,7 @@ Map {
     "name": "容灾恢复分析",
     "path": "/dr-capacity/analysis",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2499,7 +2499,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/analysis/:id",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2511,7 +2511,7 @@ Map {
     "name": "演练场景(老)",
     "path": "/dr-capacity/drill-list",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2523,7 +2523,7 @@ Map {
     "name": "采集指标",
     "path": "/dr-capacity/indicator-config-list",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2534,7 +2534,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/indicator-config/new",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2545,7 +2545,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/indicator-config/edit/:id",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2556,7 +2556,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/indicator-config/import",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2567,7 +2567,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/indicator-config/:id",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2578,7 +2578,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/indicator-config/history/:id",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2590,7 +2590,7 @@ Map {
     "name": "采集记录",
     "path": "/dr-capacity/indicator-record-list",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2601,7 +2601,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/indicator-record/edit/:id",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2612,7 +2612,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/indicator-record/:id",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2624,7 +2624,7 @@ Map {
     "name": "演练问题",
     "path": "/dr-capacity/issue-list",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2635,7 +2635,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/drill-report/manage/:id",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2646,7 +2646,7 @@ Map {
     "locale": false,
     "path": "/dr-capacity/drill-report/display/:id",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
       "/dr-capacity",
     ],
   },
@@ -2660,7 +2660,7 @@ Map {
         "name": "容灾日历",
         "path": "/dr-capacity/drill/calendar",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2675,8 +2675,8 @@ Map {
         ],
         "path": "/dr-capacity/drill",
         "pro_layout_parentKeys": Array [
+          "qixian",
           "/dashboard",
-          "/qixian",
           "/dr-capacity",
         ],
       },
@@ -2687,7 +2687,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2698,7 +2698,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/edit",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2709,7 +2709,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/new",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2720,7 +2720,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/detail",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2731,7 +2731,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2742,7 +2742,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/edit/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2754,7 +2754,7 @@ Map {
         "name": "容灾恢复分析",
         "path": "/dr-capacity/analysis",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2765,7 +2765,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/analysis/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2777,7 +2777,7 @@ Map {
         "name": "演练场景(老)",
         "path": "/dr-capacity/drill-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2789,7 +2789,7 @@ Map {
         "name": "采集指标",
         "path": "/dr-capacity/indicator-config-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2800,7 +2800,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-config/new",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2811,7 +2811,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-config/edit/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2822,7 +2822,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-config/import",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2833,7 +2833,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-config/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2844,7 +2844,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-config/history/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2856,7 +2856,7 @@ Map {
         "name": "采集记录",
         "path": "/dr-capacity/indicator-record-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2867,7 +2867,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-record/edit/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2878,7 +2878,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-record/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2890,7 +2890,7 @@ Map {
         "name": "演练问题",
         "path": "/dr-capacity/issue-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2901,7 +2901,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill-report/manage/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2912,7 +2912,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill-report/display/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2924,7 +2924,7 @@ Map {
     "name": "容灾演练管理",
     "path": "/dr-capacity",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
     ],
     "routes": Array [
       Object {
@@ -2935,7 +2935,7 @@ Map {
         "name": "容灾日历",
         "path": "/dr-capacity/drill/calendar",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2950,8 +2950,8 @@ Map {
         ],
         "path": "/dr-capacity/drill",
         "pro_layout_parentKeys": Array [
+          "qixian",
           "/dashboard",
-          "/qixian",
           "/dr-capacity",
         ],
       },
@@ -2962,7 +2962,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2973,7 +2973,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/edit",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2984,7 +2984,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/new",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -2995,7 +2995,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/detail",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3006,7 +3006,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3017,7 +3017,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill/edit/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3029,7 +3029,7 @@ Map {
         "name": "容灾恢复分析",
         "path": "/dr-capacity/analysis",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3040,7 +3040,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/analysis/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3052,7 +3052,7 @@ Map {
         "name": "演练场景(老)",
         "path": "/dr-capacity/drill-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3064,7 +3064,7 @@ Map {
         "name": "采集指标",
         "path": "/dr-capacity/indicator-config-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3075,7 +3075,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-config/new",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3086,7 +3086,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-config/edit/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3097,7 +3097,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-config/import",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3108,7 +3108,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-config/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3119,7 +3119,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-config/history/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3131,7 +3131,7 @@ Map {
         "name": "采集记录",
         "path": "/dr-capacity/indicator-record-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3142,7 +3142,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-record/edit/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3153,7 +3153,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/indicator-record/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3165,7 +3165,7 @@ Map {
         "name": "演练问题",
         "path": "/dr-capacity/issue-list",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3176,7 +3176,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill-report/manage/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3187,7 +3187,7 @@ Map {
         "locale": false,
         "path": "/dr-capacity/drill-report/display/:id",
         "pro_layout_parentKeys": Array [
-          "/qixian",
+          "qixian",
           "/dr-capacity",
         ],
       },
@@ -3199,7 +3199,7 @@ Map {
     "locale": false,
     "path": "/*",
     "pro_layout_parentKeys": Array [
-      "/qixian",
+      "qixian",
     ],
     "redirect": "./Exception/404",
   },

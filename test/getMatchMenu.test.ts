@@ -1072,4 +1072,60 @@ describe('test fullKeys  ', () => {
     expect(openMenuItems.length).toBe(1);
     expect(openMenuItems[0].path).toBe('/welcome2');
   });
+
+  it('match menu if no have path', () => {
+    const openMenuItems = getMatchMenu(
+      '/pcinstmisweb/robotMessage/robotList',
+      transformRoute([
+        {
+          children: [
+            {
+              name: '首页',
+              path: '/index',
+              key: '0-0-0',
+              parentKeys: ['0-0'],
+            },
+            {
+              children: [
+                {
+                  name: '机构群组维护',
+                  path: '/pcinstmisweb/robotMessage/robotList',
+                  key: '0-0-1-0',
+                  parentKeys: ['0-0-1'],
+                },
+                {
+                  name: '机构通知管理',
+                  path: '/pcinstmisweb/robotMessage/messageList',
+                  key: '0-0-1-1',
+                  parentKeys: ['0-0-1'],
+                },
+                {
+                  name: '消息模板管理',
+                  path: '/pcinstbaseweb/MesTemplate/MesTemplateManage',
+                  key: '0-0-1-2',
+                  parentKeys: ['0-0-1'],
+                },
+              ],
+              icon: '',
+              name: '消息中心',
+              path: '',
+              key: '0-0-1',
+              parentKeys: ['0-0'],
+            },
+          ],
+          icon: '',
+          name: '工作台',
+          path: '/index',
+          key: '0-0',
+          parentKeys: ['0'],
+        },
+      ]).menuData,
+      true,
+    );
+
+    expect(openMenuItems.length).toBe(3);
+    expect(openMenuItems[0].key).toBe('0-0');
+    expect(openMenuItems[1].key).toBe('0-0-1');
+    expect(openMenuItems[2].key).toBe('0-0-1-0');
+  });
 });

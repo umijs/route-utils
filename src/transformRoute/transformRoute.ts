@@ -215,6 +215,15 @@ function formatter(
         ...restParent
       } = parent;
 
+      const item_pro_layout_parentKeys = new Set([
+        ...pro_layout_parentKeys,
+        ...(item.parentKeys || []),
+      ]);
+
+      if (parent.key) {
+        item_pro_layout_parentKeys.add(parent.key);
+      }
+
       const finallyItem: MenuDataItem = {
         ...restParent,
         menu: undefined,
@@ -222,13 +231,9 @@ function formatter(
         path,
         locale,
         key: item.key || getKeyByPath({ ...item, path }),
-        pro_layout_parentKeys: Array.from(
-          new Set([
-            ...(item.parentKeys || []),
-            ...pro_layout_parentKeys,
-            `/${parent.key || ''}`.replace(/\/\//g, '/').replace(/\/\//g, '/'),
-          ]),
-        ).filter((key) => key && key !== '/'),
+        pro_layout_parentKeys: Array.from(item_pro_layout_parentKeys).filter(
+          (key) => key && key !== '/',
+        ),
       };
 
       if (localeName) {
