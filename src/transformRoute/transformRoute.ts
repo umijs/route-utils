@@ -162,8 +162,8 @@ function formatter(
   if (!data || !Array.isArray(data)) {
     return [];
   }
-  return data
-    .filter((item) => {
+  return clone(
+    data.filter((item) => {
       if (!item) return false;
       if (notNullArray(item[childrenPropsName])) return true;
       if (notNullArray(item.children)) return true;
@@ -173,7 +173,8 @@ function formatter(
       if (item.redirect) return false;
       if (item.unaccessible) return false;
       return false;
-    })
+    }),
+  )
     .filter((item) => {
       // 是否没有权限查看
       // 这样就不会显示，是一个兼容性的方式
@@ -192,9 +193,7 @@ function formatter(
       }
       return true;
     })
-    .map((item = { path: '/' }) => {
-      return clone(item);
-    })
+
     .map((item = { path: '/' }) => {
       const routerChildren = item.children || item[childrenPropsName];
       const path = mergePath(item.path, parent ? parent.path : '/');
