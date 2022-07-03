@@ -2,8 +2,8 @@ import isEqual from 'fast-deep-equal/es6/react';
 import memoizeOne from 'memoize-one';
 import { pathToRegexp } from '@qixian.cs/path-to-regexp';
 import sha265 from '../sha265';
-
-import { MenuDataItem, Route, MessageDescriptor } from '../types';
+import type { MenuDataItem, Route, MessageDescriptor } from '../types';
+import clone from 'lodash.clonedeep';
 
 export const childrenPropsName = 'routes';
 
@@ -191,6 +191,9 @@ function formatter(
         return false;
       }
       return true;
+    })
+    .map((item = { path: '/' }) => {
+      return clone(item);
     })
     .map((item = { path: '/' }) => {
       const routerChildren = item.children || item[childrenPropsName];
