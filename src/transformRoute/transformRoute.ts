@@ -3,7 +3,6 @@ import memoizeOne from 'memoize-one';
 import { pathToRegexp } from '@qixian.cs/path-to-regexp';
 import sha265 from '../sha265';
 import type { MenuDataItem, Route, MessageDescriptor } from '../types';
-import clone from 'lodash.clonedeep';
 
 export const childrenPropsName = 'routes';
 
@@ -162,8 +161,8 @@ function formatter(
   if (!data || !Array.isArray(data)) {
     return [];
   }
-  return clone(
-    data.filter((item) => {
+  return data
+    .filter((item) => {
       if (!item) return false;
       if (notNullArray(item[childrenPropsName])) return true;
       if (notNullArray(item.children)) return true;
@@ -173,25 +172,27 @@ function formatter(
       if (item.redirect) return false;
       if (item.unaccessible) return false;
       return false;
-    }),
-  )
+    })
     .filter((item) => {
-      // 是否没有权限查看
-      // 这样就不会显示，是一个兼容性的方式
-      if (item.unaccessible) {
-        // eslint-disable-next-line no-param-reassign
-        delete item.name;
-      }
       if (item?.menu?.name || item?.flatMenu || item?.menu?.flatMenu) {
         return true;
       }
-
       // 显示指定在 menu 中隐藏该项
       // layout 插件的功能，其实不应该存在的
       if (item.menu === false) {
         return false;
       }
       return true;
+    })
+    .map((finallyItem) => {
+      const item = { ...finallyItem };
+      // 是否没有权限查看
+      // 这样就不会显示，是一个兼容性的方式
+      if (item.unaccessible) {
+        // eslint-disable-next-line no-param-reassign
+        delete item.name;
+      }
+      return item;
     })
 
     .map((item = { path: '/' }) => {
