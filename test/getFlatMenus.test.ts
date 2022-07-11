@@ -19,6 +19,7 @@ const routes = [
         exact: true,
         unaccessible: false,
       },
+      { path: '/*', name: '404' },
     ],
   },
   {

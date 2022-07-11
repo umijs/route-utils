@@ -3193,22 +3193,277 @@ Map {
       },
     ],
   },
-  "/*" => Object {
-    "exact": false,
-    "key": "/*",
-    "locale": false,
-    "path": "/*",
-    "pro_layout_parentKeys": Array [
-      "qixian",
-    ],
-    "redirect": "./Exception/404",
-  },
 }
 `;
 
-exports[`layout flatMenu 3`] = `Array []`;
+exports[`layout flatMenu when router={} 1`] = `Array []`;
 
-exports[`layout flatMenu 4`] = `Map {}`;
+exports[`layout flatMenu when router={} 2`] = `Map {}`;
+
+exports[`layout support * 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "component": "./user/login",
+        "key": "/user/login",
+        "layout": false,
+        "locale": "menu.login",
+        "name": "login",
+        "path": "/user/login",
+        "pro_layout_parentKeys": Array [
+          "/user",
+        ],
+        "routes": undefined,
+      },
+    ],
+    "icon": "testicon",
+    "key": "/user",
+    "layout": false,
+    "locale": false,
+    "menu": Object {
+      "flatMenu": false,
+      "hideChildrenInMenu": false,
+      "hideInMenu": false,
+      "icon": "testicon",
+      "name": "overview",
+    },
+    "name": "overview",
+    "path": "/user",
+    "pro_layout_parentKeys": Array [],
+    "routes": Array [
+      Object {
+        "component": "./user/login",
+        "key": "/user/login",
+        "layout": false,
+        "locale": "menu.login",
+        "name": "login",
+        "path": "/user/login",
+        "pro_layout_parentKeys": Array [
+          "/user",
+        ],
+        "routes": undefined,
+      },
+    ],
+  },
+  Object {
+    "component": "./Welcome",
+    "icon": "smile",
+    "indexRoute": Object {
+      "component": "./Welcome",
+    },
+    "key": "/welcome",
+    "locale": "menu.welcome",
+    "name": "welcome",
+    "path": "/welcome",
+    "pro_layout_parentKeys": Array [],
+    "routes": undefined,
+  },
+  Object {
+    "access": "canAdmin",
+    "component": "./Admin",
+    "icon": "crown",
+    "key": "/admin",
+    "locale": "menu.admin",
+    "menu": Object {
+      "hideChildren": true,
+    },
+    "name": "admin",
+    "path": "/admin",
+    "pro_layout_parentKeys": Array [],
+    "routes": undefined,
+  },
+  Object {
+    "component": "./ListTableList",
+    "icon": "table",
+    "key": "/list",
+    "locale": "menu.list.table-list",
+    "name": "list.table-list",
+    "path": "/list",
+    "pro_layout_parentKeys": Array [],
+    "routes": undefined,
+  },
+  Object {
+    "component": "./ListTableList",
+    "key": "/f615a8ee34f749b5e2b9c01b15d7b54edbcea568f3edc58282585ee1584bef8e",
+    "locale": "menu.home",
+    "name": "home",
+    "path": "/",
+    "pro_layout_parentKeys": Array [],
+    "routes": undefined,
+  },
+]
+`;
+
+exports[`layout support * 2`] = `
+Map {
+  "/user/login" => Object {
+    "component": "./user/login",
+    "key": "/user/login",
+    "layout": false,
+    "locale": "menu.login",
+    "name": "login",
+    "path": "/user/login",
+    "pro_layout_parentKeys": Array [
+      "/user",
+    ],
+  },
+  "/user" => Object {
+    "children": Array [
+      Object {
+        "component": "./user/login",
+        "key": "/user/login",
+        "layout": false,
+        "locale": "menu.login",
+        "name": "login",
+        "path": "/user/login",
+        "pro_layout_parentKeys": Array [
+          "/user",
+        ],
+      },
+    ],
+    "icon": "testicon",
+    "key": "/user",
+    "layout": false,
+    "locale": false,
+    "menu": Object {
+      "flatMenu": false,
+      "hideChildrenInMenu": false,
+      "hideInMenu": false,
+      "icon": "testicon",
+      "name": "overview",
+    },
+    "name": "overview",
+    "path": "/user",
+    "pro_layout_parentKeys": Array [],
+    "routes": Array [
+      Object {
+        "component": "./user/login",
+        "key": "/user/login",
+        "layout": false,
+        "locale": "menu.login",
+        "name": "login",
+        "path": "/user/login",
+        "pro_layout_parentKeys": Array [
+          "/user",
+        ],
+      },
+    ],
+  },
+  "/welcome" => Object {
+    "component": "./Welcome",
+    "icon": "smile",
+    "indexRoute": Object {
+      "component": "./Welcome",
+    },
+    "key": "/welcome",
+    "locale": "menu.welcome",
+    "name": "welcome",
+    "path": "/welcome",
+    "pro_layout_parentKeys": Array [],
+    "routes": Array [
+      Object {
+        "component": "./Welcome",
+        "key": "/welcome",
+        "locale": false,
+        "menu": Object {},
+        "path": "/welcome",
+        "pro_layout_parentKeys": Array [
+          "/welcome",
+        ],
+      },
+    ],
+  },
+  "/admin" => Object {
+    "access": "canAdmin",
+    "component": "./Admin",
+    "icon": "crown",
+    "key": "/admin",
+    "locale": "menu.admin",
+    "menu": Object {
+      "hideChildren": true,
+    },
+    "name": "admin",
+    "path": "/admin",
+    "pro_layout_parentKeys": Array [],
+  },
+  "/admin/sub-page2" => Object {
+    "access": "canAdmin",
+    "component": "./Welcome",
+    "hideInMenu": true,
+    "icon": "smile",
+    "key": "/admin/sub-page2",
+    "locale": "menu.admin.sub-page",
+    "name": "sub-page",
+    "path": "/admin/sub-page2",
+    "pro_layout_parentKeys": Array [
+      "/admin2",
+    ],
+  },
+  "/admin2" => Object {
+    "access": "canAdmin",
+    "children": Array [
+      Object {
+        "access": "canAdmin",
+        "component": "./Welcome",
+        "hideInMenu": true,
+        "icon": "smile",
+        "key": "/admin/sub-page2",
+        "locale": "menu.admin.sub-page",
+        "name": "sub-page",
+        "path": "/admin/sub-page2",
+        "pro_layout_parentKeys": Array [
+          "/admin2",
+        ],
+      },
+    ],
+    "component": "./Admin",
+    "hideInMenu": true,
+    "icon": "crown",
+    "indexRoute": Object {
+      "redirect": "/admin/sub-page2",
+    },
+    "key": "/admin2",
+    "locale": "menu.admin",
+    "name": "admin",
+    "path": "/admin2",
+    "pro_layout_parentKeys": Array [],
+    "routes": Array [
+      Object {
+        "access": "canAdmin",
+        "component": "./Welcome",
+        "hideInMenu": true,
+        "icon": "smile",
+        "key": "/admin/sub-page2",
+        "locale": "menu.admin.sub-page",
+        "name": "sub-page",
+        "path": "/admin/sub-page2",
+        "pro_layout_parentKeys": Array [
+          "/admin2",
+        ],
+      },
+    ],
+  },
+  "/list" => Object {
+    "component": "./ListTableList",
+    "icon": "table",
+    "key": "/list",
+    "locale": "menu.list.table-list",
+    "name": "list.table-list",
+    "path": "/list",
+    "pro_layout_parentKeys": Array [],
+    "routes": Array [],
+  },
+  "/" => Object {
+    "component": "./ListTableList",
+    "key": "/f615a8ee34f749b5e2b9c01b15d7b54edbcea568f3edc58282585ee1584bef8e",
+    "locale": "menu.home",
+    "name": "home",
+    "path": "/",
+    "pro_layout_parentKeys": Array [],
+  },
+}
+`;
 
 exports[`normal 1`] = `
 Object {

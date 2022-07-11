@@ -75,6 +75,7 @@ const routes = [
     component: './ListTableList',
   },
   {
+    path: '*',
     component: './404',
   },
 ];
@@ -266,8 +267,7 @@ const flatMenu = [
     path: '/',
     routes: [
       {
-        path:
-          '_webapp' /** 添加重定向 参考：https://bigfish.antfin-inc.com/doc/deploy-assets */,
+        path: '_webapp' /** 添加重定向 参考：https://bigfish.antfin-inc.com/doc/deploy-assets */,
         redirect: '/',
       },
       { path: '/', redirect: '/dashboard/disaster-dashboard' }, // 首页跳转到「容灾数据大盘」
@@ -432,9 +432,15 @@ test('layout flatMenu', () => {
   expect(breadcrumb).toMatchSnapshot();
 });
 
-test('layout flatMenu', () => {
+test('layout flatMenu when router={}', () => {
   // @ts-expect-error
   const { menuData: userMenuData, breadcrumb } = transformRoute({}, false);
+  expect(userMenuData).toMatchSnapshot();
+  expect(breadcrumb).toMatchSnapshot();
+});
+
+test('layout support *', () => {
+  const { menuData: userMenuData, breadcrumb } = transformRoute(routes, false);
   expect(userMenuData).toMatchSnapshot();
   expect(breadcrumb).toMatchSnapshot();
 });
