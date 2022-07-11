@@ -166,6 +166,8 @@ function formatter(
       if (!item) return false;
       if (notNullArray(item[childrenPropsName])) return true;
       if (notNullArray(item.children)) return true;
+      if (item.path === '*') return false;
+      if (item.path === '/*') return false;
       if (item.path) return true;
       if (item.layout) return true;
       // 重定向
