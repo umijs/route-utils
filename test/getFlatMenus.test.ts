@@ -49,7 +49,7 @@ const { menuData } = transformRoute(routes, true, ({ id }) => {
 describe('getFlatMenus', () => {
   it('normal', () => {
     const flatMenus = getFlatMenus(menuData);
-    expect(Object.keys(flatMenus).length).toEqual(5);
+    expect(Object.keys(flatMenus).length).toEqual(6);
     expect(flatMenus['/list'].name).toEqual('查询表格');
     expect(flatMenus).toMatchSnapshot();
   });

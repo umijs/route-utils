@@ -166,8 +166,7 @@ function formatter(
       if (!item) return false;
       if (notNullArray(item[childrenPropsName])) return true;
       if (notNullArray(item.children)) return true;
-      if (item.path === '*') return false;
-      if (item.path === '/*') return false;
+
       if (item.path) return true;
       if (item.layout) return true;
       // 重定向
@@ -193,6 +192,12 @@ function formatter(
       if (item.unaccessible) {
         // eslint-disable-next-line no-param-reassign
         delete item.name;
+      }
+      if (item.path === '*') {
+        item.path = '.';
+      }
+      if (item.path === '/*') {
+        item.path = '.';
       }
       return item;
     })

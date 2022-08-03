@@ -142,6 +142,13 @@ Array [
     "path": "/",
     "pro_layout_parentKeys": Array [],
   },
+  Object {
+    "component": "./404",
+    "key": "/.",
+    "locale": false,
+    "path": "/.",
+    "pro_layout_parentKeys": Array [],
+  },
 ]
 `;
 
@@ -310,6 +317,13 @@ Map {
     "locale": "menu.home",
     "name": "home",
     "path": "/",
+    "pro_layout_parentKeys": Array [],
+  },
+  "/." => Object {
+    "component": "./404",
+    "key": "/.",
+    "locale": false,
+    "path": "/.",
     "pro_layout_parentKeys": Array [],
   },
 }
@@ -3193,6 +3207,16 @@ Map {
       },
     ],
   },
+  "/." => Object {
+    "exact": false,
+    "key": "/.",
+    "locale": false,
+    "path": "/.",
+    "pro_layout_parentKeys": Array [
+      "qixian",
+    ],
+    "redirect": "./Exception/404",
+  },
 }
 `;
 
@@ -3460,6 +3484,13 @@ Map {
     "locale": "menu.home",
     "name": "home",
     "path": "/",
+    "pro_layout_parentKeys": Array [],
+  },
+  "/." => Object {
+    "component": "./404",
+    "key": "/.",
+    "locale": false,
+    "path": "/.",
     "pro_layout_parentKeys": Array [],
   },
 }
@@ -3743,6 +3774,13 @@ Map {
     "path": "/",
     "pro_layout_parentKeys": Array [],
   },
+  "/." => Object {
+    "component": "./404",
+    "key": "/.",
+    "locale": false,
+    "path": "/.",
+    "pro_layout_parentKeys": Array [],
+  },
 }
 `;
 
@@ -3886,6 +3924,13 @@ Array [
     "locale": "menu.home",
     "name": "menu.home",
     "path": "/",
+    "pro_layout_parentKeys": Array [],
+  },
+  Object {
+    "component": "./404",
+    "key": "/.",
+    "locale": false,
+    "path": "/.",
     "pro_layout_parentKeys": Array [],
   },
 ]
@@ -4056,6 +4101,13 @@ Map {
     "locale": "menu.home",
     "name": "menu.home",
     "path": "/",
+    "pro_layout_parentKeys": Array [],
+  },
+  "/." => Object {
+    "component": "./404",
+    "key": "/.",
+    "locale": false,
+    "path": "/.",
     "pro_layout_parentKeys": Array [],
   },
 }

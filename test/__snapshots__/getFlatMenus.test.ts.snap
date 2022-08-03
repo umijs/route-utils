@@ -18,6 +18,17 @@ Object {
         "routes": undefined,
         "unaccessible": false,
       },
+      Object {
+        "access": "canAdmin",
+        "key": "/admin/.",
+        "locale": "menu.admin.404",
+        "name": "menu.admin.404",
+        "path": "/admin/.",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+        ],
+        "routes": undefined,
+      },
     ],
     "key": "/admin",
     "locale": "menu.admin",
@@ -38,7 +49,29 @@ Object {
         "routes": undefined,
         "unaccessible": false,
       },
+      Object {
+        "access": "canAdmin",
+        "key": "/admin/.",
+        "locale": "menu.admin.404",
+        "name": "menu.admin.404",
+        "path": "/admin/.",
+        "pro_layout_parentKeys": Array [
+          "/admin",
+        ],
+        "routes": undefined,
+      },
     ],
+  },
+  "/admin/.": Object {
+    "access": "canAdmin",
+    "key": "/admin/.",
+    "locale": "menu.admin.404",
+    "name": "menu.admin.404",
+    "path": "/admin/.",
+    "pro_layout_parentKeys": Array [
+      "/admin",
+    ],
+    "routes": undefined,
   },
   "/admin/sub-page": Object {
     "access": "canAdmin",
