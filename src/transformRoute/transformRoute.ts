@@ -86,7 +86,7 @@ const bigfishCompatibleConversions = (
 ) => {
   const { menu = {}, indexRoute, path = '' } = route;
 
-  const routerChildren = route.children || route[childrenPropsName];
+  const routerChildren = route.children || [];
   const {
     name = route.name,
     icon = route.icon,
@@ -121,7 +121,6 @@ const bigfishCompatibleConversions = (
   if (childrenList && childrenList.length) {
     /** 在菜单中隐藏子项 */
     if (hideChildren) {
-      delete result[childrenPropsName];
       delete result.children;
       return result;
     }
@@ -139,8 +138,7 @@ const bigfishCompatibleConversions = (
     if (flatMenu) {
       return finalChildren;
     }
-
-    result[childrenPropsName] = finalChildren;
+    delete result[childrenPropsName];
   }
 
   return result;
@@ -164,9 +162,7 @@ function formatter(
   return data
     .filter((item) => {
       if (!item) return false;
-      if (notNullArray(item[childrenPropsName])) return true;
       if (notNullArray(item.children)) return true;
-
       if (item.path) return true;
       if (item.layout) return true;
       // 重定向
@@ -187,6 +183,10 @@ function formatter(
     })
     .map((finallyItem) => {
       const item = { ...finallyItem };
+      if (!item.children && item[childrenPropsName]) {
+        item.children = item[childrenPropsName];
+        delete item[childrenPropsName];
+      }
       // 是否没有权限查看
       // 这样就不会显示，是一个兼容性的方式
       if (item.unaccessible) {
@@ -203,7 +203,7 @@ function formatter(
     })
 
     .map((item = { path: '/' }) => {
-      const routerChildren = item.children || item[childrenPropsName];
+      const routerChildren = item.children || [];
       const path = mergePath(item.path, parent ? parent.path : '/');
       const { name } = item;
       const locale = getItemLocaleName(item, parentName || 'menu');
@@ -265,7 +265,6 @@ function formatter(
         );
 
         if (notNullArray(formatterChildren)) {
-          finallyItem[childrenPropsName] = formatterChildren;
           finallyItem.children = formatterChildren;
         }
       }
@@ -284,17 +283,15 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
     .filter(
       (item: MenuDataItem) =>
         item &&
-        (item.name ||
-          notNullArray(item[childrenPropsName]) ||
-          notNullArray(item.children)) &&
+        (item.name || notNullArray(item.children)) &&
         !item.hideInMenu &&
         !item.redirect,
     )
     .map((item: MenuDataItem) => {
       const newItem = { ...item };
-      const routerChildren = newItem.children || newItem[childrenPropsName];
+      const routerChildren = newItem.children || [];
       // 兼容一下使用了 children 的旧版，有空删除一下
-
+      delete newItem[childrenPropsName];
       if (
         notNullArray(routerChildren) &&
         !newItem.hideChildrenInMenu &&
@@ -304,11 +301,10 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
         if (newChildren.length)
           return {
             ...newItem,
-            [childrenPropsName]: newChildren,
             children: newChildren,
           };
       }
-      return { ...item, [childrenPropsName]: undefined };
+      return { ...item };
     })
     .filter((item) => item);
 
@@ -348,7 +344,7 @@ const getBreadcrumbNameMap = (
   const routerMap = new RouteListMap<MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
     data.forEach((menuItem) => {
-      const routerChildren = menuItem.children || menuItem[childrenPropsName];
+      const routerChildren = menuItem.children || [];
       if (notNullArray(routerChildren)) {
         flattenMenuData(routerChildren, menuItem);
       }
@@ -369,11 +365,10 @@ const memoizeOneGetBreadcrumbNameMap = memoizeOne(
 const clearChildren = (menuData: MenuDataItem[] = []): MenuDataItem[] => {
   return menuData
     .map((item: MenuDataItem) => {
-      const routerChildren = item.children || item[childrenPropsName];
+      const routerChildren = item.children;
       if (notNullArray(routerChildren)) {
         const newChildren = clearChildren(routerChildren);
-        if (newChildren.length)
-          return { ...item, [childrenPropsName]: newChildren };
+        if (newChildren.length) return { ...item };
       }
       const finallyItem = { ...item };
       delete finallyItem[childrenPropsName];

@@ -336,7 +336,6 @@ test('test yfd layout config', () => {
         {
           path: '/bkmng/authority/my',
           name: '权限列表',
-
           unaccessible: false,
           locale: 'menu.我的权限.权限列表',
           key: '/yfd/bkmng/authority/my',
@@ -366,7 +365,6 @@ test('test yfd layout config', () => {
       unaccessible: false,
       locale: false,
       key: '/bkmng',
-
       pro_layout_parentKeys: [],
     },
   ]);
