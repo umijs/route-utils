@@ -1,5 +1,5 @@
 export interface Route extends MenuDataItem {
-  routes?: Route[];
+  children?: Route[];
 }
 
 export interface MessageDescriptor {
