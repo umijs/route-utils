@@ -164,6 +164,7 @@ function formatter(
       if (!item) return false;
       if (notNullArray(item.children)) return true;
       if (item.path) return true;
+      if (item.originPath) return true;
       if (item.layout) return true;
       // 重定向
       if (item.redirect) return false;
@@ -182,7 +183,10 @@ function formatter(
       return true;
     })
     .map((finallyItem) => {
-      const item = { ...finallyItem };
+      const item = {
+        ...finallyItem,
+        path: finallyItem.path || finallyItem.originPath,
+      } as MenuDataItem;
       if (!item.children && item[childrenPropsName]) {
         item.children = item[childrenPropsName];
         delete item[childrenPropsName];
