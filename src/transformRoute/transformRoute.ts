@@ -168,6 +168,7 @@ function formatter(
       if (notNullArray(item.children)) return true;
 
       if (item.path) return true;
+      if (item.originPath) return true;
       if (item.layout) return true;
       // 重定向
       if (item.redirect) return false;
@@ -198,6 +199,9 @@ function formatter(
       }
       if (item.path === '/*') {
         item.path = '.';
+      }
+      if (!item.path && item.originPath) {
+        item.path = item.originPath;
       }
       return item;
     })
