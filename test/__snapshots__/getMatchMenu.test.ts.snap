@@ -19,7 +19,6 @@ Array [
               "/admin",
               "/admin/sub-page",
             ],
-            "routes": undefined,
             "unaccessible": false,
           },
         ],
@@ -30,22 +29,6 @@ Array [
         "path": "/admin/sub-page",
         "pro_layout_parentKeys": Array [
           "/admin",
-        ],
-        "routes": Array [
-          Object {
-            "access": "canAdmin",
-            "exact": true,
-            "key": "/admin/sub-page/list",
-            "locale": "menu.admin.sub-page.sub-page-list",
-            "name": "三级管理页",
-            "path": "/admin/sub-page/list",
-            "pro_layout_parentKeys": Array [
-              "/admin",
-              "/admin/sub-page",
-            ],
-            "routes": undefined,
-            "unaccessible": false,
-          },
         ],
         "unaccessible": false,
       },
@@ -55,52 +38,6 @@ Array [
     "name": "管理页",
     "path": "/admin",
     "pro_layout_parentKeys": Array [],
-    "routes": Array [
-      Object {
-        "access": "canAdmin",
-        "children": Array [
-          Object {
-            "access": "canAdmin",
-            "exact": true,
-            "key": "/admin/sub-page/list",
-            "locale": "menu.admin.sub-page.sub-page-list",
-            "name": "三级管理页",
-            "path": "/admin/sub-page/list",
-            "pro_layout_parentKeys": Array [
-              "/admin",
-              "/admin/sub-page",
-            ],
-            "routes": undefined,
-            "unaccessible": false,
-          },
-        ],
-        "exact": true,
-        "key": "/admin/sub-page",
-        "locale": "menu.admin.sub-page",
-        "name": "二级管理页",
-        "path": "/admin/sub-page",
-        "pro_layout_parentKeys": Array [
-          "/admin",
-        ],
-        "routes": Array [
-          Object {
-            "access": "canAdmin",
-            "exact": true,
-            "key": "/admin/sub-page/list",
-            "locale": "menu.admin.sub-page.sub-page-list",
-            "name": "三级管理页",
-            "path": "/admin/sub-page/list",
-            "pro_layout_parentKeys": Array [
-              "/admin",
-              "/admin/sub-page",
-            ],
-            "routes": undefined,
-            "unaccessible": false,
-          },
-        ],
-        "unaccessible": false,
-      },
-    ],
   },
   Object {
     "access": "canAdmin",
@@ -116,7 +53,6 @@ Array [
           "/admin",
           "/admin/sub-page",
         ],
-        "routes": undefined,
         "unaccessible": false,
       },
     ],
@@ -127,22 +63,6 @@ Array [
     "path": "/admin/sub-page",
     "pro_layout_parentKeys": Array [
       "/admin",
-    ],
-    "routes": Array [
-      Object {
-        "access": "canAdmin",
-        "exact": true,
-        "key": "/admin/sub-page/list",
-        "locale": "menu.admin.sub-page.sub-page-list",
-        "name": "三级管理页",
-        "path": "/admin/sub-page/list",
-        "pro_layout_parentKeys": Array [
-          "/admin",
-          "/admin/sub-page",
-        ],
-        "routes": undefined,
-        "unaccessible": false,
-      },
     ],
     "unaccessible": false,
   },
@@ -157,7 +77,6 @@ Array [
       "/admin",
       "/admin/sub-page",
     ],
-    "routes": undefined,
     "unaccessible": false,
   },
 ]
@@ -182,7 +101,6 @@ Array [
               "/admin",
               "/admin/sub-page",
             ],
-            "routes": undefined,
             "unaccessible": false,
           },
         ],
@@ -193,22 +111,6 @@ Array [
         "path": "/admin/sub-page",
         "pro_layout_parentKeys": Array [
           "/admin",
-        ],
-        "routes": Array [
-          Object {
-            "access": "canAdmin",
-            "exact": true,
-            "key": "/admin/sub-page/list",
-            "locale": "menu.admin.sub-page.sub-page-list",
-            "name": "三级管理页",
-            "path": "/admin/sub-page/list",
-            "pro_layout_parentKeys": Array [
-              "/admin",
-              "/admin/sub-page",
-            ],
-            "routes": undefined,
-            "unaccessible": false,
-          },
         ],
         "unaccessible": false,
       },
@@ -218,52 +120,6 @@ Array [
     "name": "管理页",
     "path": "/admin",
     "pro_layout_parentKeys": Array [],
-    "routes": Array [
-      Object {
-        "access": "canAdmin",
-        "children": Array [
-          Object {
-            "access": "canAdmin",
-            "exact": true,
-            "key": "/admin/sub-page/list",
-            "locale": "menu.admin.sub-page.sub-page-list",
-            "name": "三级管理页",
-            "path": "/admin/sub-page/list",
-            "pro_layout_parentKeys": Array [
-              "/admin",
-              "/admin/sub-page",
-            ],
-            "routes": undefined,
-            "unaccessible": false,
-          },
-        ],
-        "exact": true,
-        "key": "/admin/sub-page",
-        "locale": "menu.admin.sub-page",
-        "name": "二级管理页",
-        "path": "/admin/sub-page",
-        "pro_layout_parentKeys": Array [
-          "/admin",
-        ],
-        "routes": Array [
-          Object {
-            "access": "canAdmin",
-            "exact": true,
-            "key": "/admin/sub-page/list",
-            "locale": "menu.admin.sub-page.sub-page-list",
-            "name": "三级管理页",
-            "path": "/admin/sub-page/list",
-            "pro_layout_parentKeys": Array [
-              "/admin",
-              "/admin/sub-page",
-            ],
-            "routes": undefined,
-            "unaccessible": false,
-          },
-        ],
-        "unaccessible": false,
-      },
-    ],
   },
   Object {
     "access": "canAdmin",
@@ -279,7 +135,6 @@ Array [
           "/admin",
           "/admin/sub-page",
         ],
-        "routes": undefined,
         "unaccessible": false,
       },
     ],
@@ -290,22 +145,6 @@ Array [
     "path": "/admin/sub-page",
     "pro_layout_parentKeys": Array [
       "/admin",
-    ],
-    "routes": Array [
-      Object {
-        "access": "canAdmin",
-        "exact": true,
-        "key": "/admin/sub-page/list",
-        "locale": "menu.admin.sub-page.sub-page-list",
-        "name": "三级管理页",
-        "path": "/admin/sub-page/list",
-        "pro_layout_parentKeys": Array [
-          "/admin",
-          "/admin/sub-page",
-        ],
-        "routes": undefined,
-        "unaccessible": false,
-      },
     ],
     "unaccessible": false,
   },
@@ -363,22 +202,7 @@ Array [
 exports[`test router 1`] = `
 Array [
   Object {
-    "icon": Object {
-      "_owner": null,
-      "_store": Object {},
-      "key": null,
-      "props": Object {},
-      "ref": null,
-      "type": Object {},
-    },
-    "key": "welcome",
-    "locale": "menu.welcome",
-    "name": "welcome",
-    "path": "/",
-    "pro_layout_parentKeys": Array [
-      "/",
-    ],
-    "routes": Array [
+    "children": Array [
       Object {
         "icon": Object {
           "_owner": null,
@@ -440,8 +264,6 @@ Array [
         ],
       },
     ],
-  },
-  Object {
     "icon": Object {
       "_owner": null,
       "_store": Object {},
@@ -457,7 +279,9 @@ Array [
     "pro_layout_parentKeys": Array [
       "/",
     ],
-    "routes": Array [
+  },
+  Object {
+    "children": Array [
       Object {
         "icon": Object {
           "_owner": null,
@@ -519,8 +343,6 @@ Array [
         ],
       },
     ],
-  },
-  Object {
     "icon": Object {
       "_owner": null,
       "_store": Object {},
@@ -529,15 +351,16 @@ Array [
       "ref": null,
       "type": Object {},
     },
-    "key": "/welcome",
-    "locale": "menu.welcome.one",
-    "name": "one",
-    "path": "/welcome",
+    "key": "welcome",
+    "locale": "menu.welcome",
+    "name": "welcome",
+    "path": "/",
     "pro_layout_parentKeys": Array [
       "/",
-      "welcome",
     ],
-    "routes": Array [
+  },
+  Object {
+    "children": Array [
       Object {
         "exact": true,
         "icon": Object {
@@ -578,6 +401,22 @@ Array [
           "/welcome",
         ],
       },
+    ],
+    "icon": Object {
+      "_owner": null,
+      "_store": Object {},
+      "key": null,
+      "props": Object {},
+      "ref": null,
+      "type": Object {},
+    },
+    "key": "/welcome",
+    "locale": "menu.welcome.one",
+    "name": "one",
+    "path": "/welcome",
+    "pro_layout_parentKeys": Array [
+      "/",
+      "welcome",
     ],
   },
   Object {
@@ -606,12 +445,7 @@ Array [
 exports[`test yfd layout config 1`] = `
 Array [
   Object {
-    "key": "/yfd/bkmng/authority",
-    "locale": "menu.我的权限",
-    "name": "我的权限",
-    "path": "/bkmng/authority",
-    "pro_layout_parentKeys": Array [],
-    "routes": Array [
+    "children": Array [
       Object {
         "exact": true,
         "key": "/yfd/bkmng/authority/my",
@@ -635,6 +469,11 @@ Array [
         "unaccessible": false,
       },
     ],
+    "key": "/yfd/bkmng/authority",
+    "locale": "menu.我的权限",
+    "name": "我的权限",
+    "path": "/bkmng/authority",
+    "pro_layout_parentKeys": Array [],
     "unaccessible": false,
   },
   Object {
@@ -663,7 +502,6 @@ Array [
     "path": "/experienceScenario",
     "permission": "KM_WORKFLOW",
     "pro_layout_parentKeys": Array [],
-    "routes": undefined,
   },
 ]
 `;
@@ -682,10 +520,9 @@ Array [
             "name": "two",
             "path": "/welcome/repertoryFw",
             "pro_layout_parentKeys": Array [
-              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+              "/151fdf1e8796d6df8536aeb3261b5603ef6ef574c115c3e82e94e0a49e4561fa",
               "/welcome",
             ],
-            "routes": undefined,
           },
           Object {
             "component": "./Welcome",
@@ -695,10 +532,9 @@ Array [
             "name": "two2",
             "path": "/welcome/repertory",
             "pro_layout_parentKeys": Array [
-              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+              "/151fdf1e8796d6df8536aeb3261b5603ef6ef574c115c3e82e94e0a49e4561fa",
               "/welcome",
             ],
-            "routes": undefined,
           },
         ],
         "component": "./Welcome",
@@ -707,112 +543,16 @@ Array [
         "name": "one",
         "path": "/welcome",
         "pro_layout_parentKeys": Array [
-          "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-        ],
-        "routes": Array [
-          Object {
-            "component": "./Welcome",
-            "icon": "smile",
-            "key": "/welcome/repertoryFw",
-            "locale": "menu.welcome.one.two",
-            "name": "two",
-            "path": "/welcome/repertoryFw",
-            "pro_layout_parentKeys": Array [
-              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-              "/welcome",
-            ],
-            "routes": undefined,
-          },
-          Object {
-            "component": "./Welcome",
-            "icon": "smile",
-            "key": "/welcome/repertory",
-            "locale": "menu.welcome.one.two2",
-            "name": "two2",
-            "path": "/welcome/repertory",
-            "pro_layout_parentKeys": Array [
-              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-              "/welcome",
-            ],
-            "routes": undefined,
-          },
+          "/151fdf1e8796d6df8536aeb3261b5603ef6ef574c115c3e82e94e0a49e4561fa",
         ],
       },
     ],
     "icon": "smile",
-    "key": "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+    "key": "/151fdf1e8796d6df8536aeb3261b5603ef6ef574c115c3e82e94e0a49e4561fa",
     "locale": "menu.welcome",
     "name": "welcome",
     "path": "/",
     "pro_layout_parentKeys": Array [],
-    "routes": Array [
-      Object {
-        "children": Array [
-          Object {
-            "component": "./Welcome",
-            "icon": "smile",
-            "key": "/welcome/repertoryFw",
-            "locale": "menu.welcome.one.two",
-            "name": "two",
-            "path": "/welcome/repertoryFw",
-            "pro_layout_parentKeys": Array [
-              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-              "/welcome",
-            ],
-            "routes": undefined,
-          },
-          Object {
-            "component": "./Welcome",
-            "icon": "smile",
-            "key": "/welcome/repertory",
-            "locale": "menu.welcome.one.two2",
-            "name": "two2",
-            "path": "/welcome/repertory",
-            "pro_layout_parentKeys": Array [
-              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-              "/welcome",
-            ],
-            "routes": undefined,
-          },
-        ],
-        "component": "./Welcome",
-        "key": "/welcome",
-        "locale": "menu.welcome.one",
-        "name": "one",
-        "path": "/welcome",
-        "pro_layout_parentKeys": Array [
-          "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-        ],
-        "routes": Array [
-          Object {
-            "component": "./Welcome",
-            "icon": "smile",
-            "key": "/welcome/repertoryFw",
-            "locale": "menu.welcome.one.two",
-            "name": "two",
-            "path": "/welcome/repertoryFw",
-            "pro_layout_parentKeys": Array [
-              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-              "/welcome",
-            ],
-            "routes": undefined,
-          },
-          Object {
-            "component": "./Welcome",
-            "icon": "smile",
-            "key": "/welcome/repertory",
-            "locale": "menu.welcome.one.two2",
-            "name": "two2",
-            "path": "/welcome/repertory",
-            "pro_layout_parentKeys": Array [
-              "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-              "/welcome",
-            ],
-            "routes": undefined,
-          },
-        ],
-      },
-    ],
   },
   Object {
     "children": Array [
@@ -824,10 +564,9 @@ Array [
         "name": "two",
         "path": "/welcome/repertoryFw",
         "pro_layout_parentKeys": Array [
-          "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+          "/151fdf1e8796d6df8536aeb3261b5603ef6ef574c115c3e82e94e0a49e4561fa",
           "/welcome",
         ],
-        "routes": undefined,
       },
       Object {
         "component": "./Welcome",
@@ -837,10 +576,9 @@ Array [
         "name": "two2",
         "path": "/welcome/repertory",
         "pro_layout_parentKeys": Array [
-          "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+          "/151fdf1e8796d6df8536aeb3261b5603ef6ef574c115c3e82e94e0a49e4561fa",
           "/welcome",
         ],
-        "routes": undefined,
       },
     ],
     "component": "./Welcome",
@@ -849,35 +587,7 @@ Array [
     "name": "one",
     "path": "/welcome",
     "pro_layout_parentKeys": Array [
-      "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-    ],
-    "routes": Array [
-      Object {
-        "component": "./Welcome",
-        "icon": "smile",
-        "key": "/welcome/repertoryFw",
-        "locale": "menu.welcome.one.two",
-        "name": "two",
-        "path": "/welcome/repertoryFw",
-        "pro_layout_parentKeys": Array [
-          "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-          "/welcome",
-        ],
-        "routes": undefined,
-      },
-      Object {
-        "component": "./Welcome",
-        "icon": "smile",
-        "key": "/welcome/repertory",
-        "locale": "menu.welcome.one.two2",
-        "name": "two2",
-        "path": "/welcome/repertory",
-        "pro_layout_parentKeys": Array [
-          "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
-          "/welcome",
-        ],
-        "routes": undefined,
-      },
+      "/151fdf1e8796d6df8536aeb3261b5603ef6ef574c115c3e82e94e0a49e4561fa",
     ],
   },
   Object {
@@ -888,10 +598,9 @@ Array [
     "name": "two",
     "path": "/welcome/repertoryFw",
     "pro_layout_parentKeys": Array [
-      "/b330b60f19a36a19fb206c2257c2502721f6803c15c5dd40c89210561a55d54b",
+      "/151fdf1e8796d6df8536aeb3261b5603ef6ef574c115c3e82e94e0a49e4561fa",
       "/welcome",
     ],
-    "routes": undefined,
   },
 ]
 `;
@@ -915,7 +624,6 @@ Array [
               "/admin",
               "/admin/sub-page",
             ],
-            "routes": undefined,
             "unaccessible": false,
           },
         ],
@@ -926,22 +634,6 @@ Array [
         "path": "/admin/sub-page",
         "pro_layout_parentKeys": Array [
           "/admin",
-        ],
-        "routes": Array [
-          Object {
-            "access": "canAdmin",
-            "exact": true,
-            "key": "/admin/sub-page/list",
-            "locale": "menu.admin.sub-page.sub-page-list",
-            "name": "三级管理页",
-            "path": "/admin/sub-page/list",
-            "pro_layout_parentKeys": Array [
-              "/admin",
-              "/admin/sub-page",
-            ],
-            "routes": undefined,
-            "unaccessible": false,
-          },
         ],
         "unaccessible": false,
       },
@@ -951,52 +643,6 @@ Array [
     "name": "管理页",
     "path": "/admin",
     "pro_layout_parentKeys": Array [],
-    "routes": Array [
-      Object {
-        "access": "canAdmin",
-        "children": Array [
-          Object {
-            "access": "canAdmin",
-            "exact": true,
-            "key": "/admin/sub-page/list",
-            "locale": "menu.admin.sub-page.sub-page-list",
-            "name": "三级管理页",
-            "path": "/admin/sub-page/list",
-            "pro_layout_parentKeys": Array [
-              "/admin",
-              "/admin/sub-page",
-            ],
-            "routes": undefined,
-            "unaccessible": false,
-          },
-        ],
-        "exact": true,
-        "key": "/admin/sub-page",
-        "locale": "menu.admin.sub-page",
-        "name": "二级管理页",
-        "path": "/admin/sub-page",
-        "pro_layout_parentKeys": Array [
-          "/admin",
-        ],
-        "routes": Array [
-          Object {
-            "access": "canAdmin",
-            "exact": true,
-            "key": "/admin/sub-page/list",
-            "locale": "menu.admin.sub-page.sub-page-list",
-            "name": "三级管理页",
-            "path": "/admin/sub-page/list",
-            "pro_layout_parentKeys": Array [
-              "/admin",
-              "/admin/sub-page",
-            ],
-            "routes": undefined,
-            "unaccessible": false,
-          },
-        ],
-        "unaccessible": false,
-      },
-    ],
   },
   Object {
     "access": "canAdmin",
@@ -1012,7 +658,6 @@ Array [
           "/admin",
           "/admin/sub-page",
         ],
-        "routes": undefined,
         "unaccessible": false,
       },
     ],
@@ -1023,22 +668,6 @@ Array [
     "path": "/admin/sub-page",
     "pro_layout_parentKeys": Array [
       "/admin",
-    ],
-    "routes": Array [
-      Object {
-        "access": "canAdmin",
-        "exact": true,
-        "key": "/admin/sub-page/list",
-        "locale": "menu.admin.sub-page.sub-page-list",
-        "name": "三级管理页",
-        "path": "/admin/sub-page/list",
-        "pro_layout_parentKeys": Array [
-          "/admin",
-          "/admin/sub-page",
-        ],
-        "routes": undefined,
-        "unaccessible": false,
-      },
     ],
     "unaccessible": false,
   },
@@ -1053,7 +682,6 @@ Array [
       "/admin",
       "/admin/sub-page",
     ],
-    "routes": undefined,
     "unaccessible": false,
   },
 ]
@@ -1071,7 +699,6 @@ Array [
         "pro_layout_parentKeys": Array [
           "/admin/userMng/",
         ],
-        "routes": undefined,
       },
       Object {
         "key": "/admin/userMng/companies",
@@ -1081,7 +708,6 @@ Array [
         "pro_layout_parentKeys": Array [
           "/admin/userMng/",
         ],
-        "routes": undefined,
       },
     ],
     "key": "/admin/userMng/",
@@ -1089,28 +715,6 @@ Array [
     "name": "人员组织管理",
     "path": "/admin/userMng/",
     "pro_layout_parentKeys": Array [],
-    "routes": Array [
-      Object {
-        "key": "/admin/userMng/users",
-        "locale": "menu.人员组织管理.人员管理",
-        "name": "人员管理",
-        "path": "/admin/userMng/users",
-        "pro_layout_parentKeys": Array [
-          "/admin/userMng/",
-        ],
-        "routes": undefined,
-      },
-      Object {
-        "key": "/admin/userMng/companies",
-        "locale": "menu.人员组织管理.单位管理",
-        "name": "单位管理",
-        "path": "/admin/userMng/companies",
-        "pro_layout_parentKeys": Array [
-          "/admin/userMng/",
-        ],
-        "routes": undefined,
-      },
-    ],
   },
   Object {
     "key": "/admin/userMng/companies",
@@ -1120,7 +724,6 @@ Array [
     "pro_layout_parentKeys": Array [
       "/admin/userMng/",
     ],
-    "routes": undefined,
   },
 ]
 `;
@@ -1134,7 +737,6 @@ Array [
     "name": "数据详情",
     "path": "/list/:id",
     "pro_layout_parentKeys": Array [],
-    "routes": undefined,
     "unaccessible": false,
   },
 ]

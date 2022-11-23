@@ -15,7 +15,6 @@ Object {
         "pro_layout_parentKeys": Array [
           "/admin",
         ],
-        "routes": undefined,
         "unaccessible": false,
       },
       Object {
@@ -27,7 +26,6 @@ Object {
         "pro_layout_parentKeys": Array [
           "/admin",
         ],
-        "routes": undefined,
       },
     ],
     "key": "/admin",
@@ -35,32 +33,6 @@ Object {
     "name": "管理页",
     "path": "/admin",
     "pro_layout_parentKeys": Array [],
-    "routes": Array [
-      Object {
-        "access": "canAdmin",
-        "exact": true,
-        "key": "/admin/sub-page",
-        "locale": "menu.admin.sub-page",
-        "name": "二级管理页",
-        "path": "/admin/sub-page",
-        "pro_layout_parentKeys": Array [
-          "/admin",
-        ],
-        "routes": undefined,
-        "unaccessible": false,
-      },
-      Object {
-        "access": "canAdmin",
-        "key": "/admin/.",
-        "locale": "menu.admin.404",
-        "name": "menu.admin.404",
-        "path": "/admin/.",
-        "pro_layout_parentKeys": Array [
-          "/admin",
-        ],
-        "routes": undefined,
-      },
-    ],
   },
   "/admin/.": Object {
     "access": "canAdmin",
@@ -71,7 +43,6 @@ Object {
     "pro_layout_parentKeys": Array [
       "/admin",
     ],
-    "routes": undefined,
   },
   "/admin/sub-page": Object {
     "access": "canAdmin",
@@ -83,7 +54,6 @@ Object {
     "pro_layout_parentKeys": Array [
       "/admin",
     ],
-    "routes": undefined,
     "unaccessible": false,
   },
   "/list": Object {
@@ -93,7 +63,6 @@ Object {
     "name": "查询表格",
     "path": "/list",
     "pro_layout_parentKeys": Array [],
-    "routes": undefined,
     "unaccessible": false,
   },
   "/list/:id": Object {
@@ -103,7 +72,6 @@ Object {
     "name": "数据详情",
     "path": "/list/:id",
     "pro_layout_parentKeys": Array [],
-    "routes": undefined,
     "unaccessible": false,
   },
   "/welcome": Object {
@@ -113,7 +81,6 @@ Object {
     "name": "欢迎",
     "path": "/welcome",
     "pro_layout_parentKeys": Array [],
-    "routes": undefined,
     "unaccessible": false,
   },
 }

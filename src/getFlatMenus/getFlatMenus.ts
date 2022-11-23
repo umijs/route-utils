@@ -1,7 +1,7 @@
 import type { MenuDataItem } from '../types';
 import {
-  childrenPropsName,
   stripQueryStringAndHashFromPath,
+  childrenPropsName,
 } from '../transformRoute/transformRoute';
 
 /**
@@ -13,11 +13,16 @@ export const getFlatMenus = (
   menuData: MenuDataItem[] = [],
 ): Record<string, MenuDataItem> => {
   let menus: Record<string, MenuDataItem> = {};
-  menuData.forEach((item) => {
+  menuData.forEach((mapItem) => {
+    const item = { ...mapItem };
     if (!item || !item.key) {
       return;
     }
-    const routerChildren = item.children || item[childrenPropsName];
+    if (!item.children && item[childrenPropsName]) {
+      item.children = item[childrenPropsName];
+      delete item[childrenPropsName];
+    }
+    const routerChildren = item.children || [];
     menus[stripQueryStringAndHashFromPath(item.path || item.key || '/')] = {
       ...item,
     };
