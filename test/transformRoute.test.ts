@@ -444,3 +444,23 @@ test('layout support *', () => {
   expect(userMenuData).toMatchSnapshot();
   expect(breadcrumb).toMatchSnapshot();
 });
+
+test('layout support **/*', () => {
+  const { menuData: userMenuData, breadcrumb } = transformRoute(
+    [
+      { path: 'base/*', name: 'qiankun' },
+      {
+        path: 'list',
+        name: 'list',
+        children: [
+          { path: 'name', name: 'name' },
+          { path: 'name/*', name: 'name2' },
+        ],
+      },
+      { path: '/*', name: 'all' },
+    ],
+    false,
+  );
+  expect(userMenuData).toMatchSnapshot();
+  expect(breadcrumb).toMatchSnapshot();
+});

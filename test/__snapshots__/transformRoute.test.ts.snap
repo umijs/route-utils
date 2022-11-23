@@ -1898,6 +1898,116 @@ Map {
 }
 `;
 
+exports[`layout support **/* 1`] = `
+Array [
+  Object {
+    "key": "base/",
+    "locale": "menu.qiankun",
+    "name": "qiankun",
+    "path": "base/",
+    "pro_layout_parentKeys": Array [],
+  },
+  Object {
+    "children": Array [
+      Object {
+        "key": "/list/name",
+        "locale": "menu.list.name",
+        "name": "name",
+        "path": "/list/name",
+        "pro_layout_parentKeys": Array [
+          "/list",
+        ],
+      },
+      Object {
+        "key": "name/",
+        "locale": "menu.list.name2",
+        "name": "name2",
+        "path": "name/",
+        "pro_layout_parentKeys": Array [
+          "/list",
+        ],
+      },
+    ],
+    "key": "/list",
+    "locale": "menu.list",
+    "name": "list",
+    "path": "/list",
+    "pro_layout_parentKeys": Array [],
+  },
+  Object {
+    "key": "/.",
+    "locale": "menu.all",
+    "name": "all",
+    "path": "/.",
+    "pro_layout_parentKeys": Array [],
+  },
+]
+`;
+
+exports[`layout support **/* 2`] = `
+Map {
+  "/base/" => Object {
+    "key": "base/",
+    "locale": "menu.qiankun",
+    "name": "qiankun",
+    "path": "base/",
+    "pro_layout_parentKeys": Array [],
+  },
+  "/list/name" => Object {
+    "key": "/list/name",
+    "locale": "menu.list.name",
+    "name": "name",
+    "path": "/list/name",
+    "pro_layout_parentKeys": Array [
+      "/list",
+    ],
+  },
+  "/list/name/" => Object {
+    "key": "name/",
+    "locale": "menu.list.name2",
+    "name": "name2",
+    "path": "name/",
+    "pro_layout_parentKeys": Array [
+      "/list",
+    ],
+  },
+  "/list" => Object {
+    "children": Array [
+      Object {
+        "key": "/list/name",
+        "locale": "menu.list.name",
+        "name": "name",
+        "path": "/list/name",
+        "pro_layout_parentKeys": Array [
+          "/list",
+        ],
+      },
+      Object {
+        "key": "name/",
+        "locale": "menu.list.name2",
+        "name": "name2",
+        "path": "name/",
+        "pro_layout_parentKeys": Array [
+          "/list",
+        ],
+      },
+    ],
+    "key": "/list",
+    "locale": "menu.list",
+    "name": "list",
+    "path": "/list",
+    "pro_layout_parentKeys": Array [],
+  },
+  "/." => Object {
+    "key": "/.",
+    "locale": "menu.all",
+    "name": "all",
+    "path": "/.",
+    "pro_layout_parentKeys": Array [],
+  },
+}
+`;
+
 exports[`normal 1`] = `
 Object {
   "access": "canAdmin",
