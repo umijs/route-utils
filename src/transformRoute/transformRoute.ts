@@ -70,6 +70,9 @@ interface FormatterProps {
  * @param parentPath
  */
 const mergePath = (path: string = '', parentPath: string = '/') => {
+  if (path.endsWith('/*')) {
+    return path.replace('/*', '/');
+  }
   if ((path || parentPath).startsWith('/')) {
     return path;
   }
@@ -202,6 +205,9 @@ function formatter(
       }
       if (item.path === '/*') {
         item.path = '.';
+      }
+      if (!item.path && item.originPath) {
+        item.path = item.originPath;
       }
       return item;
     })
