@@ -189,6 +189,7 @@ function formatter(
         ...finallyItem,
         path: finallyItem.path || finallyItem.originPath,
       } as MenuDataItem;
+
       if (!item.children && item[childrenPropsName]) {
         item.children = item[childrenPropsName];
         delete item[childrenPropsName];
@@ -212,7 +213,7 @@ function formatter(
     })
 
     .map((item = { path: '/' }) => {
-      const routerChildren = item.children || [];
+      const routerChildren = item.children || item[childrenPropsName] || [];
       const path = mergePath(item.path, parent ? parent.path : '/');
       const { name } = item;
       const locale = getItemLocaleName(item, parentName || 'menu');
@@ -296,8 +297,7 @@ const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
     )
     .map((item: MenuDataItem) => {
       const newItem = { ...item };
-      const routerChildren = newItem.children || [];
-      // 兼容一下使用了 children 的旧版，有空删除一下
+      const routerChildren = newItem.children || item[childrenPropsName] || [];
       delete newItem[childrenPropsName];
       if (
         notNullArray(routerChildren) &&
@@ -351,7 +351,8 @@ const getBreadcrumbNameMap = (
   const routerMap = new RouteListMap<MenuDataItem>();
   const flattenMenuData = (data: MenuDataItem[], parent?: MenuDataItem) => {
     data.forEach((menuItem) => {
-      const routerChildren = menuItem.children || [];
+      const routerChildren =
+        menuItem.children || menuItem[childrenPropsName] || [];
       if (notNullArray(routerChildren)) {
         flattenMenuData(routerChildren, menuItem);
       }
@@ -367,7 +368,7 @@ const getBreadcrumbNameMap = (
 const clearChildren = (menuData: MenuDataItem[] = []): MenuDataItem[] => {
   return menuData
     .map((item: MenuDataItem) => {
-      const routerChildren = item.children;
+      const routerChildren = item.children || item[childrenPropsName];
       if (notNullArray(routerChildren)) {
         const newChildren = clearChildren(routerChildren);
         if (newChildren.length) return { ...item };
