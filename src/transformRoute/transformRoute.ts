@@ -1,6 +1,5 @@
-import isEqual from 'fast-deep-equal/es6/react';
-import memoizeOne from 'memoize-one';
-import { pathToRegexp } from '@qixian.cs/path-to-regexp';
+//@ts-ignore
+import { pathToRegexp } from '../path-to-regexp';
 import sha265 from '../sha265';
 import type { MenuDataItem, Route, MessageDescriptor } from '../types';
 
@@ -283,8 +282,6 @@ function formatter(
     .flat(1);
 }
 
-const memoizeOneFormatter = memoizeOne(formatter, isEqual);
-
 /**
  * 删除 hideInMenu 和 item.name 不存在的
  */
@@ -367,11 +364,6 @@ const getBreadcrumbNameMap = (
   return routerMap;
 };
 
-const memoizeOneGetBreadcrumbNameMap = memoizeOne(
-  getBreadcrumbNameMap,
-  isEqual,
-);
-
 const clearChildren = (menuData: MenuDataItem[] = []): MenuDataItem[] => {
   return menuData
     .map((item: MenuDataItem) => {
@@ -404,7 +396,7 @@ const transformRoute = (
   breadcrumb: Map<string, MenuDataItem>;
   menuData: MenuDataItem[];
 } => {
-  const originalMenuData = memoizeOneFormatter({
+  const originalMenuData = formatter({
     data: routeList,
     formatMessage,
     locale,
@@ -413,7 +405,7 @@ const transformRoute = (
     ? clearChildren(originalMenuData)
     : defaultFilterMenuData(originalMenuData);
   // Map type used for internal logic
-  const breadcrumb = memoizeOneGetBreadcrumbNameMap(originalMenuData);
+  const breadcrumb = getBreadcrumbNameMap(originalMenuData);
 
   return { breadcrumb, menuData };
 };

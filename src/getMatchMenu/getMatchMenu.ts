@@ -1,4 +1,5 @@
-import { pathToRegexp } from '@qixian.cs/path-to-regexp';
+//@ts-ignore
+import { pathToRegexp } from '../path-to-regexp';
 import type { MenuDataItem } from '../types';
 import getFlatMenu from '../getFlatMenus/getFlatMenus';
 import {

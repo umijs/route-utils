@@ -1,4 +1,4 @@
-import { MenuDataItem } from './types';
+import type { MenuDataItem } from './types';
 
 export { default as transformRoute } from './transformRoute/transformRoute';
 export { default as getFlatMenus } from './getFlatMenus/getFlatMenus';
