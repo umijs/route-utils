@@ -1,6 +1,6 @@
 {
   "name": "@umijs/route-utils",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Quickly process the routing of umi",
   "repository": "https://github.com/umijs/route-utils",
   "license": "MIT",
